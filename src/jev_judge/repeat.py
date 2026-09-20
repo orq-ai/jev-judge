@@ -142,6 +142,18 @@ def call_id(row: dict, judge: str) -> tuple:
     return (row['id'], row['qid'], row['rep'])
 
 
+# USD per million input / output tokens from the Orq router's /v2/models on 2026-09-20 (`models.router_pricing`),
+# keyed by the short judge name the experiment records, so a prompt-cached run can be repriced as if every
+# prompt token had been billed.
+LIST_PRICE_USD_PER_M: dict[str, tuple[float, float]] = {
+    'gpt-5.6-luna': (0.20, 1.20),
+    'gpt-5.6-sol': (4.0, 20.0),
+    'claude-opus-5': (5.0, 25.0),
+    'gemini-3.8-flash': (0.75, 3.75),
+    'deepseek-v4.1-flash': (0.30, 1.20),
+}
+
+
 def economics(cells: Cells, judge: str) -> dict:
     """Cost and latency split per physical call and per decision, with latency percentiles over calls.
 
@@ -156,7 +168,14 @@ def economics(cells: Cells, judge: str) -> dict:
     call_latencies = [group[0]['latency_ms'] / 1000 for group in by_call.values()]
     total = float(sum(r['cost'] for r in rows))
     calls, decisions = len(by_call), len(rows)
+    tokens = token_stats([group[0] for group in by_call.values()])
+    list_per_call = list_price_per_call(tokens, LIST_PRICE_USD_PER_M.get(judge))
+    if np.isnan(list_per_call):
+        list_per_call = total / calls if calls else float('nan')  # no token usage stored: billed is all we have
     return {
+        **tokens,
+        'list_cost_per_call_usd': list_per_call,
+        'list_cost_per_decision_usd': list_per_call * calls / decisions if decisions else float('nan'),
         'calls': calls,
         'decisions': decisions,
         'decisions_per_call': decisions / calls if calls else float('nan'),
@@ -167,6 +186,52 @@ def economics(cells: Cells, judge: str) -> dict:
         'latency_p50_s': float(np.percentile(call_latencies, 50)) if call_latencies else float('nan'),
         'latency_p95_s': float(np.percentile(call_latencies, 95)) if call_latencies else float('nan'),
         'latency_per_decision_s': float(sum(call_latencies) / decisions) if decisions else float('nan'),
+    }
+
+
+def token_stats(calls: list[dict]) -> dict:
+    """Mean prompt and completion size per physical call and the share of prompt tokens the provider served
+    from its prompt cache; NaN for runs recorded without `token_usage` (before 2026-09-20). Repeating one state
+    100 times is exactly what a prompt cache rewards, so a cached run's billed cost understates what the same
+    judge costs on distinct traces."""
+    usage = [c['token_usage'] for c in calls if c.get('token_usage')]
+    if not usage:
+        return {
+            'input_tokens_per_call': float('nan'),
+            'output_tokens_per_call': float('nan'),
+            'cached_share': float('nan'),
+        }
+    inp = sum(u['input_tokens'] for u in usage)
+    return {
+        'input_tokens_per_call': inp / len(usage),
+        'output_tokens_per_call': sum(u['output_tokens'] for u in usage) / len(usage),
+        'cached_share': sum(u.get('cached_tokens') or 0 for u in usage) / inp if inp else float('nan'),
+    }
+
+
+def list_price_per_call(tokens: dict, rates: tuple[float, float] | None) -> float:
+    """What one call costs without any prompt-cache discount: mean tokens per call at the model's list USD/M."""
+    if rates is None or np.isnan(tokens['input_tokens_per_call']):
+        return float('nan')
+    return (tokens['input_tokens_per_call'] * rates[0] + tokens['output_tokens_per_call'] * rates[1]) / 1e6
+
+
+def per_trace(cost: dict, evals_per_trace: int) -> dict:
+    """Judge cost and wall time for one trace, extrapolated to 1,000 traces from the run's totals.
+
+    A trace is one frozen agent run judged on every eval once. The LLM judges' calls for a trace run in
+    parallel, so wall time per trace is one call's mean latency; Jev makes a single call per trace.
+    """
+    traces = cost['decisions'] / evals_per_trace
+    calls_per_trace = cost['calls'] / traces
+    usd_per_trace = cost['total_cost_usd'] / traces
+    return {
+        'calls_per_trace': calls_per_trace,
+        'usd_per_trace': usd_per_trace,
+        'usd_per_1000_traces': usd_per_trace * 1000,
+        'wall_s_per_trace': cost['latency_per_call_s'],
+        'serial_s_per_trace': cost['latency_per_call_s'] * calls_per_trace,
+        'list_usd_per_1000_traces': cost['list_cost_per_call_usd'] * calls_per_trace * 1000,
     }
 
 

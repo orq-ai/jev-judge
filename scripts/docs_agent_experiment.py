@@ -115,15 +115,16 @@ def norm(value: object) -> str | None:
 class Bench:
     """Shared judge client plus the per-(judge, case) repetition cache the summary is built from."""
 
-    def __init__(self, reps: int, *, matched: bool = False) -> None:
+    def __init__(self, reps: int, *, matched: bool = False, judges: tuple[str, ...] = JUDGES) -> None:
         self.reps = reps
         self.matched = matched
+        self.judges = judges
         self.client = resolve_llm_client(require_orq=True).client
         self.rows: dict[str, list[dict]] = {}  # judge name -> prediction rows (one per case, qid, rep)
         self._jev = get_adapter('jev')
         self._pool = ThreadPoolExecutor(max_workers=8)
         self._jev_cache: dict[str, asyncio.Future] = {}
-        self._slots = {m: asyncio.Semaphore(JUDGE_CONCURRENCY) for m in JUDGES}
+        self._slots = {m: asyncio.Semaphore(JUDGE_CONCURRENCY) for m in judges}
 
     async def llm_reps(self, model: str, qid: str, row: dict) -> list[dict]:
         """One dict per repetition, in repetition order: pred, its own latency, explanation, cost, token usage.
@@ -232,7 +233,7 @@ def result(reps: list[dict], gold: str) -> EvaluationResult:
 
 def evaluators(bench: Bench, by_case: dict[str, dict]) -> list[dict]:
     evs = []
-    for model in JUDGES:
+    for model in bench.judges:
         for qid in DOCS_RAG_QUESTIONS:
 
             async def llm_scorer(params: dict, model: str = model, qid: str = qid) -> EvaluationResult:
@@ -265,7 +266,9 @@ def evaluators(bench: Bench, by_case: dict[str, dict]) -> list[dict]:
     return evs
 
 
-async def run(reps: int, path: str | None, out: Path, *, send: bool, matched: bool) -> None:
+async def run(
+    reps: int, path: str | None, out: Path, *, send: bool, matched: bool, judges: tuple[str, ...] = JUDGES
+) -> None:
     rows = build_docs_rag()
     by_case = {r['id']: r for r in rows}
     data = [
@@ -279,7 +282,7 @@ async def run(reps: int, path: str | None, out: Path, *, send: bool, matched: bo
     async def job(dp: DataPoint, _i: int) -> dict:  # evaluatorq wants a coroutine
         return {'name': 'docs-agent (frozen)', 'output': by_case[dp.inputs['id']]['meta']['raw']}
 
-    bench = Bench(reps, matched=matched)
+    bench = Bench(reps, matched=matched, judges=judges)
     await evaluatorq(
         f'docs-agent judge repeatability x{reps}' + (' matched' if matched else ''),
         data=data,
@@ -329,10 +332,12 @@ def main(
     *,
     send: bool = True,
     matched: bool = False,
+    judges: str = ','.join(JUDGES),
 ) -> None:
-    """`--matched` pins every LLM judge to its least-sampled regime (see MATCHED); `--out` picks the result dir."""
+    """`--matched` pins every LLM judge to its least-sampled regime (see MATCHED); `--out` picks the result dir;
+    `--judges` is a comma-separated list of router model ids to run beside Jev."""
     out.mkdir(parents=True, exist_ok=True)
-    asyncio.run(run(reps, path, out, send=send, matched=matched))
+    asyncio.run(run(reps, path, out, send=send, matched=matched, judges=tuple(j for j in judges.split(',') if j)))
 
 
 if __name__ == '__main__':

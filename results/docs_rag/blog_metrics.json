@@ -489,6 +489,11 @@
           }
         },
         "cost": {
+          "input_tokens_per_call": NaN,
+          "output_tokens_per_call": NaN,
+          "cached_share": NaN,
+          "list_cost_per_call_usd": 0.0004895590000000001,
+          "list_cost_per_decision_usd": 0.00016318633333333335,
           "calls": 1200,
           "decisions": 3600,
           "decisions_per_call": 3.0,
@@ -1044,6 +1049,11 @@
           }
         },
         "cost": {
+          "input_tokens_per_call": NaN,
+          "output_tokens_per_call": NaN,
+          "cached_share": NaN,
+          "list_cost_per_call_usd": 0.001174070333333333,
+          "list_cost_per_decision_usd": 0.001174070333333333,
           "calls": 3600,
           "decisions": 3600,
           "decisions_per_call": 1.0,
@@ -1512,6 +1522,11 @@
           }
         },
         "cost": {
+          "input_tokens_per_call": NaN,
+          "output_tokens_per_call": NaN,
+          "cached_share": NaN,
+          "list_cost_per_call_usd": 0.004550736388888889,
+          "list_cost_per_decision_usd": 0.004550736388888889,
           "calls": 3600,
           "decisions": 3600,
           "decisions_per_call": 1.0,
@@ -2064,6 +2079,11 @@
           }
         },
         "cost": {
+          "input_tokens_per_call": NaN,
+          "output_tokens_per_call": NaN,
+          "cached_share": NaN,
+          "list_cost_per_call_usd": 0.00042470385000000004,
+          "list_cost_per_decision_usd": 0.00042470385000000004,
           "calls": 3600,
           "decisions": 3600,
           "decisions_per_call": 1.0,
@@ -2514,6 +2534,11 @@
         }
       },
       "cost": {
+        "input_tokens_per_call": NaN,
+        "output_tokens_per_call": NaN,
+        "cached_share": NaN,
+        "list_cost_per_call_usd": 0.0,
+        "list_cost_per_decision_usd": 0.0,
         "calls": 3600,
         "decisions": 3600,
         "decisions_per_call": 1.0,

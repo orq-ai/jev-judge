@@ -78,6 +78,17 @@ A decision is one (case, eval, repetition). The LLM judges make one call per dec
 | gemini-3.8-flash | 3600 | 3600 | 0.00455 | 0.00455 | 2.09 | 2.06 | 2.91 | 16.3827 |
 | gpt-5.6-luna | 3600 | 3600 | 0.00042 | 0.00042 | 2.96 | 2.80 | 4.18 | 1.5289 |
 
+### Table C2 — Cost per 1,000 traces (extrapolated from this run)
+
+A trace is one frozen agent run judged on all 3 evals once; the frozen states average 30,018 characters of parsed conversation and search results. USD/trace is this run's total spend divided by its (case x repetition) count and multiplied out linearly, so it assumes the same trace length and the same prices. Repeating one state many times is what a provider prompt cache rewards, so the billed figure understates a judge whose input was largely cached (`cached input`); the list-price column reprices the mean tokens per call at the model's uncached USD per million and is the number to use for 1,000 distinct traces. Wall time per trace is the mean latency of one call, since the LLM judges' 3 calls per trace run in parallel; serial is the sum. Token columns are `-` on runs recorded before per-call token usage was stored. List prices (USD per million input / output tokens, Orq router, 2026-09-20): gpt-5.6-luna 0.2 / 1.2, gpt-5.6-sol 4 / 20, claude-opus-5 5 / 25, gemini-3.8-flash 0.75 / 3.75, deepseek-v4.1-flash 0.3 / 1.2.
+
+| Judge | calls/trace | USD/trace | USD/1,000 traces (billed) | USD/1,000 traces (list price) | cached input | wall s/trace | serial s/trace | input tokens/call |
+|---|---|---|---|---|---|---|---|---|
+| jev | 1 | 0.00049 | 0.49 | - | - | 0.44 | 0.44 | - |
+| deepseek-v4.1-flash | 3 | 0.00352 | 3.52 | - | - | 4.59 | 13.76 | - |
+| gemini-3.8-flash | 3 | 0.01365 | 13.65 | - | - | 2.09 | 6.27 | - |
+| gpt-5.6-luna | 3 | 0.00127 | 1.27 | - | - | 2.96 | 8.88 | - |
+
 ### Table D — Signal value (label agreement x repeatability)
 
 Repeatability = share of repetitions matching the modal answer, averaged over cases; a failed call is a non-modal vote. Score evals are treated as exact-match categorical. `baseline(majority)` is constant, so its repeatability is 100% by construction.
@@ -166,4 +177,3 @@ Vote counts sum to the 100 repetitions; `failed:N` is a call that returned no pr
 | q11 | abstain_ok | true | true (100.0%, true:100) | true (100.0%, true:100) | true (100.0%, true:100) | true (100.0%, true:100) |
 | q11 | grounded | true | true (100.0%, true:100) | true (97.0%, true:97, false:3) | true (99.0%, true:99, false:1) | true (50.0%, true:50, false:50) |
 | q11 | quality | 3 | 2 (100.0%, 2:100) | 3 (67.0%, 3:67, 2:25, 4:6, failed:2) | 4 (100.0%, 4:100) | 2 (94.0%, 2:94, 1:3, 3:3) |
-

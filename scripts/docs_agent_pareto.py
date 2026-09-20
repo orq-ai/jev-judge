@@ -159,11 +159,13 @@ def chart(
             linewidths=1.8,
             zorder=3,
         )
-        matched = ' (' in name  # matched-arm points sit next to their main-run twin; label them to the left
+        # arm points sit next to their main-run twin: matched labels go left, sota labels flip vertically
+        matched, sota = name.endswith('(matched)'), name.endswith('(sota)')
+        dy = (-20 if on_front else 14) if sota else (14 if on_front else -20)
         ax.annotate(
             name,
             xy=(x, y),
-            xytext=(-12 if matched else 12, 14 if on_front else -20),
+            xytext=(-12 if matched else 12, dy),
             textcoords='offset points',
             ha='right' if matched else 'left',
             fontsize=11,
@@ -231,7 +233,7 @@ def table(summaries: dict[str, dict], baseline: dict, metric: str, speed: list[i
         'modal acc',
         's/call p50',
         'USD/call',
-        'USD/decision',
+        'USD/decision (list price)',
         'on front (speed)',
         'on front (cost)',
     ]
@@ -242,7 +244,7 @@ def table(summaries: dict[str, dict], baseline: dict, metric: str, speed: list[i
             f'{s["modal_accuracy"]["all"]["value"]:.3f}',
             f'{seconds_per_call(s):.2f}',
             f'{s["cost"]["cost_per_call_usd"]:.5f}',
-            f'{s["cost"]["cost_per_decision_usd"]:.5f}',
+            f'{s["cost"]["list_cost_per_decision_usd"]:.5f}',
             'yes' if i in speed else 'no',
             'yes' if i in cost else 'no',
         ]
@@ -293,7 +295,7 @@ def main(
     names = list(summaries)
     ys = [quality(s, metric) for s in summaries.values()]
     speed_points = [(seconds_per_call(s), y) for s, y in zip(summaries.values(), ys, strict=True)]
-    cost_points = [(s['cost']['cost_per_decision_usd'], y) for s, y in zip(summaries.values(), ys, strict=True)]
+    cost_points = [(s['cost']['list_cost_per_decision_usd'], y) for s, y in zip(summaries.values(), ys, strict=True)]
     speed_front, cost_front = pareto_front(speed_points), pareto_front(cost_points)
     baseline_y = quality(baseline, metric)
     ylabel = METRICS[metric][1]
@@ -315,7 +317,7 @@ def main(
         cost_points,
         cost_front,
         baseline_y,
-        xlabel='USD per decision (log scale)',
+        xlabel='USD per decision at list price (log scale)',
         ylabel=ylabel,
         title='Docs-agent judges: quality vs cost',
         footnote=cost_footnote(summaries),

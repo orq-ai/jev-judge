@@ -24,9 +24,11 @@ from rich.table import Table
 
 from jev_judge.repeat import (
     BASELINE_JUDGE,
+    LIST_PRICE_USD_PER_M,
     SCORE_MAX,
     cells_of,
     majority_baseline,
+    per_trace,
     summarise,
 )
 
@@ -101,6 +103,17 @@ def analyse(path: Path) -> dict:
         'per_judge': per_judge,
         'baseline': baseline,
     }
+
+
+def fmt_or_dash(x: float, fmt: str) -> str:
+    return '-' if np.isnan(x) else fmt.format(x)
+
+
+def mean_state_chars() -> float:
+    """Mean length of the frozen docs-agent states the judges read (same states for every run dir)."""
+    from jev_judge.tasks import build_docs_rag
+
+    return float(np.mean([len(r['state']) for r in build_docs_rag()]))
 
 
 def gold_line(data: dict) -> str:
@@ -254,6 +267,54 @@ def write_tables(path: Path, data: dict, compare: dict | None) -> str:
         'the per-cell mean on every repetition row, and their percentiles are percentiles of those means. Latency '
         'was measured with the three LLM judges at 6 in-flight calls each and Jev on an 8-thread pool, all from '
         'one laptop.',
+    )
+
+    n_evals = len(binary_qids) + len(score_qids)
+    state_chars = mean_state_chars()
+    emit(
+        md,
+        'Table C2 — Cost per 1,000 traces (extrapolated from this run)',
+        [
+            'Judge',
+            'calls/trace',
+            'USD/trace',
+            'USD/1,000 traces (billed)',
+            'USD/1,000 traces (list price)',
+            'cached input',
+            'wall s/trace',
+            'serial s/trace',
+            'input tokens/call',
+        ],
+        [
+            [
+                judge,
+                f'{t["calls_per_trace"]:.0f}',
+                f'{t["usd_per_trace"]:.5f}',
+                f'{t["usd_per_1000_traces"]:.2f}',
+                fmt_or_dash(
+                    t['list_usd_per_1000_traces'] if not np.isnan(c['cached_share']) else float('nan'), '{:.2f}'
+                ),
+                fmt_or_dash(c['cached_share'], '{:.1%}'),
+                f'{t["wall_s_per_trace"]:.2f}',
+                f'{t["serial_s_per_trace"]:.2f}',
+                fmt_or_dash(c['input_tokens_per_call'], '{:,.0f}'),
+            ]
+            for judge in judges
+            for c in [per_judge[judge]['cost']]
+            for t in [per_trace(c, n_evals)]
+        ],
+        note=f'A trace is one frozen agent run judged on all {n_evals} evals once; the frozen states average '
+        f"{state_chars:,.0f} characters of parsed conversation and search results. USD/trace is this run's total "
+        'spend divided by its (case x repetition) count and multiplied out linearly, so it assumes the same trace '
+        'length and the same prices. Repeating one state many times is what a provider prompt cache rewards, so '
+        'the billed figure understates a judge whose input was largely cached (`cached input`); the list-price '
+        "column reprices the mean tokens per call at the model's uncached USD per million and is the number to "
+        'use for 1,000 distinct traces. Wall time per trace is the mean latency of one call, since the LLM '
+        f"judges' {n_evals} calls per trace run in parallel; serial is the sum. Token columns are `-` on runs "
+        'recorded before per-call token usage was stored. List prices (USD per million input / output tokens, '
+        'Orq router, 2026-09-20): '
+        + ', '.join(f'{j} {i:g} / {o:g}' for j, (i, o) in LIST_PRICE_USD_PER_M.items())
+        + '.',
     )
 
     emit(

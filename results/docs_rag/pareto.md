@@ -4,7 +4,7 @@
 
 Jev answers the three evals of a case in one call; LLM judges make one call per eval. Per-call cost: jev $0.00049, gpt-5.6-luna $0.00042.
 
-| judge | signal | modal acc | s/call p50 | USD/call | USD/decision | on front (speed) | on front (cost) |
+| judge | signal | modal acc | s/call p50 | USD/call | USD/decision (list price) | on front (speed) | on front (cost) |
 |---|---|---|---|---|---|---|---|
 | jev | 0.887 | 0.889 | 0.43 | 0.00049 | 0.00016 | yes | yes |
 | deepseek-v4.1-flash | 0.787 | 0.861 | 3.59 | 0.00117 | 0.00117 | no | no |

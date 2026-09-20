@@ -1,0 +1,396 @@
+Transient error Service Unavailable encountered while exporting span batch, retrying in 0.88s.
+Transient error Service Unavailable encountered while exporting span batch, retrying in 2.40s.
+2026-09-20 20:32:38.063 | WARNING  | evaluatorq.common.judge:_attempt:629 - Model anthropic/claude-opus-5 rejected the Responses endpoint (Error code: 400 - {'error': {'message': "[anthropic] output_config.format.schema: For 'integer' type, properties maximum, minimum are not supported", 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_request_error'}}); using chat completions
+2026-09-20 20:32:38.406 | WARNING  | evaluatorq.common.judge:_chat_verdict:664 - Model anthropic/claude-opus-5 rejected structured output; falling back to json_object
+2026-09-20 20:32:38.885 | DEBUG    | evaluatorq.common.judge:run_judge:564 - Judge [anthropic/claude-opus-5] cannot use the Responses endpoint; using chat completions
+Failed to export span batch due to timeout, max retries or shutdown.
+2026-09-20 20:32:39.185 | WARNING  | evaluatorq.common.judge:_chat_verdict:664 - Model anthropic/claude-opus-5 rejected structured output; falling back to json_object
+2026-09-20 20:32:39.626 | DEBUG    | evaluatorq.common.judge:run_judge:564 - Judge [anthropic/claude-opus-5] cannot use the Responses endpoint; using chat completions
+2026-09-20 20:32:39.933 | WARNING  | evaluatorq.common.judge:_chat_verdict:664 - Model anthropic/claude-opus-5 rejected structured output; falling back to json_object
+2026-09-20 20:32:40.675 | DEBUG    | evaluatorq.common.judge:run_judge:564 - Judge [anthropic/claude-opus-5] cannot use the Responses endpoint; using chat completions
+2026-09-20 20:32:40.676 | DEBUG    | evaluatorq.common.judge:run_judge:564 - Judge [anthropic/claude-opus-5] cannot use the Responses endpoint; using chat completions
+2026-09-20 20:32:40.967 | WARNING  | evaluatorq.common.judge:_chat_verdict:664 - Model anthropic/claude-opus-5 rejected structured output; falling back to json_object
+2026-09-20 20:32:40.980 | WARNING  | evaluatorq.common.judge:_chat_verdict:664 - Model anthropic/claude-opus-5 rejected structured output; falling back to json_object
+2026-09-20 20:32:42.009 | DEBUG    | evaluatorq.common.judge:run_judge:564 - Judge [anthropic/claude-opus-5] cannot use the Responses endpoint; using chat completions
+2026-09-20 20:32:42.320 | WARNING  | evaluatorq.common.judge:_chat_verdict:664 - Model anthropic/claude-opus-5 rejected structured output; falling back to json_object
+2026-09-20 20:32:44.095 | DEBUG    | evaluatorq.common.llm_client:resolve_results_base_url:99 - Results upload host resolved from inference client: https://my.orq.ai
+Transient error Service Unavailable encountered while exporting span batch, retrying in 0.81s.
+2026-09-20 20:32:44.790 | DEBUG    | evaluatorq.common.model_catalogue:_parse_catalogue:287 - Catalogue prices disagree for deepseek-v4-flash-0731 (baseten vs greenpt); keeping the model_developer entry if there is one
+2026-09-20 20:32:44.790 | DEBUG    | evaluatorq.common.model_catalogue:_parse_catalogue:287 - Catalogue prices disagree for deepseek-v4-flash-0731 (baseten vs scaleway); keeping the model_developer entry if there is one
+2026-09-20 20:32:44.790 | DEBUG    | evaluatorq.common.model_catalogue:_parse_catalogue:287 - Catalogue prices disagree for moonshotai/kimi-k3 (tensorix vs nvidia); keeping the model_developer entry if there is one
+2026-09-20 20:32:44.790 | DEBUG    | evaluatorq.common.model_catalogue:_parse_catalogue:287 - Catalogue prices disagree for glm-5.2 (scaleway vs zai); keeping the model_developer entry if there is one
+2026-09-20 20:32:44.790 | DEBUG    | evaluatorq.common.model_catalogue:_parse_catalogue:287 - Catalogue prices disagree for glm-5.3-flash (baseten vs zai); keeping the model_developer entry if there is one
+2026-09-20 20:32:44.790 | DEBUG    | evaluatorq.common.model_catalogue:_parse_catalogue:287 - Catalogue prices disagree for eu.gpt-5.6-luna (azure vs openai); keeping the model_developer entry if there is one
+2026-09-20 20:32:44.790 | DEBUG    | evaluatorq.common.model_catalogue:_parse_catalogue:287 - Catalogue prices disagree for eu.gpt-5.6-terra (azure vs openai); keeping the model_developer entry if there is one
+2026-09-20 20:32:44.790 | DEBUG    | evaluatorq.common.model_catalogue:_parse_catalogue:287 - Catalogue prices disagree for qwen3.6-35b-a3b (greenpt vs scaleway); keeping the model_developer entry if there is one
+2026-09-20 20:32:44.790 | DEBUG    | evaluatorq.common.model_catalogue:_parse_catalogue:287 - Catalogue prices disagree for deepseek-ai/DeepSeek-V4-Flash-0731 (inceptron vs nebius); keeping the model_developer entry if there is one
+2026-09-20 20:32:44.790 | DEBUG    | evaluatorq.common.model_catalogue:_parse_catalogue:287 - Catalogue prices disagree for zai-org/GLM-5.2 (inceptron vs togetherai); keeping the model_developer entry if there is one
+2026-09-20 20:32:44.790 | DEBUG    | evaluatorq.common.model_catalogue:_parse_catalogue:287 - Catalogue prices disagree for zai-org/GLM-5.2 (inceptron vs nebius); keeping the model_developer entry if there is one
+2026-09-20 20:32:44.790 | DEBUG    | evaluatorq.common.model_catalogue:_parse_catalogue:287 - Catalogue prices disagree for kimi-k3 (moonshotai vs greenpt); keeping the model_developer entry if there is one
+2026-09-20 20:32:44.790 | DEBUG    | evaluatorq.common.model_catalogue:_parse_catalogue:287 - Catalogue prices disagree for kimi-k2.6 (moonshotai vs tencent); keeping the model_developer entry if there is one
+2026-09-20 20:32:44.790 | DEBUG    | evaluatorq.common.model_catalogue:_parse_catalogue:287 - Catalogue prices disagree for moonshotai/Kimi-K2.6 (togetherai vs nebius); keeping the model_developer entry if there is one
+2026-09-20 20:32:44.790 | DEBUG    | evaluatorq.common.model_catalogue:_parse_catalogue:287 - Catalogue prices disagree for moonshotai/Kimi-K2.6 (togetherai vs inceptron); keeping the model_developer entry if there is one
+2026-09-20 20:32:44.790 | DEBUG    | evaluatorq.common.model_catalogue:_parse_catalogue:287 - Catalogue prices disagree for moonshotai/Kimi-K2.7-Code (togetherai vs inceptron); keeping the model_developer entry if there is one
+2026-09-20 20:32:44.790 | DEBUG    | evaluatorq.common.model_catalogue:_parse_catalogue:287 - Catalogue prices disagree for minimax-m2.5 (tencent vs greenpt); keeping the model_developer entry if there is one
+2026-09-20 20:32:44.790 | DEBUG    | evaluatorq.common.model_catalogue:_parse_catalogue:287 - Catalogue prices disagree for MiniMax-M3 (wafer vs minimax); keeping the model_developer entry if there is one
+2026-09-20 20:32:44.790 | DEBUG    | evaluatorq.common.model_catalogue:_parse_catalogue:287 - Catalogue prices disagree for mistral-medium-3.5-128b (scaleway vs greenpt); keeping the model_developer entry if there is one
+2026-09-20 20:32:44.790 | DEBUG    | evaluatorq.common.model_catalogue:_parse_catalogue:287 - Catalogue prices disagree for gemini-3.1-flash-image (google vs google-ai); keeping the model_developer entry if there is one
+2026-09-20 20:32:44.790 | DEBUG    | evaluatorq.common.model_catalogue:_parse_catalogue:287 - Catalogue prices disagree for nvidia/nemotron-3-super-120b-a12b (nvidia vs nebius); keeping the model_developer entry if there is one
+2026-09-20 20:32:44.790 | DEBUG    | evaluatorq.common.model_catalogue:_parse_catalogue:287 - Catalogue prices disagree for gpt-oss-120b (cerebras vs baseten); keeping the model_developer entry if there is one
+2026-09-20 20:32:44.791 | DEBUG    | evaluatorq.common.model_catalogue:_parse_catalogue:287 - Catalogue prices disagree for bge-multilingual-gemma2 (scaleway vs greenpt); keeping the model_developer entry if there is one
+2026-09-20 20:32:44.791 | DEBUG    | evaluatorq.common.model_catalogue:_parse_catalogue:287 - Catalogue prices disagree for claude-haiku-4-5 (google vs anthropic); keeping the model_developer entry if there is one
+2026-09-20 20:32:44.791 | DEBUG    | evaluatorq.common.model_catalogue:_parse_catalogue:287 - Catalogue prices disagree for claude-opus-4-6 (anthropic vs google); keeping the model_developer entry if there is one
+2026-09-20 20:32:44.791 | DEBUG    | evaluatorq.common.model_catalogue:_parse_catalogue:287 - Catalogue prices disagree for claude-opus-4-7 (anthropic vs google); keeping the model_developer entry if there is one
+2026-09-20 20:32:44.791 | DEBUG    | evaluatorq.common.model_catalogue:_parse_catalogue:287 - Catalogue prices disagree for claude-opus-4-8 (anthropic vs google); keeping the model_developer entry if there is one
+2026-09-20 20:32:44.791 | DEBUG    | evaluatorq.common.model_catalogue:_parse_catalogue:287 - Catalogue prices disagree for claude-sonnet-4-6 (anthropic vs google); keeping the model_developer entry if there is one
+2026-09-20 20:32:44.791 | DEBUG    | evaluatorq.common.model_catalogue:_parse_catalogue:287 - Catalogue prices disagree for deepseek-v4-pro (fireworks vs alibaba); keeping the model_developer entry if there is one
+2026-09-20 20:32:44.791 | DEBUG    | evaluatorq.common.model_catalogue:_parse_catalogue:287 - Catalogue prices disagree for gemma-4-26b-a4b-it (google-ai vs scaleway); keeping the model_developer entry if there is one
+2026-09-20 20:32:44.791 | DEBUG    | evaluatorq.common.model_catalogue:_parse_catalogue:287 - Catalogue prices disagree for glm-5.2 (zai vs greenpt); keeping the model_developer entry if there is one
+2026-09-20 20:32:44.791 | DEBUG    | evaluatorq.common.model_catalogue:_parse_catalogue:287 - Catalogue prices disagree for gpt-5.6-sol (openai vs azure); keeping the model_developer entry if there is one
+2026-09-20 20:32:44.791 | DEBUG    | evaluatorq.common.model_catalogue:_parse_catalogue:287 - Catalogue prices disagree for gpt-oss-120b (cerebras vs scaleway); keeping the model_developer entry if there is one
+2026-09-20 20:32:44.791 | DEBUG    | evaluatorq.common.model_catalogue:_parse_catalogue:287 - Catalogue prices disagree for gpt-oss-120b (cerebras vs greenpt); keeping the model_developer entry if there is one
+2026-09-20 20:32:44.791 | DEBUG    | evaluatorq.common.model_catalogue:_parse_catalogue:287 - Catalogue prices disagree for kimi-k2.6 (moonshotai vs greenpt); keeping the model_developer entry if there is one
+2026-09-20 20:32:44.791 | DEBUG    | evaluatorq.common.model_catalogue:_parse_catalogue:287 - Catalogue prices disagree for kimi-k2.6 (moonshotai vs alibaba); keeping the model_developer entry if there is one
+2026-09-20 20:32:44.791 | DEBUG    | evaluatorq.common.model_catalogue:_parse_catalogue:287 - Catalogue prices disagree for kimi-k2.7-code (moonshotai vs greenpt); keeping the model_developer entry if there is one
+2026-09-20 20:32:44.791 | DEBUG    | evaluatorq.common.model_catalogue:_parse_catalogue:287 - Catalogue prices disagree for llama-3.3-70b-instruct (greenpt vs scaleway); keeping the model_developer entry if there is one
+2026-09-20 20:32:44.791 | DEBUG    | evaluatorq.common.model_catalogue:_parse_catalogue:287 - Catalogue prices disagree for mistral-small-3.2-24b-instruct-2506 (greenpt vs scaleway); keeping the model_developer entry if there is one
+2026-09-20 20:32:44.791 | DEBUG    | evaluatorq.common.model_catalogue:_parse_catalogue:287 - Catalogue prices disagree for moonshotai/kimi-k2.6 (moonshotai vs tensorix); keeping the model_developer entry if there is one
+2026-09-20 20:32:44.791 | DEBUG    | evaluatorq.common.model_catalogue:_parse_catalogue:287 - Catalogue prices disagree for nvidia/nemotron-3-super-120b-a12b (nvidia vs tensorix); keeping the model_developer entry if there is one
+2026-09-20 20:32:44.791 | DEBUG    | evaluatorq.common.model_catalogue:_parse_catalogue:287 - Catalogue prices disagree for openai/gpt-oss-120b (groq vs tensorix); keeping the model_developer entry if there is one
+2026-09-20 20:32:44.791 | DEBUG    | evaluatorq.common.model_catalogue:_parse_catalogue:287 - Catalogue prices disagree for openai/gpt-oss-20b (groq vs tensorix); keeping the model_developer entry if there is one
+2026-09-20 20:32:44.791 | DEBUG    | evaluatorq.common.model_catalogue:_parse_catalogue:287 - Catalogue prices disagree for qwen3-235b-a22b-instruct-2507 (scaleway vs greenpt); keeping the model_developer entry if there is one
+2026-09-20 20:32:44.791 | DEBUG    | evaluatorq.common.model_catalogue:_parse_catalogue:287 - Catalogue prices disagree for qwen3-embedding-8b (greenpt vs scaleway); keeping the model_developer entry if there is one
+2026-09-20 20:32:44.791 | DEBUG    | evaluatorq.common.model_catalogue:_parse_catalogue:287 - Catalogue prices disagree for qwen3.5-397b-a17b (greenpt vs scaleway); keeping the model_developer entry if there is one
+2026-09-20 20:32:44.791 | DEBUG    | evaluatorq.common.model_catalogue:_parse_catalogue:287 - Catalogue prices disagree for qwen3.6-35b-a3b (greenpt vs alibaba); keeping the model_developer entry if there is one
+2026-09-20 20:32:44.791 | DEBUG    | evaluatorq.common.model_catalogue:_parse_catalogue:287 - Catalogue prices disagree for qwen3.7-plus (fireworks vs alibaba); keeping the model_developer entry if there is one
+2026-09-20 20:32:44.792 | DEBUG    | evaluatorq.common.model_catalogue:_load_catalogue:368 - Loaded catalogue for 1323 models from https://my.orq.ai
+2026-09-20 20:32:44.795 | DEBUG    | evaluatorq.common.llm_client:resolve_results_base_url:99 - Results upload host resolved from inference client: https://my.orq.ai
+2026-09-20 20:32:45.393 | DEBUG    | evaluatorq.common.llm_client:resolve_results_base_url:99 - Results upload host resolved from inference client: https://my.orq.ai
+Transient error Service Unavailable encountered while exporting span batch, retrying in 2.01s.
+2026-09-20 20:32:46.441 | DEBUG    | evaluatorq.common.llm_client:resolve_results_base_url:99 - Results upload host resolved from inference client: https://my.orq.ai
+2026-09-20 20:32:46.636 | DEBUG    | evaluatorq.common.llm_client:resolve_results_base_url:99 - Results upload host resolved from inference client: https://my.orq.ai
+2026-09-20 20:32:46.636 | WARNING  | __main__:llm_reps:179 - ⚠ anthropic/claude-opus-5 quality served by {'chat'}, not the responses endpoint
+2026-09-20 20:32:46.986 | DEBUG    | evaluatorq.common.llm_client:resolve_results_base_url:99 - Results upload host resolved from inference client: https://my.orq.ai
+2026-09-20 20:32:46.986 | WARNING  | __main__:llm_reps:179 - ⚠ anthropic/claude-opus-5 quality served by {'chat'}, not the responses endpoint
+2026-09-20 20:32:47.829 | DEBUG    | evaluatorq.common.judge:run_judge:564 - Judge [anthropic/claude-opus-5] cannot use the Responses endpoint; using chat completions
+2026-09-20 20:32:47.831 | DEBUG    | evaluatorq.common.judge:run_judge:564 - Judge [anthropic/claude-opus-5] cannot use the Responses endpoint; using chat completions
+2026-09-20 20:32:47.832 | DEBUG    | evaluatorq.common.judge:run_judge:564 - Judge [anthropic/claude-opus-5] cannot use the Responses endpoint; using chat completions
+2026-09-20 20:32:47.833 | DEBUG    | evaluatorq.common.judge:run_judge:564 - Judge [anthropic/claude-opus-5] cannot use the Responses endpoint; using chat completions
+2026-09-20 20:32:47.834 | DEBUG    | evaluatorq.common.judge:run_judge:564 - Judge [anthropic/claude-opus-5] cannot use the Responses endpoint; using chat completions
+2026-09-20 20:32:47.835 | DEBUG    | evaluatorq.common.judge:run_judge:564 - Judge [anthropic/claude-opus-5] cannot use the Responses endpoint; using chat completions
+Failed to export span batch due to timeout, max retries or shutdown.
+2026-09-20 20:32:50.546 | DEBUG    | evaluatorq.common.llm_client:resolve_results_base_url:99 - Results upload host resolved from inference client: https://my.orq.ai
+2026-09-20 20:32:50.547 | DEBUG    | evaluatorq.common.judge:run_judge:564 - Judge [anthropic/claude-opus-5] cannot use the Responses endpoint; using chat completions
+2026-09-20 20:32:50.740 | DEBUG    | evaluatorq.common.llm_client:resolve_results_base_url:99 - Results upload host resolved from inference client: https://my.orq.ai
+2026-09-20 20:32:50.740 | DEBUG    | evaluatorq.common.judge:run_judge:564 - Judge [anthropic/claude-opus-5] cannot use the Responses endpoint; using chat completions
+2026-09-20 20:32:51.248 | DEBUG    | evaluatorq.common.llm_client:resolve_results_base_url:99 - Results upload host resolved from inference client: https://my.orq.ai
+2026-09-20 20:32:51.249 | DEBUG    | evaluatorq.common.judge:run_judge:564 - Judge [anthropic/claude-opus-5] cannot use the Responses endpoint; using chat completions
+2026-09-20 20:32:51.928 | DEBUG    | evaluatorq.common.llm_client:resolve_results_base_url:99 - Results upload host resolved from inference client: https://my.orq.ai
+2026-09-20 20:32:51.930 | DEBUG    | evaluatorq.common.judge:run_judge:564 - Judge [anthropic/claude-opus-5] cannot use the Responses endpoint; using chat completions
+2026-09-20 20:32:51.934 | WARNING  | __main__:llm_reps:179 - ⚠ anthropic/claude-opus-5 abstain_ok served by {'chat'}, not the responses endpoint
+2026-09-20 20:32:52.826 | DEBUG    | evaluatorq.common.llm_client:resolve_results_base_url:99 - Results upload host resolved from inference client: https://my.orq.ai
+2026-09-20 20:32:52.833 | DEBUG    | evaluatorq.common.judge:run_judge:564 - Judge [anthropic/claude-opus-5] cannot use the Responses endpoint; using chat completions
+2026-09-20 20:32:54.066 | DEBUG    | evaluatorq.common.llm_client:resolve_results_base_url:99 - Results upload host resolved from inference client: https://my.orq.ai
+2026-09-20 20:32:54.067 | DEBUG    | evaluatorq.common.judge:run_judge:564 - Judge [anthropic/claude-opus-5] cannot use the Responses endpoint; using chat completions
+2026-09-20 20:32:54.070 | WARNING  | __main__:llm_reps:179 - ⚠ anthropic/claude-opus-5 grounded served by {'chat'}, not the responses endpoint
+Transient error Service Unavailable encountered while exporting span batch, retrying in 1.18s.
+Failed to export span batch due to timeout, max retries or shutdown.
+2026-09-20 20:32:58.136 | DEBUG    | evaluatorq.common.llm_client:resolve_results_base_url:99 - Results upload host resolved from inference client: https://my.orq.ai
+2026-09-20 20:32:58.137 | DEBUG    | evaluatorq.common.judge:run_judge:564 - Judge [anthropic/claude-opus-5] cannot use the Responses endpoint; using chat completions
+2026-09-20 20:32:58.151 | DEBUG    | evaluatorq.common.llm_client:resolve_results_base_url:99 - Results upload host resolved from inference client: https://my.orq.ai
+2026-09-20 20:32:58.151 | DEBUG    | evaluatorq.common.judge:run_judge:564 - Judge [anthropic/claude-opus-5] cannot use the Responses endpoint; using chat completions
+2026-09-20 20:32:58.162 | DEBUG    | evaluatorq.common.llm_client:resolve_results_base_url:99 - Results upload host resolved from inference client: https://my.orq.ai
+2026-09-20 20:32:58.162 | DEBUG    | evaluatorq.common.judge:run_judge:564 - Judge [anthropic/claude-opus-5] cannot use the Responses endpoint; using chat completions
+2026-09-20 20:32:58.212 | DEBUG    | evaluatorq.common.llm_client:resolve_results_base_url:99 - Results upload host resolved from inference client: https://my.orq.ai
+2026-09-20 20:32:58.213 | WARNING  | __main__:llm_reps:179 - ⚠ anthropic/claude-opus-5 grounded served by {'chat'}, not the responses endpoint
+2026-09-20 20:32:58.214 | DEBUG    | evaluatorq.common.judge:run_judge:564 - Judge [anthropic/claude-opus-5] cannot use the Responses endpoint; using chat completions
+2026-09-20 20:32:58.498 | WARNING  | evaluatorq.common.judge:_chat_verdict:664 - Model anthropic/claude-opus-5 rejected structured output; falling back to json_object
+2026-09-20 20:32:58.539 | WARNING  | evaluatorq.common.judge:_chat_verdict:664 - Model anthropic/claude-opus-5 rejected structured output; falling back to json_object
+2026-09-20 20:32:58.567 | WARNING  | evaluatorq.common.judge:_chat_verdict:664 - Model anthropic/claude-opus-5 rejected structured output; falling back to json_object
+2026-09-20 20:32:58.635 | WARNING  | evaluatorq.common.judge:_chat_verdict:664 - Model anthropic/claude-opus-5 rejected structured output; falling back to json_object
+2026-09-20 20:32:59.866 | DEBUG    | evaluatorq.common.llm_client:resolve_results_base_url:99 - Results upload host resolved from inference client: https://my.orq.ai
+2026-09-20 20:32:59.866 | DEBUG    | evaluatorq.common.judge:run_judge:564 - Judge [anthropic/claude-opus-5] cannot use the Responses endpoint; using chat completions
+2026-09-20 20:33:00.073 | DEBUG    | evaluatorq.common.llm_client:resolve_results_base_url:99 - Results upload host resolved from inference client: https://my.orq.ai
+2026-09-20 20:33:00.073 | DEBUG    | evaluatorq.common.judge:run_judge:564 - Judge [anthropic/claude-opus-5] cannot use the Responses endpoint; using chat completions
+2026-09-20 20:33:00.075 | WARNING  | __main__:llm_reps:179 - ⚠ anthropic/claude-opus-5 abstain_ok served by {'chat'}, not the responses endpoint
+2026-09-20 20:33:00.183 | WARNING  | evaluatorq.common.judge:_chat_verdict:664 - Model anthropic/claude-opus-5 rejected structured output; falling back to json_object
+2026-09-20 20:33:01.259 | WARNING  | evaluatorq.common.judge:_chat_verdict:664 - Model anthropic/claude-opus-5 rejected structured output; falling back to json_object
+Transient error Service Unavailable encountered while exporting span batch, retrying in 1.09s.
+2026-09-20 20:33:02.348 | DEBUG    | evaluatorq.common.llm_client:resolve_results_base_url:99 - Results upload host resolved from inference client: https://my.orq.ai
+Transient error Service Unavailable encountered while exporting span batch, retrying in 1.63s.
+2026-09-20 20:33:02.716 | DEBUG    | evaluatorq.common.llm_client:resolve_results_base_url:99 - Results upload host resolved from inference client: https://my.orq.ai
+2026-09-20 20:33:02.925 | DEBUG    | evaluatorq.common.llm_client:resolve_results_base_url:99 - Results upload host resolved from inference client: https://my.orq.ai
+2026-09-20 20:33:02.925 | WARNING  | __main__:llm_reps:179 - ⚠ anthropic/claude-opus-5 quality served by {'chat'}, not the responses endpoint
+2026-09-20 20:33:03.222 | DEBUG    | evaluatorq.common.judge:run_judge:564 - Judge [anthropic/claude-opus-5] cannot use the Responses endpoint; using chat completions
+2026-09-20 20:33:03.226 | DEBUG    | evaluatorq.common.judge:run_judge:564 - Judge [anthropic/claude-opus-5] cannot use the Responses endpoint; using chat completions
+2026-09-20 20:33:03.228 | DEBUG    | evaluatorq.common.judge:run_judge:564 - Judge [anthropic/claude-opus-5] cannot use the Responses endpoint; using chat completions
+Failed to export span batch due to timeout, max retries or shutdown.
+2026-09-20 20:33:06.711 | DEBUG    | evaluatorq.common.llm_client:resolve_results_base_url:99 - Results upload host resolved from inference client: https://my.orq.ai
+2026-09-20 20:33:06.714 | DEBUG    | evaluatorq.common.judge:run_judge:564 - Judge [anthropic/claude-opus-5] cannot use the Responses endpoint; using chat completions
+2026-09-20 20:33:10.137 | DEBUG    | evaluatorq.common.llm_client:resolve_results_base_url:99 - Results upload host resolved from inference client: https://my.orq.ai
+2026-09-20 20:33:10.138 | DEBUG    | evaluatorq.common.judge:run_judge:564 - Judge [anthropic/claude-opus-5] cannot use the Responses endpoint; using chat completions
+Transient error Service Unavailable encountered while exporting span batch, retrying in 0.93s.
+2026-09-20 20:33:10.638 | DEBUG    | evaluatorq.common.llm_client:resolve_results_base_url:99 - Results upload host resolved from inference client: https://my.orq.ai
+2026-09-20 20:33:10.639 | DEBUG    | evaluatorq.common.judge:run_judge:564 - Judge [anthropic/claude-opus-5] cannot use the Responses endpoint; using chat completions
+2026-09-20 20:33:10.640 | WARNING  | __main__:llm_reps:179 - ⚠ anthropic/claude-opus-5 quality served by {'chat'}, not the responses endpoint
+2026-09-20 20:33:11.095 | DEBUG    | evaluatorq.common.llm_client:resolve_results_base_url:99 - Results upload host resolved from inference client: https://my.orq.ai
+Transient error Service Unavailable encountered while exporting span batch, retrying in 2.14s.
+2026-09-20 20:33:12.150 | DEBUG    | evaluatorq.common.judge:run_judge:564 - Judge [anthropic/claude-opus-5] cannot use the Responses endpoint; using chat completions
+2026-09-20 20:33:13.849 | DEBUG    | evaluatorq.common.llm_client:resolve_results_base_url:99 - Results upload host resolved from inference client: https://my.orq.ai
+2026-09-20 20:33:13.850 | DEBUG    | evaluatorq.common.judge:run_judge:564 - Judge [anthropic/claude-opus-5] cannot use the Responses endpoint; using chat completions
+2026-09-20 20:33:13.910 | DEBUG    | evaluatorq.common.llm_client:resolve_results_base_url:99 - Results upload host resolved from inference client: https://my.orq.ai
+2026-09-20 20:33:13.910 | DEBUG    | evaluatorq.common.judge:run_judge:564 - Judge [anthropic/claude-opus-5] cannot use the Responses endpoint; using chat completions
+Failed to export span batch due to timeout, max retries or shutdown.
+2026-09-20 20:33:15.820 | DEBUG    | evaluatorq.common.llm_client:resolve_results_base_url:99 - Results upload host resolved from inference client: https://my.orq.ai
+2026-09-20 20:33:15.820 | DEBUG    | evaluatorq.common.judge:run_judge:564 - Judge [anthropic/claude-opus-5] cannot use the Responses endpoint; using chat completions
+2026-09-20 20:33:15.822 | WARNING  | __main__:llm_reps:179 - ⚠ anthropic/claude-opus-5 grounded served by {'chat'}, not the responses endpoint
+2026-09-20 20:33:16.176 | DEBUG    | evaluatorq.common.llm_client:resolve_results_base_url:99 - Results upload host resolved from inference client: https://my.orq.ai
+2026-09-20 20:33:16.177 | DEBUG    | evaluatorq.common.judge:run_judge:564 - Judge [anthropic/claude-opus-5] cannot use the Responses endpoint; using chat completions
+2026-09-20 20:33:17.408 | DEBUG    | evaluatorq.common.llm_client:resolve_results_base_url:99 - Results upload host resolved from inference client: https://my.orq.ai
+2026-09-20 20:33:17.408 | DEBUG    | evaluatorq.common.judge:run_judge:564 - Judge [anthropic/claude-opus-5] cannot use the Responses endpoint; using chat completions
+2026-09-20 20:33:17.409 | WARNING  | __main__:llm_reps:179 - ⚠ anthropic/claude-opus-5 abstain_ok served by {'chat'}, not the responses endpoint
+2026-09-20 20:33:19.815 | DEBUG    | evaluatorq.common.llm_client:resolve_results_base_url:99 - Results upload host resolved from inference client: https://my.orq.ai
+2026-09-20 20:33:19.815 | DEBUG    | evaluatorq.common.judge:run_judge:564 - Judge [anthropic/claude-opus-5] cannot use the Responses endpoint; using chat completions
+2026-09-20 20:33:19.817 | DEBUG    | evaluatorq.common.llm_client:resolve_results_base_url:99 - Results upload host resolved from inference client: https://my.orq.ai
+2026-09-20 20:33:19.817 | DEBUG    | evaluatorq.common.judge:run_judge:564 - Judge [anthropic/claude-opus-5] cannot use the Responses endpoint; using chat completions
+Transient error Service Unavailable encountered while exporting span batch, retrying in 0.97s.
+2026-09-20 20:33:20.243 | WARNING  | evaluatorq.common.judge:_chat_verdict:664 - Model anthropic/claude-opus-5 rejected structured output; falling back to json_object
+2026-09-20 20:33:20.249 | DEBUG    | evaluatorq.common.llm_client:resolve_results_base_url:99 - Results upload host resolved from inference client: https://my.orq.ai
+2026-09-20 20:33:20.249 | DEBUG    | evaluatorq.common.judge:run_judge:564 - Judge [anthropic/claude-opus-5] cannot use the Responses endpoint; using chat completions
+2026-09-20 20:33:20.250 | WARNING  | __main__:llm_reps:179 - ⚠ anthropic/claude-opus-5 grounded served by {'chat'}, not the responses endpoint
+2026-09-20 20:33:20.520 | WARNING  | evaluatorq.common.judge:_chat_verdict:664 - Model anthropic/claude-opus-5 rejected structured output; falling back to json_object
+2026-09-20 20:33:20.598 | WARNING  | evaluatorq.common.judge:_chat_verdict:664 - Model anthropic/claude-opus-5 rejected structured output; falling back to json_object
+Transient error Service Unavailable encountered while exporting span batch, retrying in 1.81s.
+2026-09-20 20:33:22.254 | DEBUG    | evaluatorq.common.llm_client:resolve_results_base_url:99 - Results upload host resolved from inference client: https://my.orq.ai
+2026-09-20 20:33:22.254 | DEBUG    | evaluatorq.common.judge:run_judge:564 - Judge [anthropic/claude-opus-5] cannot use the Responses endpoint; using chat completions
+2026-09-20 20:33:22.335 | DEBUG    | evaluatorq.common.llm_client:resolve_results_base_url:99 - Results upload host resolved from inference client: https://my.orq.ai
+2026-09-20 20:33:22.335 | DEBUG    | evaluatorq.common.judge:run_judge:564 - Judge [anthropic/claude-opus-5] cannot use the Responses endpoint; using chat completions
+2026-09-20 20:33:22.616 | WARNING  | evaluatorq.common.judge:_chat_verdict:664 - Model anthropic/claude-opus-5 rejected structured output; falling back to json_object
+2026-09-20 20:33:22.661 | WARNING  | evaluatorq.common.judge:_chat_verdict:664 - Model anthropic/claude-opus-5 rejected structured output; falling back to json_object
+2026-09-20 20:33:23.456 | DEBUG    | evaluatorq.common.llm_client:resolve_results_base_url:99 - Results upload host resolved from inference client: https://my.orq.ai
+2026-09-20 20:33:23.457 | DEBUG    | evaluatorq.common.judge:run_judge:564 - Judge [anthropic/claude-opus-5] cannot use the Responses endpoint; using chat completions
+2026-09-20 20:33:23.460 | WARNING  | __main__:llm_reps:179 - ⚠ anthropic/claude-opus-5 abstain_ok served by {'chat'}, not the responses endpoint
+2026-09-20 20:33:23.825 | WARNING  | evaluatorq.common.judge:_chat_verdict:664 - Model anthropic/claude-opus-5 rejected structured output; falling back to json_object
+Failed to export span batch due to timeout, max retries or shutdown.
+2026-09-20 20:33:27.924 | DEBUG    | evaluatorq.common.llm_client:resolve_results_base_url:99 - Results upload host resolved from inference client: https://my.orq.ai
+2026-09-20 20:33:28.286 | DEBUG    | evaluatorq.common.llm_client:resolve_results_base_url:99 - Results upload host resolved from inference client: https://my.orq.ai
+2026-09-20 20:33:28.512 | DEBUG    | evaluatorq.common.llm_client:resolve_results_base_url:99 - Results upload host resolved from inference client: https://my.orq.ai
+2026-09-20 20:33:28.513 | WARNING  | __main__:llm_reps:179 - ⚠ anthropic/claude-opus-5 quality served by {'chat'}, not the responses endpoint
+2026-09-20 20:33:29.238 | DEBUG    | evaluatorq.common.llm_client:resolve_results_base_url:99 - Results upload host resolved from inference client: https://my.orq.ai
+Transient error Service Unavailable encountered while exporting span batch, retrying in 1.06s.
+2026-09-20 20:33:29.958 | DEBUG    | evaluatorq.common.llm_client:resolve_results_base_url:99 - Results upload host resolved from inference client: https://my.orq.ai
+2026-09-20 20:33:31.200 | DEBUG    | evaluatorq.common.judge:run_judge:564 - Judge [anthropic/claude-opus-5] cannot use the Responses endpoint; using chat completions
+2026-09-20 20:33:31.204 | DEBUG    | evaluatorq.common.judge:run_judge:564 - Judge [anthropic/claude-opus-5] cannot use the Responses endpoint; using chat completions
+2026-09-20 20:33:31.206 | DEBUG    | evaluatorq.common.judge:run_judge:564 - Judge [anthropic/claude-opus-5] cannot use the Responses endpoint; using chat completions
+2026-09-20 20:33:31.207 | DEBUG    | evaluatorq.common.judge:run_judge:564 - Judge [anthropic/claude-opus-5] cannot use the Responses endpoint; using chat completions
+2026-09-20 20:33:31.208 | DEBUG    | evaluatorq.common.judge:run_judge:564 - Judge [anthropic/claude-opus-5] cannot use the Responses endpoint; using chat completions
+Transient error Service Unavailable encountered while exporting span batch, retrying in 2.14s.
+Failed to export span batch due to timeout, max retries or shutdown.
+2026-09-20 20:33:34.385 | DEBUG    | evaluatorq.common.llm_client:resolve_results_base_url:99 - Results upload host resolved from inference client: https://my.orq.ai
+2026-09-20 20:33:34.385 | DEBUG    | evaluatorq.common.judge:run_judge:564 - Judge [anthropic/claude-opus-5] cannot use the Responses endpoint; using chat completions
+2026-09-20 20:33:34.386 | WARNING  | __main__:llm_reps:179 - ⚠ anthropic/claude-opus-5 quality served by {'chat'}, not the responses endpoint
+2026-09-20 20:33:36.080 | DEBUG    | evaluatorq.common.llm_client:resolve_results_base_url:99 - Results upload host resolved from inference client: https://my.orq.ai
+2026-09-20 20:33:37.298 | DEBUG    | evaluatorq.common.llm_client:resolve_results_base_url:99 - Results upload host resolved from inference client: https://my.orq.ai
+Transient error Service Unavailable encountered while exporting span batch, retrying in 1.06s.
+2026-09-20 20:33:39.971 | DEBUG    | evaluatorq.common.llm_client:resolve_results_base_url:99 - Results upload host resolved from inference client: https://my.orq.ai
+2026-09-20 20:33:39.971 | WARNING  | __main__:llm_reps:179 - ⚠ anthropic/claude-opus-5 abstain_ok served by {'chat'}, not the responses endpoint
+2026-09-20 20:33:39.972 | DEBUG    | evaluatorq.common.judge:run_judge:564 - Judge [anthropic/claude-opus-5] cannot use the Responses endpoint; using chat completions
+2026-09-20 20:33:39.973 | DEBUG    | evaluatorq.common.judge:run_judge:564 - Judge [anthropic/claude-opus-5] cannot use the Responses endpoint; using chat completions
+2026-09-20 20:33:39.974 | DEBUG    | evaluatorq.common.judge:run_judge:564 - Judge [anthropic/claude-opus-5] cannot use the Responses endpoint; using chat completions
+2026-09-20 20:33:40.289 | WARNING  | evaluatorq.common.judge:_chat_verdict:664 - Model anthropic/claude-opus-5 rejected structured output; falling back to json_object
+2026-09-20 20:33:40.440 | WARNING  | evaluatorq.common.judge:_chat_verdict:664 - Model anthropic/claude-opus-5 rejected structured output; falling back to json_object
+2026-09-20 20:33:40.442 | WARNING  | evaluatorq.common.judge:_chat_verdict:664 - Model anthropic/claude-opus-5 rejected structured output; falling back to json_object
+Transient error Service Unavailable encountered while exporting span batch, retrying in 1.88s.
+2026-09-20 20:33:42.176 | DEBUG    | evaluatorq.common.llm_client:resolve_results_base_url:99 - Results upload host resolved from inference client: https://my.orq.ai
+2026-09-20 20:33:42.353 | DEBUG    | evaluatorq.common.llm_client:resolve_results_base_url:99 - Results upload host resolved from inference client: https://my.orq.ai
+2026-09-20 20:33:42.688 | DEBUG    | evaluatorq.common.llm_client:resolve_results_base_url:99 - Results upload host resolved from inference client: https://my.orq.ai
+2026-09-20 20:33:42.690 | WARNING  | __main__:llm_reps:179 - ⚠ anthropic/claude-opus-5 grounded served by {'chat'}, not the responses endpoint
+Failed to export span batch due to timeout, max retries or shutdown.
+2026-09-20 20:33:46.804 | DEBUG    | evaluatorq.common.llm_client:resolve_results_base_url:99 - Results upload host resolved from inference client: https://my.orq.ai
+2026-09-20 20:33:47.878 | DEBUG    | evaluatorq.common.llm_client:resolve_results_base_url:99 - Results upload host resolved from inference client: https://my.orq.ai
+Transient error Service Unavailable encountered while exporting span batch, retrying in 0.92s.
+2026-09-20 20:33:50.133 | DEBUG    | evaluatorq.common.llm_client:resolve_results_base_url:99 - Results upload host resolved from inference client: https://my.orq.ai
+2026-09-20 20:33:50.133 | WARNING  | __main__:llm_reps:179 - ⚠ anthropic/claude-opus-5 quality served by {'chat'}, not the responses endpoint
+Transient error Service Unavailable encountered while exporting span batch, retrying in 1.95s.
+Failed to export span batch due to timeout, max retries or shutdown.
+2026-09-20 20:33:56.952 | DEBUG    | evaluatorq.common.judge:run_judge:564 - Judge [anthropic/claude-opus-5] cannot use the Responses endpoint; using chat completions
+2026-09-20 20:33:56.955 | DEBUG    | evaluatorq.common.judge:run_judge:564 - Judge [anthropic/claude-opus-5] cannot use the Responses endpoint; using chat completions
+2026-09-20 20:33:56.956 | DEBUG    | evaluatorq.common.judge:run_judge:564 - Judge [anthropic/claude-opus-5] cannot use the Responses endpoint; using chat completions
+2026-09-20 20:33:56.957 | DEBUG    | evaluatorq.common.judge:run_judge:564 - Judge [anthropic/claude-opus-5] cannot use the Responses endpoint; using chat completions
+2026-09-20 20:33:56.958 | DEBUG    | evaluatorq.common.judge:run_judge:564 - Judge [anthropic/claude-opus-5] cannot use the Responses endpoint; using chat completions
+2026-09-20 20:33:56.958 | DEBUG    | evaluatorq.common.judge:run_judge:564 - Judge [anthropic/claude-opus-5] cannot use the Responses endpoint; using chat completions
+Transient error Service Unavailable encountered while exporting span batch, retrying in 1.10s.
+Transient error Service Unavailable encountered while exporting span batch, retrying in 1.68s.
+2026-09-20 20:34:00.196 | DEBUG    | evaluatorq.common.llm_client:resolve_results_base_url:99 - Results upload host resolved from inference client: https://my.orq.ai
+2026-09-20 20:34:00.890 | DEBUG    | evaluatorq.common.llm_client:resolve_results_base_url:99 - Results upload host resolved from inference client: https://my.orq.ai
+Failed to export span batch due to timeout, max retries or shutdown.
+2026-09-20 20:34:02.073 | DEBUG    | evaluatorq.common.llm_client:resolve_results_base_url:99 - Results upload host resolved from inference client: https://my.orq.ai
+2026-09-20 20:34:02.073 | WARNING  | __main__:llm_reps:179 - ⚠ anthropic/claude-opus-5 abstain_ok served by {'chat'}, not the responses endpoint
+2026-09-20 20:34:02.074 | DEBUG    | evaluatorq.common.judge:run_judge:564 - Judge [anthropic/claude-opus-5] cannot use the Responses endpoint; using chat completions
+2026-09-20 20:34:02.076 | DEBUG    | evaluatorq.common.judge:run_judge:564 - Judge [anthropic/claude-opus-5] cannot use the Responses endpoint; using chat completions
+2026-09-20 20:34:02.077 | DEBUG    | evaluatorq.common.judge:run_judge:564 - Judge [anthropic/claude-opus-5] cannot use the Responses endpoint; using chat completions
+2026-09-20 20:34:02.471 | WARNING  | evaluatorq.common.judge:_chat_verdict:664 - Model anthropic/claude-opus-5 rejected structured output; falling back to json_object
+2026-09-20 20:34:02.496 | WARNING  | evaluatorq.common.judge:_chat_verdict:664 - Model anthropic/claude-opus-5 rejected structured output; falling back to json_object
+2026-09-20 20:34:02.498 | WARNING  | evaluatorq.common.judge:_chat_verdict:664 - Model anthropic/claude-opus-5 rejected structured output; falling back to json_object
+2026-09-20 20:34:04.040 | DEBUG    | evaluatorq.common.llm_client:resolve_results_base_url:99 - Results upload host resolved from inference client: https://my.orq.ai
+Transient error Service Unavailable encountered while exporting span batch, retrying in 0.85s.
+2026-09-20 20:34:06.992 | DEBUG    | evaluatorq.common.llm_client:resolve_results_base_url:99 - Results upload host resolved from inference client: https://my.orq.ai
+Transient error Service Unavailable encountered while exporting span batch, retrying in 1.76s.
+2026-09-20 20:34:08.065 | DEBUG    | evaluatorq.common.llm_client:resolve_results_base_url:99 - Results upload host resolved from inference client: https://my.orq.ai
+2026-09-20 20:34:08.065 | WARNING  | __main__:llm_reps:179 - ⚠ anthropic/claude-opus-5 grounded served by {'chat'}, not the responses endpoint
+2026-09-20 20:34:08.246 | DEBUG    | evaluatorq.common.llm_client:resolve_results_base_url:99 - Results upload host resolved from inference client: https://my.orq.ai
+2026-09-20 20:34:08.453 | DEBUG    | evaluatorq.common.llm_client:resolve_results_base_url:99 - Results upload host resolved from inference client: https://my.orq.ai
+2026-09-20 20:34:09.125 | DEBUG    | evaluatorq.common.llm_client:resolve_results_base_url:99 - Results upload host resolved from inference client: https://my.orq.ai
+2026-09-20 20:34:09.125 | WARNING  | __main__:llm_reps:179 - ⚠ anthropic/claude-opus-5 quality served by {'chat'}, not the responses endpoint
+Failed to export span batch due to timeout, max retries or shutdown.
+Transient error Service Unavailable encountered while exporting span batch, retrying in 1.13s.
+Transient error Service Unavailable encountered while exporting span batch, retrying in 1.90s.
+2026-09-20 20:34:17.145 | DEBUG    | evaluatorq.common.judge:run_judge:564 - Judge [anthropic/claude-opus-5] cannot use the Responses endpoint; using chat completions
+2026-09-20 20:34:17.147 | DEBUG    | evaluatorq.common.judge:run_judge:564 - Judge [anthropic/claude-opus-5] cannot use the Responses endpoint; using chat completions
+2026-09-20 20:34:17.148 | DEBUG    | evaluatorq.common.judge:run_judge:564 - Judge [anthropic/claude-opus-5] cannot use the Responses endpoint; using chat completions
+2026-09-20 20:34:17.149 | DEBUG    | evaluatorq.common.judge:run_judge:564 - Judge [anthropic/claude-opus-5] cannot use the Responses endpoint; using chat completions
+2026-09-20 20:34:17.150 | DEBUG    | evaluatorq.common.judge:run_judge:564 - Judge [anthropic/claude-opus-5] cannot use the Responses endpoint; using chat completions
+2026-09-20 20:34:17.150 | DEBUG    | evaluatorq.common.judge:run_judge:564 - Judge [anthropic/claude-opus-5] cannot use the Responses endpoint; using chat completions
+Failed to export span batch due to timeout, max retries or shutdown.
+2026-09-20 20:34:20.101 | DEBUG    | evaluatorq.common.llm_client:resolve_results_base_url:99 - Results upload host resolved from inference client: https://my.orq.ai
+2026-09-20 20:34:20.127 | DEBUG    | evaluatorq.common.llm_client:resolve_results_base_url:99 - Results upload host resolved from inference client: https://my.orq.ai
+2026-09-20 20:34:20.503 | DEBUG    | evaluatorq.common.llm_client:resolve_results_base_url:99 - Results upload host resolved from inference client: https://my.orq.ai
+2026-09-20 20:34:20.512 | DEBUG    | evaluatorq.common.llm_client:resolve_results_base_url:99 - Results upload host resolved from inference client: https://my.orq.ai
+2026-09-20 20:34:20.514 | DEBUG    | evaluatorq.common.llm_client:resolve_results_base_url:99 - Results upload host resolved from inference client: https://my.orq.ai
+2026-09-20 20:34:20.514 | WARNING  | __main__:llm_reps:179 - ⚠ anthropic/claude-opus-5 abstain_ok served by {'chat'}, not the responses endpoint
+2026-09-20 20:34:20.515 | DEBUG    | evaluatorq.common.judge:run_judge:564 - Judge [anthropic/claude-opus-5] cannot use the Responses endpoint; using chat completions
+2026-09-20 20:34:20.517 | DEBUG    | evaluatorq.common.judge:run_judge:564 - Judge [anthropic/claude-opus-5] cannot use the Responses endpoint; using chat completions
+2026-09-20 20:34:20.519 | DEBUG    | evaluatorq.common.judge:run_judge:564 - Judge [anthropic/claude-opus-5] cannot use the Responses endpoint; using chat completions
+2026-09-20 20:34:20.813 | WARNING  | evaluatorq.common.judge:_chat_verdict:664 - Model anthropic/claude-opus-5 rejected structured output; falling back to json_object
+2026-09-20 20:34:20.817 | WARNING  | evaluatorq.common.judge:_chat_verdict:664 - Model anthropic/claude-opus-5 rejected structured output; falling back to json_object
+2026-09-20 20:34:20.836 | WARNING  | evaluatorq.common.judge:_chat_verdict:664 - Model anthropic/claude-opus-5 rejected structured output; falling back to json_object
+2026-09-20 20:34:21.117 | DEBUG    | evaluatorq.common.llm_client:resolve_results_base_url:99 - Results upload host resolved from inference client: https://my.orq.ai
+2026-09-20 20:34:21.117 | WARNING  | __main__:llm_reps:179 - ⚠ anthropic/claude-opus-5 grounded served by {'chat'}, not the responses endpoint
+2026-09-20 20:34:22.948 | DEBUG    | evaluatorq.common.llm_client:resolve_results_base_url:99 - Results upload host resolved from inference client: https://my.orq.ai
+2026-09-20 20:34:23.104 | DEBUG    | evaluatorq.common.llm_client:resolve_results_base_url:99 - Results upload host resolved from inference client: https://my.orq.ai
+2026-09-20 20:34:23.136 | DEBUG    | evaluatorq.common.llm_client:resolve_results_base_url:99 - Results upload host resolved from inference client: https://my.orq.ai
+2026-09-20 20:34:23.136 | WARNING  | __main__:llm_reps:179 - ⚠ anthropic/claude-opus-5 quality served by {'chat'}, not the responses endpoint
+Transient error Service Unavailable encountered while exporting span batch, retrying in 1.12s.
+Transient error Service Unavailable encountered while exporting span batch, retrying in 2.04s.
+Failed to export span batch due to timeout, max retries or shutdown.
+2026-09-20 20:34:27.637 | DEBUG    | evaluatorq.common.judge:run_judge:564 - Judge [anthropic/claude-opus-5] cannot use the Responses endpoint; using chat completions
+2026-09-20 20:34:27.640 | DEBUG    | evaluatorq.common.judge:run_judge:564 - Judge [anthropic/claude-opus-5] cannot use the Responses endpoint; using chat completions
+2026-09-20 20:34:27.642 | DEBUG    | evaluatorq.common.judge:run_judge:564 - Judge [anthropic/claude-opus-5] cannot use the Responses endpoint; using chat completions
+2026-09-20 20:34:27.643 | DEBUG    | evaluatorq.common.judge:run_judge:564 - Judge [anthropic/claude-opus-5] cannot use the Responses endpoint; using chat completions
+2026-09-20 20:34:27.645 | DEBUG    | evaluatorq.common.judge:run_judge:564 - Judge [anthropic/claude-opus-5] cannot use the Responses endpoint; using chat completions
+2026-09-20 20:34:27.646 | DEBUG    | evaluatorq.common.judge:run_judge:564 - Judge [anthropic/claude-opus-5] cannot use the Responses endpoint; using chat completions
+2026-09-20 20:34:32.726 | DEBUG    | evaluatorq.common.llm_client:resolve_results_base_url:99 - Results upload host resolved from inference client: https://my.orq.ai
+2026-09-20 20:34:32.726 | DEBUG    | evaluatorq.common.judge:run_judge:564 - Judge [anthropic/claude-opus-5] cannot use the Responses endpoint; using chat completions
+Transient error Service Unavailable encountered while exporting span batch, retrying in 0.92s.
+2026-09-20 20:34:33.239 | DEBUG    | evaluatorq.common.llm_client:resolve_results_base_url:99 - Results upload host resolved from inference client: https://my.orq.ai
+2026-09-20 20:34:33.240 | DEBUG    | evaluatorq.common.judge:run_judge:564 - Judge [anthropic/claude-opus-5] cannot use the Responses endpoint; using chat completions
+2026-09-20 20:34:33.659 | DEBUG    | evaluatorq.common.llm_client:resolve_results_base_url:99 - Results upload host resolved from inference client: https://my.orq.ai
+2026-09-20 20:34:33.660 | DEBUG    | evaluatorq.common.judge:run_judge:564 - Judge [anthropic/claude-opus-5] cannot use the Responses endpoint; using chat completions
+2026-09-20 20:34:33.663 | WARNING  | __main__:llm_reps:179 - ⚠ anthropic/claude-opus-5 abstain_ok served by {'chat'}, not the responses endpoint
+Transient error Service Unavailable encountered while exporting span batch, retrying in 1.78s.
+2026-09-20 20:34:36.334 | DEBUG    | evaluatorq.common.llm_client:resolve_results_base_url:99 - Results upload host resolved from inference client: https://my.orq.ai
+2026-09-20 20:34:36.334 | DEBUG    | evaluatorq.common.judge:run_judge:564 - Judge [anthropic/claude-opus-5] cannot use the Responses endpoint; using chat completions
+2026-09-20 20:34:36.544 | DEBUG    | evaluatorq.common.llm_client:resolve_results_base_url:99 - Results upload host resolved from inference client: https://my.orq.ai
+2026-09-20 20:34:36.545 | DEBUG    | evaluatorq.common.judge:run_judge:564 - Judge [anthropic/claude-opus-5] cannot use the Responses endpoint; using chat completions
+2026-09-20 20:34:36.596 | DEBUG    | evaluatorq.common.llm_client:resolve_results_base_url:99 - Results upload host resolved from inference client: https://my.orq.ai
+2026-09-20 20:34:36.597 | DEBUG    | evaluatorq.common.judge:run_judge:564 - Judge [anthropic/claude-opus-5] cannot use the Responses endpoint; using chat completions
+2026-09-20 20:34:36.600 | WARNING  | __main__:llm_reps:179 - ⚠ anthropic/claude-opus-5 grounded served by {'chat'}, not the responses endpoint
+Failed to export span batch due to timeout, max retries or shutdown.
+2026-09-20 20:34:40.107 | DEBUG    | evaluatorq.common.llm_client:resolve_results_base_url:99 - Results upload host resolved from inference client: https://my.orq.ai
+2026-09-20 20:34:40.108 | DEBUG    | evaluatorq.common.judge:run_judge:564 - Judge [anthropic/claude-opus-5] cannot use the Responses endpoint; using chat completions
+2026-09-20 20:34:40.213 | DEBUG    | evaluatorq.common.llm_client:resolve_results_base_url:99 - Results upload host resolved from inference client: https://my.orq.ai
+2026-09-20 20:34:40.213 | DEBUG    | evaluatorq.common.judge:run_judge:564 - Judge [anthropic/claude-opus-5] cannot use the Responses endpoint; using chat completions
+2026-09-20 20:34:40.438 | WARNING  | evaluatorq.common.judge:_chat_verdict:664 - Model anthropic/claude-opus-5 rejected structured output; falling back to json_object
+2026-09-20 20:34:40.533 | WARNING  | evaluatorq.common.judge:_chat_verdict:664 - Model anthropic/claude-opus-5 rejected structured output; falling back to json_object
+2026-09-20 20:34:41.076 | DEBUG    | evaluatorq.common.llm_client:resolve_results_base_url:99 - Results upload host resolved from inference client: https://my.orq.ai
+2026-09-20 20:34:41.077 | DEBUG    | evaluatorq.common.judge:run_judge:564 - Judge [anthropic/claude-opus-5] cannot use the Responses endpoint; using chat completions
+2026-09-20 20:34:41.261 | DEBUG    | evaluatorq.common.llm_client:resolve_results_base_url:99 - Results upload host resolved from inference client: https://my.orq.ai
+2026-09-20 20:34:41.263 | DEBUG    | evaluatorq.common.llm_client:resolve_results_base_url:99 - Results upload host resolved from inference client: https://my.orq.ai
+2026-09-20 20:34:41.264 | WARNING  | __main__:llm_reps:179 - ⚠ anthropic/claude-opus-5 grounded served by {'chat'}, not the responses endpoint
+2026-09-20 20:34:41.266 | DEBUG    | evaluatorq.common.judge:run_judge:564 - Judge [anthropic/claude-opus-5] cannot use the Responses endpoint; using chat completions
+2026-09-20 20:34:41.268 | DEBUG    | evaluatorq.common.judge:run_judge:564 - Judge [anthropic/claude-opus-5] cannot use the Responses endpoint; using chat completions
+2026-09-20 20:34:41.346 | WARNING  | evaluatorq.common.judge:_chat_verdict:664 - Model anthropic/claude-opus-5 rejected structured output; falling back to json_object
+2026-09-20 20:34:41.479 | DEBUG    | evaluatorq.common.llm_client:resolve_results_base_url:99 - Results upload host resolved from inference client: https://my.orq.ai
+2026-09-20 20:34:41.480 | DEBUG    | evaluatorq.common.judge:run_judge:564 - Judge [anthropic/claude-opus-5] cannot use the Responses endpoint; using chat completions
+2026-09-20 20:34:41.483 | WARNING  | __main__:llm_reps:179 - ⚠ anthropic/claude-opus-5 abstain_ok served by {'chat'}, not the responses endpoint
+2026-09-20 20:34:41.548 | WARNING  | evaluatorq.common.judge:_chat_verdict:664 - Model anthropic/claude-opus-5 rejected structured output; falling back to json_object
+2026-09-20 20:34:41.597 | WARNING  | evaluatorq.common.judge:_chat_verdict:664 - Model anthropic/claude-opus-5 rejected structured output; falling back to json_object
+2026-09-20 20:34:41.979 | WARNING  | evaluatorq.common.judge:_chat_verdict:664 - Model anthropic/claude-opus-5 rejected structured output; falling back to json_object
+Transient error Service Unavailable encountered while exporting span batch, retrying in 0.94s.
+Transient error Service Unavailable encountered while exporting span batch, retrying in 2.24s.
+2026-09-20 20:34:45.569 | DEBUG    | evaluatorq.common.llm_client:resolve_results_base_url:99 - Results upload host resolved from inference client: https://my.orq.ai
+2026-09-20 20:34:46.025 | DEBUG    | evaluatorq.common.llm_client:resolve_results_base_url:99 - Results upload host resolved from inference client: https://my.orq.ai
+2026-09-20 20:34:46.237 | DEBUG    | evaluatorq.common.llm_client:resolve_results_base_url:99 - Results upload host resolved from inference client: https://my.orq.ai
+2026-09-20 20:34:46.267 | DEBUG    | evaluatorq.common.llm_client:resolve_results_base_url:99 - Results upload host resolved from inference client: https://my.orq.ai
+2026-09-20 20:34:46.294 | DEBUG    | evaluatorq.common.llm_client:resolve_results_base_url:99 - Results upload host resolved from inference client: https://my.orq.ai
+2026-09-20 20:34:46.294 | WARNING  | __main__:llm_reps:179 - ⚠ anthropic/claude-opus-5 quality served by {'chat'}, not the responses endpoint
+Failed to export span batch due to timeout, max retries or shutdown.
+2026-09-20 20:34:49.241 | DEBUG    | evaluatorq.common.llm_client:resolve_results_base_url:99 - Results upload host resolved from inference client: https://my.orq.ai
+2026-09-20 20:34:49.242 | WARNING  | __main__:llm_reps:179 - ⚠ anthropic/claude-opus-5 quality served by {'chat'}, not the responses endpoint
+Transient error Service Unavailable encountered while exporting span batch, retrying in 0.95s.
+2026-09-20 20:34:52.512 | DEBUG    | evaluatorq.common.judge:run_judge:564 - Judge [anthropic/claude-opus-5] cannot use the Responses endpoint; using chat completions
+2026-09-20 20:34:52.513 | DEBUG    | evaluatorq.common.judge:run_judge:564 - Judge [anthropic/claude-opus-5] cannot use the Responses endpoint; using chat completions
+2026-09-20 20:34:52.514 | DEBUG    | evaluatorq.common.judge:run_judge:564 - Judge [anthropic/claude-opus-5] cannot use the Responses endpoint; using chat completions
+2026-09-20 20:34:52.515 | DEBUG    | evaluatorq.common.judge:run_judge:564 - Judge [anthropic/claude-opus-5] cannot use the Responses endpoint; using chat completions
+2026-09-20 20:34:52.515 | DEBUG    | evaluatorq.common.judge:run_judge:564 - Judge [anthropic/claude-opus-5] cannot use the Responses endpoint; using chat completions
+2026-09-20 20:34:52.516 | DEBUG    | evaluatorq.common.judge:run_judge:564 - Judge [anthropic/claude-opus-5] cannot use the Responses endpoint; using chat completions
+Transient error Service Unavailable encountered while exporting span batch, retrying in 1.76s.
+Failed to export span batch due to timeout, max retries or shutdown.
+2026-09-20 20:34:59.221 | DEBUG    | evaluatorq.common.llm_client:resolve_results_base_url:99 - Results upload host resolved from inference client: https://my.orq.ai
+2026-09-20 20:35:00.350 | DEBUG    | evaluatorq.common.llm_client:resolve_results_base_url:99 - Results upload host resolved from inference client: https://my.orq.ai
+Transient error Service Unavailable encountered while exporting span batch, retrying in 0.95s.
+Transient error Service Unavailable encountered while exporting span batch, retrying in 1.87s.
+2026-09-20 20:35:02.658 | DEBUG    | evaluatorq.common.llm_client:resolve_results_base_url:99 - Results upload host resolved from inference client: https://my.orq.ai
+2026-09-20 20:35:03.643 | DEBUG    | evaluatorq.common.llm_client:resolve_results_base_url:99 - Results upload host resolved from inference client: https://my.orq.ai
+2026-09-20 20:35:03.646 | WARNING  | __main__:llm_reps:179 - ⚠ anthropic/claude-opus-5 abstain_ok served by {'chat'}, not the responses endpoint
+2026-09-20 20:35:03.684 | DEBUG    | evaluatorq.common.judge:run_judge:564 - Judge [anthropic/claude-opus-5] cannot use the Responses endpoint; using chat completions
+2026-09-20 20:35:03.717 | DEBUG    | evaluatorq.common.judge:run_judge:564 - Judge [anthropic/claude-opus-5] cannot use the Responses endpoint; using chat completions
+2026-09-20 20:35:03.721 | DEBUG    | evaluatorq.common.judge:run_judge:564 - Judge [anthropic/claude-opus-5] cannot use the Responses endpoint; using chat completions
+2026-09-20 20:35:04.120 | WARNING  | evaluatorq.common.judge:_chat_verdict:664 - Model anthropic/claude-opus-5 rejected structured output; falling back to json_object
+2026-09-20 20:35:04.148 | WARNING  | evaluatorq.common.judge:_chat_verdict:664 - Model anthropic/claude-opus-5 rejected structured output; falling back to json_object
+2026-09-20 20:35:04.196 | WARNING  | evaluatorq.common.judge:_chat_verdict:664 - Model anthropic/claude-opus-5 rejected structured output; falling back to json_object
+2026-09-20 20:35:04.516 | DEBUG    | evaluatorq.common.llm_client:resolve_results_base_url:99 - Results upload host resolved from inference client: https://my.orq.ai
+Failed to export span batch due to timeout, max retries or shutdown.
+2026-09-20 20:35:06.950 | DEBUG    | evaluatorq.common.llm_client:resolve_results_base_url:99 - Results upload host resolved from inference client: https://my.orq.ai
+2026-09-20 20:35:06.951 | WARNING  | __main__:llm_reps:179 - ⚠ anthropic/claude-opus-5 grounded served by {'chat'}, not the responses endpoint
+Transient error Service Unavailable encountered while exporting span batch, retrying in 1.14s.
+Transient error Service Unavailable encountered while exporting span batch, retrying in 1.90s.
+2026-09-20 20:35:12.269 | DEBUG    | evaluatorq.common.llm_client:resolve_results_base_url:99 - Results upload host resolved from inference client: https://my.orq.ai
+2026-09-20 20:35:12.335 | DEBUG    | evaluatorq.common.llm_client:resolve_results_base_url:99 - Results upload host resolved from inference client: https://my.orq.ai
+2026-09-20 20:35:13.004 | DEBUG    | evaluatorq.common.llm_client:resolve_results_base_url:99 - Results upload host resolved from inference client: https://my.orq.ai
+2026-09-20 20:35:13.005 | WARNING  | __main__:llm_reps:179 - ⚠ anthropic/claude-opus-5 quality served by {'chat'}, not the responses endpoint
+Failed to export span batch code: None, reason: HTTPSConnectionPool(host='my.orq.ai', port=443): Read timed out. (read timeout=1.205536127090454)
+Transient error Service Unavailable encountered while exporting span batch, retrying in 1.18s.
+2026-09-20 20:35:22.843 | DEBUG    | evaluatorq.send_results:send_results_to_orq:99 - Uploading results to https://my.orq.ai
+Failed to export span batch due to timeout, max retries or shutdown.
+2026-09-20 20:35:32.121 | INFO     | evaluatorq.send_results:send_results_to_orq:152 - Results sent to Orq: docs-agent judge repeatability x3 (12 rows created)
+2026-09-20 20:35:32.122 | INFO     | evaluatorq.send_results:send_results_to_orq:169 - View your evaluation at: https://my.orq.ai/<workspace>/experiments/<id>
+Transient error Service Unavailable encountered while exporting span batch, retrying in 1.08s.
+2026-09-20 20:35:37.125 | WARNING  | evaluatorq.tracing.setup:flush_tracing:273 - OTEL span flush timed out after 5000ms; some spans may not have been exported.
+2026-09-20 20:35:37.127 | INFO     | jev_judge.results:write_results:118 - ✓ wrote 36 rows -> results/docs_rag_sota/claude-opus-5__rep00.jsonl
+2026-09-20 20:35:37.128 | INFO     | jev_judge.results:write_results:118 - ✓ wrote 36 rows -> results/docs_rag_sota/claude-opus-5__rep01.jsonl
+2026-09-20 20:35:37.128 | INFO     | jev_judge.results:write_results:118 - ✓ wrote 36 rows -> results/docs_rag_sota/claude-opus-5__rep02.jsonl
+Failed to export span batch code: None, reason: HTTPSConnectionPool(host='my.orq.ai', port=443): Read timed out. (read timeout=0.41884684562683105)
+2026-09-20 20:35:37.147 | INFO     | jev_judge.results:write_results:118 - ✓ wrote 36 rows -> results/docs_rag_sota/gpt-5.6-sol__rep00.jsonl
+2026-09-20 20:35:37.147 | INFO     | jev_judge.results:write_results:118 - ✓ wrote 36 rows -> results/docs_rag_sota/gpt-5.6-sol__rep01.jsonl
+2026-09-20 20:35:37.148 | INFO     | jev_judge.results:write_results:118 - ✓ wrote 36 rows -> results/docs_rag_sota/gpt-5.6-sol__rep02.jsonl
+2026-09-20 20:35:37.149 | INFO     | jev_judge.results:write_results:118 - ✓ wrote 36 rows -> results/docs_rag_sota/jev__rep00.jsonl
+2026-09-20 20:35:37.149 | INFO     | jev_judge.results:write_results:118 - ✓ wrote 36 rows -> results/docs_rag_sota/jev__rep01.jsonl
+2026-09-20 20:35:37.149 | INFO     | jev_judge.results:write_results:118 - ✓ wrote 36 rows -> results/docs_rag_sota/jev__rep02.jsonl
+                        docs-agent judge repeatability, 3 reps x 12 cases
+┏━━━━━━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━━┓
+┃ judge         ┃ accuracy ┃ repeatability ┃ signal ┃ unstable cells ┃ failed ┃ $/call ┃ s/call ┃
+┡━━━━━━━━━━━━━━━╇━━━━━━━━━━╇━━━━━━━━━━━━━━━╇━━━━━━━━╇━━━━━━━━━━━━━━━━╇━━━━━━━━╇━━━━━━━━╇━━━━━━━━┩
+│ claude-opus-5 │ 0.824    │ 0.991         │ 0.816  │ 1              │ 0      │ 0.0866 │ 6.54   │
+│ gpt-5.6-sol   │ 0.833    │ 0.963         │ 0.802  │ 4              │ 0      │ 0.0064 │ 4.52   │
+│ jev           │ 0.889    │ 1.000         │ 0.889  │ 0              │ 0      │ 0.0005 │ 1.00   │
+└───────────────┴──────────┴───────────────┴────────┴────────────────┴────────┴────────┴────────┘
+2026-09-20 20:35:37.161 | INFO     | __main__:run:323 - claude-opus-5 abstain_ok: acc 1.00 repeat 1.00 unstable 0 failed 0
+2026-09-20 20:35:37.161 | INFO     | __main__:run:323 - claude-opus-5 grounded: acc 1.00 repeat 1.00 unstable 0 failed 0
+2026-09-20 20:35:37.161 | INFO     | __main__:run:323 - claude-opus-5 quality: acc 0.47 repeat 0.97 unstable 1 failed 0
+2026-09-20 20:35:37.161 | INFO     | __main__:run:323 - gpt-5.6-sol abstain_ok: acc 0.92 repeat 1.00 unstable 0 failed 0
+2026-09-20 20:35:37.161 | INFO     | __main__:run:323 - gpt-5.6-sol grounded: acc 0.94 repeat 0.97 unstable 1 failed 0
+2026-09-20 20:35:37.161 | INFO     | __main__:run:323 - gpt-5.6-sol quality: acc 0.64 repeat 0.92 unstable 3 failed 0
+2026-09-20 20:35:37.161 | INFO     | __main__:run:323 - jev abstain_ok: acc 1.00 repeat 1.00 unstable 0 failed 0
+2026-09-20 20:35:37.161 | INFO     | __main__:run:323 - jev grounded: acc 1.00 repeat 1.00 unstable 0 failed 0
+2026-09-20 20:35:37.161 | INFO     | __main__:run:323 - jev quality: acc 0.67 repeat 1.00 unstable 0 failed 0

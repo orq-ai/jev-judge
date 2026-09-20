@@ -19,8 +19,11 @@ so every difference between repetitions is judge noise and nothing else.
   charts**: with reasoning off, the provider returned server errors on most calls, so its numbers measure
   the outage and not the judge. Its rows are kept, unused, in
   `results/docs_rag_matched/excluded_deepseek/`.
+* **a frontier arm** — the same 12 cases and the same three evals judged by `claude-opus-5` and
+  `gpt-5.6-sol` (`anthropic/claude-opus-5` and `openai/gpt-5.6-sol` on the router), 3 repetitions instead
+  of 100, so 108 calls per judge. It is in `results/docs_rag_sota/`.
 
-The results of both runs are committed, so you can read the tables and redraw the charts without
+The results of all three runs are committed, so you can read the tables and redraw the charts without
 spending anything.
 
 ## Headline
@@ -29,6 +32,16 @@ spending anything.
 version: Jev repeats itself, the LLM judges do not, and on these 12 cases none of the LLM judges beats
 an always-answer-the-majority-class baseline on the binary evals. Turning sampling off does not fix the
 instability — `gpt-5.6-luna` at temperature 0 still disagrees with itself across repetitions.
+
+Judging the same 12 states over and over is what a provider prompt cache rewards, so the billed LLM cost
+in these runs is lower than the same judge would cost on 1,000 distinct traces. The share of input tokens
+the provider served from cache was 100% for `gpt-5.6-sol`, 99.5% for `gpt-5.6-luna`, 65.4% for
+`gemini-3.8-flash` and 0% for `claude-opus-5`. Table C2 in each `blog_tables.md` therefore reports cost
+per 1,000 traces twice: as billed, and at the model's list price for uncached input. At list price the
+LLM judges cost $6.56 (`gpt-5.6-luna`), $26.36 (`gemini-3.8-flash`), $125.45 (`gpt-5.6-sol`) and $259.70
+(`claude-opus-5`) per 1,000 traces, against $0.49 for Jev, which is billed per input token with no cache
+discount to lose. The main run predates per-call token accounting, so its list-price column is `-`; the
+matched and frontier arms carry the token counts.
 
 Read the caveats at the bottom before quoting any of it.
 
@@ -43,6 +56,7 @@ data/docs_rag/
   README.md            what each field means and how the labels were decided
 results/docs_rag/          the main run (100 reps, temperature 1)
 results/docs_rag_matched/  the matched arm (100 reps, sampling off where the router allows it)
+results/docs_rag_sota/     the frontier arm (3 reps, claude-opus-5 and gpt-5.6-sol)
   excluded_deepseek/       the matched deepseek rows, excluded from that arm's tables and charts
   <judge>__rep<NN>.jsonl   one file per judge and repetition; one row per decision
   repeat_summary.json      every metric per judge
@@ -84,6 +98,15 @@ uv run python scripts/docs_agent_experiment.py --reps 100
 uv run python scripts/docs_agent_experiment.py --reps 100 --matched --out results/docs_rag_matched
 ```
 
+`--judges` takes a comma-separated list of router model ids to run beside Jev, which is how the frontier
+arm was produced:
+
+```bash
+uv run python scripts/docs_agent_experiment.py --reps 3 \
+    --judges anthropic/claude-opus-5,openai/gpt-5.6-sol \
+    --out results/docs_rag_sota
+```
+
 Add `--no-send` to keep the results local instead of uploading them to an Orq experiment, and
 `--reps 1 --out /tmp/smoke` for a cheap smoke test.
 
@@ -93,18 +116,20 @@ in place):
 ```bash
 uv run python scripts/docs_agent_analysis.py --dir results/docs_rag
 uv run python scripts/docs_agent_analysis.py --dir results/docs_rag_matched --compare results/docs_rag
+uv run python scripts/docs_agent_analysis.py --dir results/docs_rag_sota --compare results/docs_rag
 ```
 
 `--dir` reads every `*__rep*.jsonl` directly inside it, which is why the excluded deepseek rows sit one
 level down in `excluded_deepseek/` and never reach the matched tables.
 
-**Pareto charts** (free), both runs on one pair of axes:
+**Pareto charts** (free), all runs on one pair of axes:
 
 ```bash
 uv run python scripts/docs_agent_pareto.py --dir results/docs_rag                      # the main run alone
 uv run python scripts/docs_agent_pareto.py \
     --dir results/docs_rag --dir results/docs_rag_matched:matched \
-    --out results/docs_rag_matched                                                     # both runs, one axis
+    --dir results/docs_rag_sota:sota \
+    --out results/docs_rag_matched                                                     # all three, one axis
 ```
 
 Without `--out` the charts land in the first `--dir`, which would overwrite the single-run charts there.
@@ -122,6 +147,7 @@ uv run ruff check .
 |-----|-----------|-------|
 | main, 100 reps | ~46 min | ~$23 (gemini $16.38, deepseek $4.23, luna $1.53, Jev $0.59) |
 | matched, 100 reps | ~47 min | ~$18 (gemini $13.57, deepseek $1.91, luna $1.53, Jev $0.59) |
+| frontier, 3 reps | ~3 min | ~$10 (opus $9.35, sol $0.69, Jev $0.02) |
 
 The matched deepseek spend bought nothing usable — see the exclusion note above.
 
