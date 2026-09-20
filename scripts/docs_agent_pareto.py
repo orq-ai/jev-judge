@@ -159,12 +159,13 @@ def chart(
             linewidths=1.8,
             zorder=3,
         )
+        matched = ' (' in name  # matched-arm points sit next to their main-run twin; label them to the left
         ax.annotate(
             name,
             xy=(x, y),
-            xytext=(0, 14 if on_front else -20),
+            xytext=(-12 if matched else 12, 14 if on_front else -20),
             textcoords='offset points',
-            ha='center',
+            ha='right' if matched else 'left',
             fontsize=11,
             fontweight='bold' if on_front else 'normal',
             color=colour if on_front else '#55555f',
