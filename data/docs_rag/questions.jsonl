@@ -1,0 +1,12 @@
+{"id": "q01", "question": "How do I migrate my existing OpenAI SDK traffic to the Orq AI Gateway?", "kind": "how-to"}
+{"id": "q02", "question": "What is the difference between an API key and a management key?", "kind": "comparison"}
+{"id": "q03", "question": "Can I set a spending budget on a single model rather than the whole workspace?", "kind": "yes-no"}
+{"id": "q04", "question": "How do I set up fallback models so a request retries on another provider when the first one fails?", "kind": "how-to"}
+{"id": "q05", "question": "What is the difference between a managed agent and a deployment?", "kind": "comparison"}
+{"id": "q06", "question": "How do I export my traces to my own data warehouse?", "kind": "how-to"}
+{"id": "q07", "question": "Which chunking strategies are available for a knowledge base and when should I pick each?", "kind": "what-is"}
+{"id": "q08", "question": "Does Orq support SSO with Okta, and how do I enable it?", "kind": "yes-no"}
+{"id": "q09", "question": "Can I run the platform fully on-premise in my own Kubernetes cluster?", "kind": "yes-no"}
+{"id": "q10", "question": "How do I train a custom fine-tuned model inside Orq and deploy it?", "kind": "unanswerable"}
+{"id": "q11", "question": "Is there a native Salesforce integration so my agent can look up CRM records, and how do I turn it on?", "kind": "unanswerable"}
+{"id": "q05v1", "question": "What is the difference between a managed agent and a deployment?", "kind": "comparison"}
