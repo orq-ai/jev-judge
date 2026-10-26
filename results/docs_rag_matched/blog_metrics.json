@@ -1,0 +1,7007 @@
+{
+  "run": {
+    "dir": "results/docs_rag_matched",
+    "judges": [
+      "jev",
+      "gemini-3.8-flash",
+      "gpt-5.6-luna"
+    ],
+    "cases": [
+      "h01",
+      "h02",
+      "h03",
+      "h04",
+      "h05",
+      "h06",
+      "h07",
+      "h08",
+      "h09",
+      "h10",
+      "q01",
+      "q02",
+      "q03",
+      "q04",
+      "q05",
+      "q05v1",
+      "q06",
+      "q07",
+      "q08",
+      "q09",
+      "q10",
+      "q11"
+    ],
+    "binary_evals": [
+      "abstain_ok",
+      "grounded"
+    ],
+    "score_evals": [
+      "quality"
+    ],
+    "reps": 20,
+    "gold_distribution": {
+      "abstain_ok": {
+        "true": 18,
+        "false": 4
+      },
+      "grounded": {
+        "true": 12,
+        "false": 10
+      },
+      "quality": {
+        "4": 7,
+        "1": 6,
+        "0": 5,
+        "3": 4
+      }
+    },
+    "per_judge": {
+      "jev": {
+        "judge": "jev",
+        "model": "jev",
+        "reps": 20,
+        "cases": [
+          "h01",
+          "h02",
+          "h03",
+          "h04",
+          "h05",
+          "h06",
+          "h07",
+          "h08",
+          "h09",
+          "h10",
+          "q01",
+          "q02",
+          "q03",
+          "q04",
+          "q05",
+          "q05v1",
+          "q06",
+          "q07",
+          "q08",
+          "q09",
+          "q10",
+          "q11"
+        ],
+        "binary_evals": [
+          "abstain_ok",
+          "grounded"
+        ],
+        "score_evals": [
+          "quality"
+        ],
+        "accuracy": {
+          "abstain_ok": {
+            "correct": 298,
+            "total": 440,
+            "failed": 0,
+            "value": 0.6772727272727272
+          },
+          "grounded": {
+            "correct": 440,
+            "total": 440,
+            "failed": 0,
+            "value": 1.0
+          },
+          "quality": {
+            "correct": 240,
+            "total": 440,
+            "failed": 0,
+            "value": 0.5454545454545454
+          },
+          "binary_pooled": {
+            "correct": 738,
+            "total": 880,
+            "failed": 0,
+            "value": 0.8386363636363636
+          },
+          "all": {
+            "correct": 978,
+            "total": 1320,
+            "failed": 0,
+            "value": 0.740909090909091
+          }
+        },
+        "modal_accuracy": {
+          "abstain_ok": {
+            "correct": 15,
+            "total": 22,
+            "value": 0.6818181818181818
+          },
+          "grounded": {
+            "correct": 22,
+            "total": 22,
+            "value": 1.0
+          },
+          "quality": {
+            "correct": 12,
+            "total": 22,
+            "value": 0.5454545454545454
+          },
+          "binary_pooled": {
+            "correct": 37,
+            "total": 44,
+            "value": 0.8409090909090909
+          },
+          "all": {
+            "correct": 49,
+            "total": 66,
+            "value": 0.7424242424242424
+          }
+        },
+        "repeatability": {
+          "abstain_ok": 0.9954545454545454,
+          "grounded": 1.0,
+          "quality": 1.0,
+          "binary_pooled": 0.9977272727272727,
+          "all": 0.9984848484848485
+        },
+        "signal": {
+          "abstain_ok": 0.6741942148760329,
+          "grounded": 1.0,
+          "quality": 0.5454545454545454,
+          "binary_pooled": 0.8367303719008264,
+          "all": 0.7397865013774105
+        },
+        "quality_variance": {
+          "quality": {
+            "per_case": {
+              "h01": 0.0,
+              "h02": 0.0,
+              "h03": 0.0,
+              "h04": 0.0,
+              "h05": 0.0,
+              "h06": 0.0,
+              "h07": 0.0,
+              "h08": 0.0,
+              "h09": 0.0,
+              "h10": 0.0,
+              "q01": 0.0,
+              "q02": 0.0,
+              "q03": 0.0,
+              "q04": 0.0,
+              "q05": 0.0,
+              "q05v1": 0.0,
+              "q06": 0.0,
+              "q07": 0.0,
+              "q08": 0.0,
+              "q09": 0.0,
+              "q10": 0.0,
+              "q11": 0.0
+            },
+            "mean": 0.0,
+            "failure_rate": 0.0,
+            "x_jev": null
+          }
+        },
+        "failures": {
+          "total": 0,
+          "per_eval": {
+            "abstain_ok": 0,
+            "grounded": 0,
+            "quality": 0
+          }
+        },
+        "unstable": {
+          "abstain_ok": {
+            "q05v1": {
+              "false": 18,
+              "true": 2
+            }
+          },
+          "grounded": {},
+          "quality": {}
+        },
+        "modal": {
+          "grounded|q01": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "abstain_ok|q01": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "quality|q01": {
+            "gold": "4",
+            "modal": "4",
+            "agreement": 1.0,
+            "votes": {
+              "4": 20
+            }
+          },
+          "grounded|q03": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "abstain_ok|q03": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "quality|q03": {
+            "gold": "4",
+            "modal": "4",
+            "agreement": 1.0,
+            "votes": {
+              "4": 20
+            }
+          },
+          "grounded|q04": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "abstain_ok|q04": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "quality|q04": {
+            "gold": "3",
+            "modal": "4",
+            "agreement": 1.0,
+            "votes": {
+              "4": 20
+            }
+          },
+          "grounded|q02": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "abstain_ok|q02": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "quality|q02": {
+            "gold": "4",
+            "modal": "4",
+            "agreement": 1.0,
+            "votes": {
+              "4": 20
+            }
+          },
+          "grounded|q05": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "abstain_ok|q05": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "quality|q05": {
+            "gold": "4",
+            "modal": "4",
+            "agreement": 1.0,
+            "votes": {
+              "4": 20
+            }
+          },
+          "grounded|q06": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "abstain_ok|q06": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "quality|q06": {
+            "gold": "3",
+            "modal": "2",
+            "agreement": 1.0,
+            "votes": {
+              "2": 20
+            }
+          },
+          "grounded|q07": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "abstain_ok|q07": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "quality|q07": {
+            "gold": "4",
+            "modal": "4",
+            "agreement": 1.0,
+            "votes": {
+              "4": 20
+            }
+          },
+          "grounded|q08": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "abstain_ok|q08": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "quality|q08": {
+            "gold": "4",
+            "modal": "4",
+            "agreement": 1.0,
+            "votes": {
+              "4": 20
+            }
+          },
+          "grounded|q09": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "abstain_ok|q09": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "quality|q09": {
+            "gold": "4",
+            "modal": "4",
+            "agreement": 1.0,
+            "votes": {
+              "4": 20
+            }
+          },
+          "grounded|q10": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "abstain_ok|q10": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "quality|q10": {
+            "gold": "3",
+            "modal": "3",
+            "agreement": 1.0,
+            "votes": {
+              "3": 20
+            }
+          },
+          "grounded|q11": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "abstain_ok|q11": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "quality|q11": {
+            "gold": "3",
+            "modal": "2",
+            "agreement": 1.0,
+            "votes": {
+              "2": 20
+            }
+          },
+          "grounded|q05v1": {
+            "gold": "false",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "abstain_ok|q05v1": {
+            "gold": "false",
+            "modal": "false",
+            "agreement": 0.9,
+            "votes": {
+              "false": 18,
+              "true": 2
+            }
+          },
+          "quality|q05v1": {
+            "gold": "1",
+            "modal": "3",
+            "agreement": 1.0,
+            "votes": {
+              "3": 20
+            }
+          },
+          "grounded|h01": {
+            "gold": "false",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "abstain_ok|h01": {
+            "gold": "true",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "quality|h01": {
+            "gold": "1",
+            "modal": "3",
+            "agreement": 1.0,
+            "votes": {
+              "3": 20
+            }
+          },
+          "grounded|h02": {
+            "gold": "false",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "abstain_ok|h02": {
+            "gold": "true",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "quality|h02": {
+            "gold": "0",
+            "modal": "1",
+            "agreement": 1.0,
+            "votes": {
+              "1": 20
+            }
+          },
+          "grounded|h03": {
+            "gold": "false",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "abstain_ok|h03": {
+            "gold": "true",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "quality|h03": {
+            "gold": "0",
+            "modal": "0",
+            "agreement": 1.0,
+            "votes": {
+              "0": 20
+            }
+          },
+          "grounded|h04": {
+            "gold": "false",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "abstain_ok|h04": {
+            "gold": "true",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "quality|h04": {
+            "gold": "1",
+            "modal": "1",
+            "agreement": 1.0,
+            "votes": {
+              "1": 20
+            }
+          },
+          "grounded|h05": {
+            "gold": "false",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "abstain_ok|h05": {
+            "gold": "true",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "quality|h05": {
+            "gold": "1",
+            "modal": "2",
+            "agreement": 1.0,
+            "votes": {
+              "2": 20
+            }
+          },
+          "grounded|h06": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "abstain_ok|h06": {
+            "gold": "true",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "quality|h06": {
+            "gold": "1",
+            "modal": "1",
+            "agreement": 1.0,
+            "votes": {
+              "1": 20
+            }
+          },
+          "grounded|h07": {
+            "gold": "false",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "abstain_ok|h07": {
+            "gold": "true",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "quality|h07": {
+            "gold": "1",
+            "modal": "1",
+            "agreement": 1.0,
+            "votes": {
+              "1": 20
+            }
+          },
+          "grounded|h08": {
+            "gold": "false",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "abstain_ok|h08": {
+            "gold": "false",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "quality|h08": {
+            "gold": "0",
+            "modal": "1",
+            "agreement": 1.0,
+            "votes": {
+              "1": 20
+            }
+          },
+          "grounded|h09": {
+            "gold": "false",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "abstain_ok|h09": {
+            "gold": "false",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "quality|h09": {
+            "gold": "0",
+            "modal": "1",
+            "agreement": 1.0,
+            "votes": {
+              "1": 20
+            }
+          },
+          "grounded|h10": {
+            "gold": "false",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "abstain_ok|h10": {
+            "gold": "false",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "quality|h10": {
+            "gold": "0",
+            "modal": "1",
+            "agreement": 1.0,
+            "votes": {
+              "1": 20
+            }
+          }
+        },
+        "gold_distribution": {
+          "abstain_ok": {
+            "true": 18,
+            "false": 4
+          },
+          "grounded": {
+            "true": 12,
+            "false": 10
+          },
+          "quality": {
+            "4": 7,
+            "1": 6,
+            "0": 5,
+            "3": 4
+          }
+        },
+        "cost": {
+          "input_tokens_per_call": NaN,
+          "output_tokens_per_call": NaN,
+          "cached_share": NaN,
+          "list_cost_per_call_usd": 0.00047128581818181825,
+          "list_cost_per_decision_usd": 0.00015709527272727276,
+          "calls": 440,
+          "decisions": 1320,
+          "decisions_per_call": 3.0,
+          "cost_per_call_usd": 0.00047128581818181825,
+          "cost_per_decision_usd": 0.00015709527272727276,
+          "total_cost_usd": 0.20736576000000004,
+          "latency_per_call_s": 3.905372184496214,
+          "latency_p50_s": 0.9480159789673053,
+          "latency_p95_s": 20.790904318739187,
+          "latency_per_decision_s": 1.3017907281654046
+        }
+      },
+      "gemini-3.8-flash": {
+        "judge": "gemini-3.8-flash",
+        "model": "gemini-3.8-flash",
+        "reps": 20,
+        "cases": [
+          "h01",
+          "h02",
+          "h03",
+          "h04",
+          "h05",
+          "h06",
+          "h07",
+          "h08",
+          "h09",
+          "h10",
+          "q01",
+          "q02",
+          "q03",
+          "q04",
+          "q05",
+          "q05v1",
+          "q06",
+          "q07",
+          "q08",
+          "q09",
+          "q10",
+          "q11"
+        ],
+        "binary_evals": [
+          "abstain_ok",
+          "grounded"
+        ],
+        "score_evals": [
+          "quality"
+        ],
+        "accuracy": {
+          "abstain_ok": {
+            "correct": 301,
+            "total": 440,
+            "failed": 0,
+            "value": 0.6840909090909091
+          },
+          "grounded": {
+            "correct": 420,
+            "total": 440,
+            "failed": 0,
+            "value": 0.9545454545454546
+          },
+          "quality": {
+            "correct": 280,
+            "total": 440,
+            "failed": 2,
+            "value": 0.6363636363636364
+          },
+          "binary_pooled": {
+            "correct": 721,
+            "total": 880,
+            "failed": 0,
+            "value": 0.8193181818181818
+          },
+          "all": {
+            "correct": 1001,
+            "total": 1320,
+            "failed": 2,
+            "value": 0.7583333333333333
+          }
+        },
+        "modal_accuracy": {
+          "abstain_ok": {
+            "correct": 15,
+            "total": 22,
+            "value": 0.6818181818181818
+          },
+          "grounded": {
+            "correct": 21,
+            "total": 22,
+            "value": 0.9545454545454546
+          },
+          "quality": {
+            "correct": 14,
+            "total": 22,
+            "value": 0.6363636363636364
+          },
+          "binary_pooled": {
+            "correct": 36,
+            "total": 44,
+            "value": 0.8181818181818182
+          },
+          "all": {
+            "correct": 50,
+            "total": 66,
+            "value": 0.7575757575757576
+          }
+        },
+        "repeatability": {
+          "abstain_ok": 0.9886363636363636,
+          "grounded": 1.0,
+          "quality": 0.9454545454545454,
+          "binary_pooled": 0.9943181818181818,
+          "all": 0.978030303030303
+        },
+        "signal": {
+          "abstain_ok": 0.6763171487603306,
+          "grounded": 0.9545454545454546,
+          "quality": 0.6016528925619834,
+          "binary_pooled": 0.8146629648760331,
+          "all": 0.7416729797979797
+        },
+        "quality_variance": {
+          "quality": {
+            "per_case": {
+              "h01": 0.0,
+              "h02": 0.002968749999999999,
+              "h03": 0.0,
+              "h04": 0.0,
+              "h05": 0.015581717451523548,
+              "h06": 0.0,
+              "h07": 0.0,
+              "h08": 0.0,
+              "h09": 0.0,
+              "h10": 0.0,
+              "q01": 0.0,
+              "q02": 0.0,
+              "q03": 0.0,
+              "q04": 0.0,
+              "q05": 0.0,
+              "q05v1": 0.015625,
+              "q06": 0.005625,
+              "q07": 0.0,
+              "q08": 0.0,
+              "q09": 0.0,
+              "q10": 0.0,
+              "q11": 0.0
+            },
+            "mean": 0.001809112156887434,
+            "failure_rate": 0.004545454545454545,
+            "x_jev": null
+          }
+        },
+        "failures": {
+          "total": 2,
+          "per_eval": {
+            "abstain_ok": 0,
+            "grounded": 0,
+            "quality": 2
+          }
+        },
+        "unstable": {
+          "abstain_ok": {
+            "h04": {
+              "false": 17,
+              "true": 3
+            },
+            "h07": {
+              "true": 18,
+              "false": 2
+            }
+          },
+          "grounded": {},
+          "quality": {
+            "h02": {
+              "0": 19,
+              "1": 1
+            },
+            "h05": {
+              "2": 10,
+              "3": 9,
+              "failed": 1
+            },
+            "q02": {
+              "4": 19,
+              "failed": 1
+            },
+            "q05v1": {
+              "3": 10,
+              "4": 10
+            },
+            "q06": {
+              "4": 18,
+              "3": 2
+            }
+          }
+        },
+        "modal": {
+          "grounded|q01": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "abstain_ok|q01": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "grounded|q02": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "abstain_ok|q02": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "quality|q01": {
+            "gold": "4",
+            "modal": "4",
+            "agreement": 1.0,
+            "votes": {
+              "4": 20
+            }
+          },
+          "grounded|q03": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "abstain_ok|q03": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "quality|q03": {
+            "gold": "4",
+            "modal": "4",
+            "agreement": 1.0,
+            "votes": {
+              "4": 20
+            }
+          },
+          "grounded|q04": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "abstain_ok|q04": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "quality|q04": {
+            "gold": "3",
+            "modal": "4",
+            "agreement": 1.0,
+            "votes": {
+              "4": 20
+            }
+          },
+          "quality|q02": {
+            "gold": "4",
+            "modal": "4",
+            "agreement": 0.95,
+            "votes": {
+              "4": 19,
+              "failed": 1
+            }
+          },
+          "grounded|q05": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "abstain_ok|q05": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "quality|q05": {
+            "gold": "4",
+            "modal": "4",
+            "agreement": 1.0,
+            "votes": {
+              "4": 20
+            }
+          },
+          "grounded|q06": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "abstain_ok|q06": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "quality|q06": {
+            "gold": "3",
+            "modal": "4",
+            "agreement": 0.9,
+            "votes": {
+              "4": 18,
+              "3": 2
+            }
+          },
+          "grounded|q07": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "abstain_ok|q07": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "quality|q07": {
+            "gold": "4",
+            "modal": "4",
+            "agreement": 1.0,
+            "votes": {
+              "4": 20
+            }
+          },
+          "grounded|q08": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "abstain_ok|q08": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "quality|q08": {
+            "gold": "4",
+            "modal": "4",
+            "agreement": 1.0,
+            "votes": {
+              "4": 20
+            }
+          },
+          "grounded|q09": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "abstain_ok|q09": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "quality|q09": {
+            "gold": "4",
+            "modal": "4",
+            "agreement": 1.0,
+            "votes": {
+              "4": 20
+            }
+          },
+          "grounded|q10": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "abstain_ok|q10": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "quality|q10": {
+            "gold": "3",
+            "modal": "4",
+            "agreement": 1.0,
+            "votes": {
+              "4": 20
+            }
+          },
+          "grounded|q11": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "abstain_ok|q11": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "quality|q11": {
+            "gold": "3",
+            "modal": "4",
+            "agreement": 1.0,
+            "votes": {
+              "4": 20
+            }
+          },
+          "grounded|q05v1": {
+            "gold": "false",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "abstain_ok|q05v1": {
+            "gold": "false",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "quality|q05v1": {
+            "gold": "1",
+            "modal": "3",
+            "agreement": 0.5,
+            "votes": {
+              "3": 10,
+              "4": 10
+            }
+          },
+          "grounded|h01": {
+            "gold": "false",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "abstain_ok|h01": {
+            "gold": "true",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "quality|h01": {
+            "gold": "1",
+            "modal": "2",
+            "agreement": 1.0,
+            "votes": {
+              "2": 20
+            }
+          },
+          "abstain_ok|h02": {
+            "gold": "true",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "grounded|h02": {
+            "gold": "false",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "quality|h02": {
+            "gold": "0",
+            "modal": "0",
+            "agreement": 0.95,
+            "votes": {
+              "0": 19,
+              "1": 1
+            }
+          },
+          "grounded|h03": {
+            "gold": "false",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "abstain_ok|h03": {
+            "gold": "true",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "quality|h03": {
+            "gold": "0",
+            "modal": "0",
+            "agreement": 1.0,
+            "votes": {
+              "0": 20
+            }
+          },
+          "grounded|h04": {
+            "gold": "false",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "abstain_ok|h04": {
+            "gold": "true",
+            "modal": "false",
+            "agreement": 0.85,
+            "votes": {
+              "false": 17,
+              "true": 3
+            }
+          },
+          "quality|h04": {
+            "gold": "1",
+            "modal": "1",
+            "agreement": 1.0,
+            "votes": {
+              "1": 20
+            }
+          },
+          "grounded|h05": {
+            "gold": "false",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "abstain_ok|h05": {
+            "gold": "true",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "grounded|h06": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "abstain_ok|h06": {
+            "gold": "true",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "quality|h06": {
+            "gold": "1",
+            "modal": "1",
+            "agreement": 1.0,
+            "votes": {
+              "1": 20
+            }
+          },
+          "quality|h05": {
+            "gold": "1",
+            "modal": "2",
+            "agreement": 0.5,
+            "votes": {
+              "2": 10,
+              "3": 9,
+              "failed": 1
+            }
+          },
+          "grounded|h07": {
+            "gold": "false",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "abstain_ok|h07": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 0.9,
+            "votes": {
+              "true": 18,
+              "false": 2
+            }
+          },
+          "quality|h07": {
+            "gold": "1",
+            "modal": "2",
+            "agreement": 1.0,
+            "votes": {
+              "2": 20
+            }
+          },
+          "grounded|h08": {
+            "gold": "false",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "abstain_ok|h08": {
+            "gold": "false",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "quality|h08": {
+            "gold": "0",
+            "modal": "0",
+            "agreement": 1.0,
+            "votes": {
+              "0": 20
+            }
+          },
+          "grounded|h09": {
+            "gold": "false",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "abstain_ok|h09": {
+            "gold": "false",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "quality|h09": {
+            "gold": "0",
+            "modal": "0",
+            "agreement": 1.0,
+            "votes": {
+              "0": 20
+            }
+          },
+          "grounded|h10": {
+            "gold": "false",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "abstain_ok|h10": {
+            "gold": "false",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "quality|h10": {
+            "gold": "0",
+            "modal": "0",
+            "agreement": 1.0,
+            "votes": {
+              "0": 20
+            }
+          }
+        },
+        "gold_distribution": {
+          "abstain_ok": {
+            "true": 18,
+            "false": 4
+          },
+          "grounded": {
+            "true": 12,
+            "false": 10
+          },
+          "quality": {
+            "4": 7,
+            "1": 6,
+            "0": 5,
+            "3": 4
+          }
+        },
+        "cost": {
+          "input_tokens_per_call": 10925.331562974203,
+          "output_tokens_per_call": 88.17450682852807,
+          "cached_share": 0.5920938565807478,
+          "list_cost_per_call_usd": 0.008524653072837634,
+          "list_cost_per_decision_usd": 0.008524653072837634,
+          "calls": 1320,
+          "decisions": 1320,
+          "decisions_per_call": 1.0,
+          "cost_per_call_usd": 0.004151899204545454,
+          "cost_per_decision_usd": 0.004151899204545454,
+          "total_cost_usd": 5.48050695,
+          "latency_per_call_s": 4.206015119131542,
+          "latency_p50_s": 2.295190791483037,
+          "latency_p95_s": 12.485446666635106,
+          "latency_per_decision_s": 4.206015119131542
+        }
+      },
+      "gpt-5.6-luna": {
+        "judge": "gpt-5.6-luna",
+        "model": "gpt-5.6-luna",
+        "reps": 20,
+        "cases": [
+          "h01",
+          "h02",
+          "h03",
+          "h04",
+          "h05",
+          "h06",
+          "h07",
+          "h08",
+          "h09",
+          "h10",
+          "q01",
+          "q02",
+          "q03",
+          "q04",
+          "q05",
+          "q05v1",
+          "q06",
+          "q07",
+          "q08",
+          "q09",
+          "q10",
+          "q11"
+        ],
+        "binary_evals": [
+          "abstain_ok",
+          "grounded"
+        ],
+        "score_evals": [
+          "quality"
+        ],
+        "accuracy": {
+          "abstain_ok": {
+            "correct": 285,
+            "total": 440,
+            "failed": 0,
+            "value": 0.6477272727272727
+          },
+          "grounded": {
+            "correct": 405,
+            "total": 440,
+            "failed": 8,
+            "value": 0.9204545454545454
+          },
+          "quality": {
+            "correct": 277,
+            "total": 440,
+            "failed": 0,
+            "value": 0.6295454545454545
+          },
+          "binary_pooled": {
+            "correct": 690,
+            "total": 880,
+            "failed": 8,
+            "value": 0.7840909090909091
+          },
+          "all": {
+            "correct": 967,
+            "total": 1320,
+            "failed": 8,
+            "value": 0.7325757575757575
+          }
+        },
+        "modal_accuracy": {
+          "abstain_ok": {
+            "correct": 14,
+            "total": 22,
+            "value": 0.6363636363636364
+          },
+          "grounded": {
+            "correct": 21,
+            "total": 22,
+            "value": 0.9545454545454546
+          },
+          "quality": {
+            "correct": 14,
+            "total": 22,
+            "value": 0.6363636363636364
+          },
+          "binary_pooled": {
+            "correct": 35,
+            "total": 44,
+            "value": 0.7954545454545454
+          },
+          "all": {
+            "correct": 49,
+            "total": 66,
+            "value": 0.7424242424242424
+          }
+        },
+        "repeatability": {
+          "abstain_ok": 0.9704545454545456,
+          "grounded": 0.925,
+          "quality": 0.9136363636363637,
+          "binary_pooled": 0.9477272727272728,
+          "all": 0.9363636363636364
+        },
+        "signal": {
+          "abstain_ok": 0.6285898760330579,
+          "grounded": 0.8514204545454546,
+          "quality": 0.5751756198347108,
+          "binary_pooled": 0.7431043388429752,
+          "all": 0.6859573002754821
+        },
+        "quality_variance": {
+          "quality": {
+            "per_case": {
+              "h01": 0.002968750000000001,
+              "h02": 0.005625000000000001,
+              "h03": 0.0,
+              "h04": 0.0,
+              "h05": 0.005625,
+              "h06": 0.0,
+              "h07": 0.0,
+              "h08": 0.0,
+              "h09": 0.014218749999999997,
+              "h10": 0.00796875,
+              "q01": 0.0029687499999999996,
+              "q02": 0.0,
+              "q03": 0.0,
+              "q04": 0.0,
+              "q05": 0.0029687499999999996,
+              "q05v1": 0.009999999999999998,
+              "q06": 0.0,
+              "q07": 0.040468750000000005,
+              "q08": 0.0,
+              "q09": 0.005625,
+              "q10": 0.015000000000000003,
+              "q11": 0.0
+            },
+            "mean": 0.00515625,
+            "failure_rate": 0.0,
+            "x_jev": null
+          }
+        },
+        "failures": {
+          "total": 8,
+          "per_eval": {
+            "abstain_ok": 0,
+            "grounded": 8,
+            "quality": 0
+          }
+        },
+        "unstable": {
+          "abstain_ok": {
+            "q05v1": {
+              "true": 11,
+              "false": 9
+            },
+            "q07": {
+              "true": 16,
+              "false": 4
+            }
+          },
+          "grounded": {
+            "h06": {
+              "true": 14,
+              "failed": 6
+            },
+            "q02": {
+              "true": 18,
+              "failed": 2
+            },
+            "q05v1": {
+              "true": 11,
+              "false": 9
+            },
+            "q06": {
+              "true": 18,
+              "false": 2
+            },
+            "q07": {
+              "true": 14,
+              "false": 6
+            },
+            "q10": {
+              "true": 19,
+              "false": 1
+            },
+            "q11": {
+              "true": 13,
+              "false": 7
+            }
+          },
+          "quality": {
+            "h01": {
+              "2": 19,
+              "1": 1
+            },
+            "h02": {
+              "0": 18,
+              "1": 2
+            },
+            "h05": {
+              "2": 18,
+              "1": 2
+            },
+            "h09": {
+              "1": 13,
+              "0": 7
+            },
+            "h10": {
+              "0": 17,
+              "1": 3
+            },
+            "q01": {
+              "4": 19,
+              "3": 1
+            },
+            "q05": {
+              "4": 19,
+              "3": 1
+            },
+            "q05v1": {
+              "2": 16,
+              "3": 4
+            },
+            "q07": {
+              "2": 13,
+              "4": 4,
+              "3": 3
+            },
+            "q09": {
+              "4": 18,
+              "3": 2
+            },
+            "q10": {
+              "3": 12,
+              "4": 8
+            }
+          }
+        },
+        "modal": {
+          "grounded|q01": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "abstain_ok|q01": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "quality|q01": {
+            "gold": "4",
+            "modal": "4",
+            "agreement": 0.95,
+            "votes": {
+              "4": 19,
+              "3": 1
+            }
+          },
+          "grounded|q03": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "abstain_ok|q03": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "quality|q03": {
+            "gold": "4",
+            "modal": "4",
+            "agreement": 1.0,
+            "votes": {
+              "4": 20
+            }
+          },
+          "grounded|q04": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "grounded|q02": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 0.9,
+            "votes": {
+              "true": 18,
+              "failed": 2
+            }
+          },
+          "abstain_ok|q04": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "quality|q04": {
+            "gold": "3",
+            "modal": "4",
+            "agreement": 1.0,
+            "votes": {
+              "4": 20
+            }
+          },
+          "abstain_ok|q02": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "quality|q02": {
+            "gold": "4",
+            "modal": "4",
+            "agreement": 1.0,
+            "votes": {
+              "4": 20
+            }
+          },
+          "grounded|q05": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "abstain_ok|q05": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "quality|q05": {
+            "gold": "4",
+            "modal": "4",
+            "agreement": 0.95,
+            "votes": {
+              "4": 19,
+              "3": 1
+            }
+          },
+          "grounded|q06": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 0.9,
+            "votes": {
+              "true": 18,
+              "false": 2
+            }
+          },
+          "abstain_ok|q06": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "quality|q06": {
+            "gold": "3",
+            "modal": "2",
+            "agreement": 1.0,
+            "votes": {
+              "2": 20
+            }
+          },
+          "grounded|q07": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 0.7,
+            "votes": {
+              "true": 14,
+              "false": 6
+            }
+          },
+          "abstain_ok|q07": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 0.8,
+            "votes": {
+              "true": 16,
+              "false": 4
+            }
+          },
+          "grounded|q08": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "quality|q07": {
+            "gold": "4",
+            "modal": "2",
+            "agreement": 0.65,
+            "votes": {
+              "2": 13,
+              "4": 4,
+              "3": 3
+            }
+          },
+          "abstain_ok|q08": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "quality|q08": {
+            "gold": "4",
+            "modal": "4",
+            "agreement": 1.0,
+            "votes": {
+              "4": 20
+            }
+          },
+          "grounded|q09": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "abstain_ok|q09": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "quality|q09": {
+            "gold": "4",
+            "modal": "4",
+            "agreement": 0.9,
+            "votes": {
+              "4": 18,
+              "3": 2
+            }
+          },
+          "grounded|q10": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 0.95,
+            "votes": {
+              "true": 19,
+              "false": 1
+            }
+          },
+          "abstain_ok|q10": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "quality|q10": {
+            "gold": "3",
+            "modal": "3",
+            "agreement": 0.6,
+            "votes": {
+              "3": 12,
+              "4": 8
+            }
+          },
+          "grounded|q11": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 0.65,
+            "votes": {
+              "true": 13,
+              "false": 7
+            }
+          },
+          "abstain_ok|q11": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "quality|q11": {
+            "gold": "3",
+            "modal": "2",
+            "agreement": 1.0,
+            "votes": {
+              "2": 20
+            }
+          },
+          "grounded|q05v1": {
+            "gold": "false",
+            "modal": "true",
+            "agreement": 0.55,
+            "votes": {
+              "true": 11,
+              "false": 9
+            }
+          },
+          "abstain_ok|q05v1": {
+            "gold": "false",
+            "modal": "true",
+            "agreement": 0.55,
+            "votes": {
+              "true": 11,
+              "false": 9
+            }
+          },
+          "grounded|h01": {
+            "gold": "false",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "quality|q05v1": {
+            "gold": "1",
+            "modal": "2",
+            "agreement": 0.8,
+            "votes": {
+              "2": 16,
+              "3": 4
+            }
+          },
+          "abstain_ok|h01": {
+            "gold": "true",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "quality|h01": {
+            "gold": "1",
+            "modal": "2",
+            "agreement": 0.95,
+            "votes": {
+              "2": 19,
+              "1": 1
+            }
+          },
+          "grounded|h02": {
+            "gold": "false",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "abstain_ok|h02": {
+            "gold": "true",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "quality|h02": {
+            "gold": "0",
+            "modal": "0",
+            "agreement": 0.9,
+            "votes": {
+              "0": 18,
+              "1": 2
+            }
+          },
+          "grounded|h03": {
+            "gold": "false",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "abstain_ok|h03": {
+            "gold": "true",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "quality|h03": {
+            "gold": "0",
+            "modal": "0",
+            "agreement": 1.0,
+            "votes": {
+              "0": 20
+            }
+          },
+          "grounded|h04": {
+            "gold": "false",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "abstain_ok|h04": {
+            "gold": "true",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "quality|h04": {
+            "gold": "1",
+            "modal": "1",
+            "agreement": 1.0,
+            "votes": {
+              "1": 20
+            }
+          },
+          "grounded|h05": {
+            "gold": "false",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "abstain_ok|h05": {
+            "gold": "true",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "grounded|h06": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 0.7,
+            "votes": {
+              "true": 14,
+              "failed": 6
+            }
+          },
+          "abstain_ok|h06": {
+            "gold": "true",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "quality|h05": {
+            "gold": "1",
+            "modal": "2",
+            "agreement": 0.9,
+            "votes": {
+              "2": 18,
+              "1": 2
+            }
+          },
+          "quality|h06": {
+            "gold": "1",
+            "modal": "1",
+            "agreement": 1.0,
+            "votes": {
+              "1": 20
+            }
+          },
+          "grounded|h07": {
+            "gold": "false",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "abstain_ok|h07": {
+            "gold": "true",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "quality|h07": {
+            "gold": "1",
+            "modal": "1",
+            "agreement": 1.0,
+            "votes": {
+              "1": 20
+            }
+          },
+          "grounded|h08": {
+            "gold": "false",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "abstain_ok|h08": {
+            "gold": "false",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "quality|h08": {
+            "gold": "0",
+            "modal": "0",
+            "agreement": 1.0,
+            "votes": {
+              "0": 20
+            }
+          },
+          "grounded|h09": {
+            "gold": "false",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "abstain_ok|h09": {
+            "gold": "false",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "quality|h09": {
+            "gold": "0",
+            "modal": "1",
+            "agreement": 0.65,
+            "votes": {
+              "1": 13,
+              "0": 7
+            }
+          },
+          "grounded|h10": {
+            "gold": "false",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "abstain_ok|h10": {
+            "gold": "false",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "quality|h10": {
+            "gold": "0",
+            "modal": "0",
+            "agreement": 0.85,
+            "votes": {
+              "0": 17,
+              "1": 3
+            }
+          }
+        },
+        "gold_distribution": {
+          "abstain_ok": {
+            "true": 18,
+            "false": 4
+          },
+          "grounded": {
+            "true": 12,
+            "false": 10
+          },
+          "quality": {
+            "4": 7,
+            "1": 6,
+            "0": 5,
+            "3": 4
+          }
+        },
+        "cost": {
+          "input_tokens_per_call": 9487.890243902439,
+          "output_tokens_per_call": 159.8871951219512,
+          "cached_share": 0.9493799541649368,
+          "list_cost_per_call_usd": 0.002089442682926829,
+          "list_cost_per_decision_usd": 0.002089442682926829,
+          "calls": 1320,
+          "decisions": 1320,
+          "decisions_per_call": 1.0,
+          "cost_per_call_usd": 0.00046523557575757577,
+          "cost_per_decision_usd": 0.00046523557575757577,
+          "total_cost_usd": 0.61411096,
+          "latency_per_call_s": 6.1523385344723165,
+          "latency_p50_s": 3.4828446875326335,
+          "latency_p95_s": 14.171574814966876,
+          "latency_per_decision_s": 6.1523385344723165
+        }
+      }
+    },
+    "baseline": {
+      "judge": "baseline(majority)",
+      "model": "baseline(majority)",
+      "reps": 20,
+      "cases": [
+        "h01",
+        "h02",
+        "h03",
+        "h04",
+        "h05",
+        "h06",
+        "h07",
+        "h08",
+        "h09",
+        "h10",
+        "q01",
+        "q02",
+        "q03",
+        "q04",
+        "q05",
+        "q05v1",
+        "q06",
+        "q07",
+        "q08",
+        "q09",
+        "q10",
+        "q11"
+      ],
+      "binary_evals": [
+        "abstain_ok",
+        "grounded"
+      ],
+      "score_evals": [
+        "quality"
+      ],
+      "accuracy": {
+        "abstain_ok": {
+          "correct": 360,
+          "total": 440,
+          "failed": 0,
+          "value": 0.8181818181818182
+        },
+        "grounded": {
+          "correct": 240,
+          "total": 440,
+          "failed": 0,
+          "value": 0.5454545454545454
+        },
+        "quality": {
+          "correct": 140,
+          "total": 440,
+          "failed": 0,
+          "value": 0.3181818181818182
+        },
+        "binary_pooled": {
+          "correct": 600,
+          "total": 880,
+          "failed": 0,
+          "value": 0.6818181818181818
+        },
+        "all": {
+          "correct": 740,
+          "total": 1320,
+          "failed": 0,
+          "value": 0.5606060606060606
+        }
+      },
+      "modal_accuracy": {
+        "abstain_ok": {
+          "correct": 18,
+          "total": 22,
+          "value": 0.8181818181818182
+        },
+        "grounded": {
+          "correct": 12,
+          "total": 22,
+          "value": 0.5454545454545454
+        },
+        "quality": {
+          "correct": 7,
+          "total": 22,
+          "value": 0.3181818181818182
+        },
+        "binary_pooled": {
+          "correct": 30,
+          "total": 44,
+          "value": 0.6818181818181818
+        },
+        "all": {
+          "correct": 37,
+          "total": 66,
+          "value": 0.5606060606060606
+        }
+      },
+      "repeatability": {
+        "abstain_ok": 1.0,
+        "grounded": 1.0,
+        "quality": 1.0,
+        "binary_pooled": 1.0,
+        "all": 1.0
+      },
+      "signal": {
+        "abstain_ok": 0.8181818181818182,
+        "grounded": 0.5454545454545454,
+        "quality": 0.3181818181818182,
+        "binary_pooled": 0.6818181818181818,
+        "all": 0.5606060606060606
+      },
+      "quality_variance": {
+        "quality": {
+          "per_case": {
+            "h01": 0.0,
+            "h02": 0.0,
+            "h03": 0.0,
+            "h04": 0.0,
+            "h05": 0.0,
+            "h06": 0.0,
+            "h07": 0.0,
+            "h08": 0.0,
+            "h09": 0.0,
+            "h10": 0.0,
+            "q01": 0.0,
+            "q02": 0.0,
+            "q03": 0.0,
+            "q04": 0.0,
+            "q05": 0.0,
+            "q05v1": 0.0,
+            "q06": 0.0,
+            "q07": 0.0,
+            "q08": 0.0,
+            "q09": 0.0,
+            "q10": 0.0,
+            "q11": 0.0
+          },
+          "mean": 0.0,
+          "failure_rate": 0.0
+        }
+      },
+      "failures": {
+        "total": 0,
+        "per_eval": {
+          "abstain_ok": 0,
+          "grounded": 0,
+          "quality": 0
+        }
+      },
+      "unstable": {
+        "abstain_ok": {},
+        "grounded": {},
+        "quality": {}
+      },
+      "modal": {
+        "grounded|q01": {
+          "gold": "true",
+          "modal": "true",
+          "agreement": 1.0,
+          "votes": {
+            "true": 20
+          }
+        },
+        "abstain_ok|q01": {
+          "gold": "true",
+          "modal": "true",
+          "agreement": 1.0,
+          "votes": {
+            "true": 20
+          }
+        },
+        "quality|q01": {
+          "gold": "4",
+          "modal": "4",
+          "agreement": 1.0,
+          "votes": {
+            "4": 20
+          }
+        },
+        "grounded|q03": {
+          "gold": "true",
+          "modal": "true",
+          "agreement": 1.0,
+          "votes": {
+            "true": 20
+          }
+        },
+        "abstain_ok|q03": {
+          "gold": "true",
+          "modal": "true",
+          "agreement": 1.0,
+          "votes": {
+            "true": 20
+          }
+        },
+        "quality|q03": {
+          "gold": "4",
+          "modal": "4",
+          "agreement": 1.0,
+          "votes": {
+            "4": 20
+          }
+        },
+        "grounded|q04": {
+          "gold": "true",
+          "modal": "true",
+          "agreement": 1.0,
+          "votes": {
+            "true": 20
+          }
+        },
+        "abstain_ok|q04": {
+          "gold": "true",
+          "modal": "true",
+          "agreement": 1.0,
+          "votes": {
+            "true": 20
+          }
+        },
+        "quality|q04": {
+          "gold": "3",
+          "modal": "4",
+          "agreement": 1.0,
+          "votes": {
+            "4": 20
+          }
+        },
+        "grounded|q02": {
+          "gold": "true",
+          "modal": "true",
+          "agreement": 1.0,
+          "votes": {
+            "true": 20
+          }
+        },
+        "abstain_ok|q02": {
+          "gold": "true",
+          "modal": "true",
+          "agreement": 1.0,
+          "votes": {
+            "true": 20
+          }
+        },
+        "quality|q02": {
+          "gold": "4",
+          "modal": "4",
+          "agreement": 1.0,
+          "votes": {
+            "4": 20
+          }
+        },
+        "grounded|q05": {
+          "gold": "true",
+          "modal": "true",
+          "agreement": 1.0,
+          "votes": {
+            "true": 20
+          }
+        },
+        "abstain_ok|q05": {
+          "gold": "true",
+          "modal": "true",
+          "agreement": 1.0,
+          "votes": {
+            "true": 20
+          }
+        },
+        "quality|q05": {
+          "gold": "4",
+          "modal": "4",
+          "agreement": 1.0,
+          "votes": {
+            "4": 20
+          }
+        },
+        "grounded|q06": {
+          "gold": "true",
+          "modal": "true",
+          "agreement": 1.0,
+          "votes": {
+            "true": 20
+          }
+        },
+        "abstain_ok|q06": {
+          "gold": "true",
+          "modal": "true",
+          "agreement": 1.0,
+          "votes": {
+            "true": 20
+          }
+        },
+        "quality|q06": {
+          "gold": "3",
+          "modal": "4",
+          "agreement": 1.0,
+          "votes": {
+            "4": 20
+          }
+        },
+        "grounded|q07": {
+          "gold": "true",
+          "modal": "true",
+          "agreement": 1.0,
+          "votes": {
+            "true": 20
+          }
+        },
+        "abstain_ok|q07": {
+          "gold": "true",
+          "modal": "true",
+          "agreement": 1.0,
+          "votes": {
+            "true": 20
+          }
+        },
+        "quality|q07": {
+          "gold": "4",
+          "modal": "4",
+          "agreement": 1.0,
+          "votes": {
+            "4": 20
+          }
+        },
+        "grounded|q08": {
+          "gold": "true",
+          "modal": "true",
+          "agreement": 1.0,
+          "votes": {
+            "true": 20
+          }
+        },
+        "abstain_ok|q08": {
+          "gold": "true",
+          "modal": "true",
+          "agreement": 1.0,
+          "votes": {
+            "true": 20
+          }
+        },
+        "quality|q08": {
+          "gold": "4",
+          "modal": "4",
+          "agreement": 1.0,
+          "votes": {
+            "4": 20
+          }
+        },
+        "grounded|q09": {
+          "gold": "true",
+          "modal": "true",
+          "agreement": 1.0,
+          "votes": {
+            "true": 20
+          }
+        },
+        "abstain_ok|q09": {
+          "gold": "true",
+          "modal": "true",
+          "agreement": 1.0,
+          "votes": {
+            "true": 20
+          }
+        },
+        "quality|q09": {
+          "gold": "4",
+          "modal": "4",
+          "agreement": 1.0,
+          "votes": {
+            "4": 20
+          }
+        },
+        "grounded|q10": {
+          "gold": "true",
+          "modal": "true",
+          "agreement": 1.0,
+          "votes": {
+            "true": 20
+          }
+        },
+        "abstain_ok|q10": {
+          "gold": "true",
+          "modal": "true",
+          "agreement": 1.0,
+          "votes": {
+            "true": 20
+          }
+        },
+        "quality|q10": {
+          "gold": "3",
+          "modal": "4",
+          "agreement": 1.0,
+          "votes": {
+            "4": 20
+          }
+        },
+        "grounded|q11": {
+          "gold": "true",
+          "modal": "true",
+          "agreement": 1.0,
+          "votes": {
+            "true": 20
+          }
+        },
+        "abstain_ok|q11": {
+          "gold": "true",
+          "modal": "true",
+          "agreement": 1.0,
+          "votes": {
+            "true": 20
+          }
+        },
+        "quality|q11": {
+          "gold": "3",
+          "modal": "4",
+          "agreement": 1.0,
+          "votes": {
+            "4": 20
+          }
+        },
+        "grounded|q05v1": {
+          "gold": "false",
+          "modal": "true",
+          "agreement": 1.0,
+          "votes": {
+            "true": 20
+          }
+        },
+        "abstain_ok|q05v1": {
+          "gold": "false",
+          "modal": "true",
+          "agreement": 1.0,
+          "votes": {
+            "true": 20
+          }
+        },
+        "quality|q05v1": {
+          "gold": "1",
+          "modal": "4",
+          "agreement": 1.0,
+          "votes": {
+            "4": 20
+          }
+        },
+        "grounded|h01": {
+          "gold": "false",
+          "modal": "true",
+          "agreement": 1.0,
+          "votes": {
+            "true": 20
+          }
+        },
+        "abstain_ok|h01": {
+          "gold": "true",
+          "modal": "true",
+          "agreement": 1.0,
+          "votes": {
+            "true": 20
+          }
+        },
+        "quality|h01": {
+          "gold": "1",
+          "modal": "4",
+          "agreement": 1.0,
+          "votes": {
+            "4": 20
+          }
+        },
+        "grounded|h02": {
+          "gold": "false",
+          "modal": "true",
+          "agreement": 1.0,
+          "votes": {
+            "true": 20
+          }
+        },
+        "abstain_ok|h02": {
+          "gold": "true",
+          "modal": "true",
+          "agreement": 1.0,
+          "votes": {
+            "true": 20
+          }
+        },
+        "quality|h02": {
+          "gold": "0",
+          "modal": "4",
+          "agreement": 1.0,
+          "votes": {
+            "4": 20
+          }
+        },
+        "grounded|h03": {
+          "gold": "false",
+          "modal": "true",
+          "agreement": 1.0,
+          "votes": {
+            "true": 20
+          }
+        },
+        "abstain_ok|h03": {
+          "gold": "true",
+          "modal": "true",
+          "agreement": 1.0,
+          "votes": {
+            "true": 20
+          }
+        },
+        "quality|h03": {
+          "gold": "0",
+          "modal": "4",
+          "agreement": 1.0,
+          "votes": {
+            "4": 20
+          }
+        },
+        "grounded|h04": {
+          "gold": "false",
+          "modal": "true",
+          "agreement": 1.0,
+          "votes": {
+            "true": 20
+          }
+        },
+        "abstain_ok|h04": {
+          "gold": "true",
+          "modal": "true",
+          "agreement": 1.0,
+          "votes": {
+            "true": 20
+          }
+        },
+        "quality|h04": {
+          "gold": "1",
+          "modal": "4",
+          "agreement": 1.0,
+          "votes": {
+            "4": 20
+          }
+        },
+        "grounded|h05": {
+          "gold": "false",
+          "modal": "true",
+          "agreement": 1.0,
+          "votes": {
+            "true": 20
+          }
+        },
+        "abstain_ok|h05": {
+          "gold": "true",
+          "modal": "true",
+          "agreement": 1.0,
+          "votes": {
+            "true": 20
+          }
+        },
+        "quality|h05": {
+          "gold": "1",
+          "modal": "4",
+          "agreement": 1.0,
+          "votes": {
+            "4": 20
+          }
+        },
+        "grounded|h06": {
+          "gold": "true",
+          "modal": "true",
+          "agreement": 1.0,
+          "votes": {
+            "true": 20
+          }
+        },
+        "abstain_ok|h06": {
+          "gold": "true",
+          "modal": "true",
+          "agreement": 1.0,
+          "votes": {
+            "true": 20
+          }
+        },
+        "quality|h06": {
+          "gold": "1",
+          "modal": "4",
+          "agreement": 1.0,
+          "votes": {
+            "4": 20
+          }
+        },
+        "grounded|h07": {
+          "gold": "false",
+          "modal": "true",
+          "agreement": 1.0,
+          "votes": {
+            "true": 20
+          }
+        },
+        "abstain_ok|h07": {
+          "gold": "true",
+          "modal": "true",
+          "agreement": 1.0,
+          "votes": {
+            "true": 20
+          }
+        },
+        "quality|h07": {
+          "gold": "1",
+          "modal": "4",
+          "agreement": 1.0,
+          "votes": {
+            "4": 20
+          }
+        },
+        "grounded|h08": {
+          "gold": "false",
+          "modal": "true",
+          "agreement": 1.0,
+          "votes": {
+            "true": 20
+          }
+        },
+        "abstain_ok|h08": {
+          "gold": "false",
+          "modal": "true",
+          "agreement": 1.0,
+          "votes": {
+            "true": 20
+          }
+        },
+        "quality|h08": {
+          "gold": "0",
+          "modal": "4",
+          "agreement": 1.0,
+          "votes": {
+            "4": 20
+          }
+        },
+        "grounded|h09": {
+          "gold": "false",
+          "modal": "true",
+          "agreement": 1.0,
+          "votes": {
+            "true": 20
+          }
+        },
+        "abstain_ok|h09": {
+          "gold": "false",
+          "modal": "true",
+          "agreement": 1.0,
+          "votes": {
+            "true": 20
+          }
+        },
+        "quality|h09": {
+          "gold": "0",
+          "modal": "4",
+          "agreement": 1.0,
+          "votes": {
+            "4": 20
+          }
+        },
+        "grounded|h10": {
+          "gold": "false",
+          "modal": "true",
+          "agreement": 1.0,
+          "votes": {
+            "true": 20
+          }
+        },
+        "abstain_ok|h10": {
+          "gold": "false",
+          "modal": "true",
+          "agreement": 1.0,
+          "votes": {
+            "true": 20
+          }
+        },
+        "quality|h10": {
+          "gold": "0",
+          "modal": "4",
+          "agreement": 1.0,
+          "votes": {
+            "4": 20
+          }
+        }
+      },
+      "gold_distribution": {
+        "abstain_ok": {
+          "true": 18,
+          "false": 4
+        },
+        "grounded": {
+          "true": 12,
+          "false": 10
+        },
+        "quality": {
+          "4": 7,
+          "1": 6,
+          "0": 5,
+          "3": 4
+        }
+      },
+      "cost": {
+        "input_tokens_per_call": NaN,
+        "output_tokens_per_call": NaN,
+        "cached_share": NaN,
+        "list_cost_per_call_usd": 0.0,
+        "list_cost_per_decision_usd": 0.0,
+        "calls": 440,
+        "decisions": 1320,
+        "decisions_per_call": 3.0,
+        "cost_per_call_usd": 0.0,
+        "cost_per_decision_usd": 0.0,
+        "total_cost_usd": 0.0,
+        "latency_per_call_s": 0.0,
+        "latency_p50_s": 0.0,
+        "latency_p95_s": 0.0,
+        "latency_per_decision_s": 0.0
+      }
+    }
+  },
+  "compare": {
+    "dir": "results/docs_rag",
+    "judges": [
+      "jev",
+      "deepseek-v4.1-flash",
+      "gemini-3.8-flash",
+      "gpt-5.6-luna"
+    ],
+    "cases": [
+      "h01",
+      "h02",
+      "h03",
+      "h04",
+      "h05",
+      "h06",
+      "h07",
+      "h08",
+      "h09",
+      "h10",
+      "q01",
+      "q02",
+      "q03",
+      "q04",
+      "q05",
+      "q05v1",
+      "q06",
+      "q07",
+      "q08",
+      "q09",
+      "q10",
+      "q11"
+    ],
+    "binary_evals": [
+      "abstain_ok",
+      "grounded"
+    ],
+    "score_evals": [
+      "quality"
+    ],
+    "reps": 20,
+    "gold_distribution": {
+      "abstain_ok": {
+        "true": 18,
+        "false": 4
+      },
+      "grounded": {
+        "true": 12,
+        "false": 10
+      },
+      "quality": {
+        "4": 7,
+        "1": 6,
+        "0": 5,
+        "3": 4
+      }
+    },
+    "per_judge": {
+      "jev": {
+        "judge": "jev",
+        "model": "jev",
+        "reps": 20,
+        "cases": [
+          "h01",
+          "h02",
+          "h03",
+          "h04",
+          "h05",
+          "h06",
+          "h07",
+          "h08",
+          "h09",
+          "h10",
+          "q01",
+          "q02",
+          "q03",
+          "q04",
+          "q05",
+          "q05v1",
+          "q06",
+          "q07",
+          "q08",
+          "q09",
+          "q10",
+          "q11"
+        ],
+        "binary_evals": [
+          "abstain_ok",
+          "grounded"
+        ],
+        "score_evals": [
+          "quality"
+        ],
+        "accuracy": {
+          "abstain_ok": {
+            "correct": 299,
+            "total": 440,
+            "failed": 0,
+            "value": 0.6795454545454546
+          },
+          "grounded": {
+            "correct": 440,
+            "total": 440,
+            "failed": 0,
+            "value": 1.0
+          },
+          "quality": {
+            "correct": 240,
+            "total": 440,
+            "failed": 0,
+            "value": 0.5454545454545454
+          },
+          "binary_pooled": {
+            "correct": 739,
+            "total": 880,
+            "failed": 0,
+            "value": 0.8397727272727272
+          },
+          "all": {
+            "correct": 979,
+            "total": 1320,
+            "failed": 0,
+            "value": 0.7416666666666667
+          }
+        },
+        "modal_accuracy": {
+          "abstain_ok": {
+            "correct": 15,
+            "total": 22,
+            "value": 0.6818181818181818
+          },
+          "grounded": {
+            "correct": 22,
+            "total": 22,
+            "value": 1.0
+          },
+          "quality": {
+            "correct": 12,
+            "total": 22,
+            "value": 0.5454545454545454
+          },
+          "binary_pooled": {
+            "correct": 37,
+            "total": 44,
+            "value": 0.8409090909090909
+          },
+          "all": {
+            "correct": 49,
+            "total": 66,
+            "value": 0.7424242424242424
+          }
+        },
+        "repeatability": {
+          "abstain_ok": 0.9977272727272727,
+          "grounded": 1.0,
+          "quality": 1.0,
+          "binary_pooled": 0.9988636363636364,
+          "all": 0.9992424242424243
+        },
+        "signal": {
+          "abstain_ok": 0.6780010330578512,
+          "grounded": 1.0,
+          "quality": 0.5454545454545454,
+          "binary_pooled": 0.8388184400826446,
+          "all": 0.741104797979798
+        },
+        "quality_variance": {
+          "quality": {
+            "per_case": {
+              "h01": 0.0,
+              "h02": 0.0,
+              "h03": 0.0,
+              "h04": 0.0,
+              "h05": 0.0,
+              "h06": 0.0,
+              "h07": 0.0,
+              "h08": 0.0,
+              "h09": 0.0,
+              "h10": 0.0,
+              "q01": 0.0,
+              "q02": 0.0,
+              "q03": 0.0,
+              "q04": 0.0,
+              "q05": 0.0,
+              "q05v1": 0.0,
+              "q06": 0.0,
+              "q07": 0.0,
+              "q08": 0.0,
+              "q09": 0.0,
+              "q10": 0.0,
+              "q11": 0.0
+            },
+            "mean": 0.0,
+            "failure_rate": 0.0,
+            "x_jev": null
+          }
+        },
+        "failures": {
+          "total": 0,
+          "per_eval": {
+            "abstain_ok": 0,
+            "grounded": 0,
+            "quality": 0
+          }
+        },
+        "unstable": {
+          "abstain_ok": {
+            "q05v1": {
+              "false": 19,
+              "true": 1
+            }
+          },
+          "grounded": {},
+          "quality": {}
+        },
+        "modal": {
+          "grounded|q01": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "abstain_ok|q01": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "quality|q01": {
+            "gold": "4",
+            "modal": "4",
+            "agreement": 1.0,
+            "votes": {
+              "4": 20
+            }
+          },
+          "grounded|q02": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "abstain_ok|q02": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "quality|q02": {
+            "gold": "4",
+            "modal": "4",
+            "agreement": 1.0,
+            "votes": {
+              "4": 20
+            }
+          },
+          "grounded|q03": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "abstain_ok|q03": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "quality|q03": {
+            "gold": "4",
+            "modal": "4",
+            "agreement": 1.0,
+            "votes": {
+              "4": 20
+            }
+          },
+          "grounded|q04": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "abstain_ok|q04": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "quality|q04": {
+            "gold": "3",
+            "modal": "4",
+            "agreement": 1.0,
+            "votes": {
+              "4": 20
+            }
+          },
+          "grounded|q05": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "abstain_ok|q05": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "quality|q05": {
+            "gold": "4",
+            "modal": "4",
+            "agreement": 1.0,
+            "votes": {
+              "4": 20
+            }
+          },
+          "grounded|q06": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "abstain_ok|q06": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "quality|q06": {
+            "gold": "3",
+            "modal": "2",
+            "agreement": 1.0,
+            "votes": {
+              "2": 20
+            }
+          },
+          "grounded|q07": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "abstain_ok|q07": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "quality|q07": {
+            "gold": "4",
+            "modal": "4",
+            "agreement": 1.0,
+            "votes": {
+              "4": 20
+            }
+          },
+          "grounded|q08": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "abstain_ok|q08": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "quality|q08": {
+            "gold": "4",
+            "modal": "4",
+            "agreement": 1.0,
+            "votes": {
+              "4": 20
+            }
+          },
+          "grounded|q09": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "abstain_ok|q09": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "quality|q09": {
+            "gold": "4",
+            "modal": "4",
+            "agreement": 1.0,
+            "votes": {
+              "4": 20
+            }
+          },
+          "grounded|q10": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "abstain_ok|q10": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "quality|q10": {
+            "gold": "3",
+            "modal": "3",
+            "agreement": 1.0,
+            "votes": {
+              "3": 20
+            }
+          },
+          "grounded|q11": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "abstain_ok|q11": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "quality|q11": {
+            "gold": "3",
+            "modal": "2",
+            "agreement": 1.0,
+            "votes": {
+              "2": 20
+            }
+          },
+          "grounded|q05v1": {
+            "gold": "false",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "abstain_ok|q05v1": {
+            "gold": "false",
+            "modal": "false",
+            "agreement": 0.95,
+            "votes": {
+              "false": 19,
+              "true": 1
+            }
+          },
+          "quality|q05v1": {
+            "gold": "1",
+            "modal": "3",
+            "agreement": 1.0,
+            "votes": {
+              "3": 20
+            }
+          },
+          "grounded|h01": {
+            "gold": "false",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "abstain_ok|h01": {
+            "gold": "true",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "quality|h01": {
+            "gold": "1",
+            "modal": "3",
+            "agreement": 1.0,
+            "votes": {
+              "3": 20
+            }
+          },
+          "grounded|h02": {
+            "gold": "false",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "abstain_ok|h02": {
+            "gold": "true",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "quality|h02": {
+            "gold": "0",
+            "modal": "1",
+            "agreement": 1.0,
+            "votes": {
+              "1": 20
+            }
+          },
+          "grounded|h03": {
+            "gold": "false",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "abstain_ok|h03": {
+            "gold": "true",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "quality|h03": {
+            "gold": "0",
+            "modal": "0",
+            "agreement": 1.0,
+            "votes": {
+              "0": 20
+            }
+          },
+          "grounded|h04": {
+            "gold": "false",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "abstain_ok|h04": {
+            "gold": "true",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "quality|h04": {
+            "gold": "1",
+            "modal": "1",
+            "agreement": 1.0,
+            "votes": {
+              "1": 20
+            }
+          },
+          "grounded|h05": {
+            "gold": "false",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "abstain_ok|h05": {
+            "gold": "true",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "quality|h05": {
+            "gold": "1",
+            "modal": "2",
+            "agreement": 1.0,
+            "votes": {
+              "2": 20
+            }
+          },
+          "grounded|h06": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "abstain_ok|h06": {
+            "gold": "true",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "quality|h06": {
+            "gold": "1",
+            "modal": "1",
+            "agreement": 1.0,
+            "votes": {
+              "1": 20
+            }
+          },
+          "grounded|h07": {
+            "gold": "false",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "abstain_ok|h07": {
+            "gold": "true",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "quality|h07": {
+            "gold": "1",
+            "modal": "1",
+            "agreement": 1.0,
+            "votes": {
+              "1": 20
+            }
+          },
+          "grounded|h08": {
+            "gold": "false",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "abstain_ok|h08": {
+            "gold": "false",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "quality|h08": {
+            "gold": "0",
+            "modal": "1",
+            "agreement": 1.0,
+            "votes": {
+              "1": 20
+            }
+          },
+          "grounded|h09": {
+            "gold": "false",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "abstain_ok|h09": {
+            "gold": "false",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "quality|h09": {
+            "gold": "0",
+            "modal": "1",
+            "agreement": 1.0,
+            "votes": {
+              "1": 20
+            }
+          },
+          "grounded|h10": {
+            "gold": "false",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "abstain_ok|h10": {
+            "gold": "false",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "quality|h10": {
+            "gold": "0",
+            "modal": "1",
+            "agreement": 1.0,
+            "votes": {
+              "1": 20
+            }
+          }
+        },
+        "gold_distribution": {
+          "abstain_ok": {
+            "true": 18,
+            "false": 4
+          },
+          "grounded": {
+            "true": 12,
+            "false": 10
+          },
+          "quality": {
+            "4": 7,
+            "1": 6,
+            "0": 5,
+            "3": 4
+          }
+        },
+        "cost": {
+          "input_tokens_per_call": NaN,
+          "output_tokens_per_call": NaN,
+          "cached_share": NaN,
+          "list_cost_per_call_usd": 0.00047128581818181825,
+          "list_cost_per_decision_usd": 0.00015709527272727276,
+          "calls": 440,
+          "decisions": 1320,
+          "decisions_per_call": 3.0,
+          "cost_per_call_usd": 0.00047128581818181825,
+          "cost_per_decision_usd": 0.00015709527272727276,
+          "total_cost_usd": 0.20736576000000004,
+          "latency_per_call_s": 1.2888458930961364,
+          "latency_p50_s": 0.6962781880283728,
+          "latency_p95_s": 3.9725520360167135,
+          "latency_per_decision_s": 0.42961529769871215
+        }
+      },
+      "deepseek-v4.1-flash": {
+        "judge": "deepseek-v4.1-flash",
+        "model": "deepseek-v4.1-flash",
+        "reps": 20,
+        "cases": [
+          "h01",
+          "h02",
+          "h03",
+          "h04",
+          "h05",
+          "h06",
+          "h07",
+          "h08",
+          "h09",
+          "h10",
+          "q01",
+          "q02",
+          "q03",
+          "q04",
+          "q05",
+          "q05v1",
+          "q06",
+          "q07",
+          "q08",
+          "q09",
+          "q10",
+          "q11"
+        ],
+        "binary_evals": [
+          "abstain_ok",
+          "grounded"
+        ],
+        "score_evals": [
+          "quality"
+        ],
+        "accuracy": {
+          "abstain_ok": {
+            "correct": 313,
+            "total": 440,
+            "failed": 1,
+            "value": 0.7113636363636363
+          },
+          "grounded": {
+            "correct": 416,
+            "total": 440,
+            "failed": 5,
+            "value": 0.9454545454545454
+          },
+          "quality": {
+            "correct": 276,
+            "total": 440,
+            "failed": 0,
+            "value": 0.6272727272727273
+          },
+          "binary_pooled": {
+            "correct": 729,
+            "total": 880,
+            "failed": 6,
+            "value": 0.8284090909090909
+          },
+          "all": {
+            "correct": 1005,
+            "total": 1320,
+            "failed": 6,
+            "value": 0.7613636363636364
+          }
+        },
+        "modal_accuracy": {
+          "abstain_ok": {
+            "correct": 14,
+            "total": 22,
+            "value": 0.6363636363636364
+          },
+          "grounded": {
+            "correct": 21,
+            "total": 22,
+            "value": 0.9545454545454546
+          },
+          "quality": {
+            "correct": 14,
+            "total": 22,
+            "value": 0.6363636363636364
+          },
+          "binary_pooled": {
+            "correct": 35,
+            "total": 44,
+            "value": 0.7954545454545454
+          },
+          "all": {
+            "correct": 49,
+            "total": 66,
+            "value": 0.7424242424242424
+          }
+        },
+        "repeatability": {
+          "abstain_ok": 0.9227272727272726,
+          "grounded": 0.9863636363636363,
+          "quality": 0.8113636363636363,
+          "binary_pooled": 0.9545454545454546,
+          "all": 0.9068181818181819
+        },
+        "signal": {
+          "abstain_ok": 0.6563946280991734,
+          "grounded": 0.9325619834710743,
+          "quality": 0.5089462809917356,
+          "binary_pooled": 0.790754132231405,
+          "all": 0.6904183884297521
+        },
+        "quality_variance": {
+          "quality": {
+            "per_case": {
+              "h01": 0.013124999999999998,
+              "h02": 0.014218749999999999,
+              "h03": 0.010000000000000002,
+              "h04": 0.002968750000000001,
+              "h05": 0.015625,
+              "h06": 0.002968750000000001,
+              "h07": 0.013124999999999998,
+              "h08": 0.015000000000000003,
+              "h09": 0.005625000000000001,
+              "h10": 0.01171875,
+              "q01": 0.0,
+              "q02": 0.0,
+              "q03": 0.0,
+              "q04": 0.01171875,
+              "q05": 0.005625,
+              "q05v1": 0.021250000000000005,
+              "q06": 0.0029687499999999996,
+              "q07": 0.0029687499999999996,
+              "q08": 0.005625,
+              "q09": 0.0,
+              "q10": 0.015468750000000007,
+              "q11": 0.016249999999999997
+            },
+            "mean": 0.00846590909090909,
+            "failure_rate": 0.0,
+            "x_jev": null
+          }
+        },
+        "failures": {
+          "total": 6,
+          "per_eval": {
+            "abstain_ok": 1,
+            "grounded": 5,
+            "quality": 0
+          }
+        },
+        "unstable": {
+          "abstain_ok": {
+            "h01": {
+              "false": 12,
+              "true": 8
+            },
+            "h02": {
+              "false": 19,
+              "failed": 1
+            },
+            "h03": {
+              "false": 19,
+              "true": 1
+            },
+            "h04": {
+              "false": 16,
+              "true": 4
+            },
+            "h05": {
+              "false": 12,
+              "true": 8
+            },
+            "h07": {
+              "false": 10,
+              "true": 10
+            },
+            "q05v1": {
+              "true": 18,
+              "false": 2
+            }
+          },
+          "grounded": {
+            "q05v1": {
+              "true": 19,
+              "false": 1
+            },
+            "q06": {
+              "true": 15,
+              "failed": 5
+            }
+          },
+          "quality": {
+            "h01": {
+              "2": 14,
+              "1": 6
+            },
+            "h02": {
+              "1": 13,
+              "0": 7
+            },
+            "h03": {
+              "0": 16,
+              "1": 4
+            },
+            "h04": {
+              "1": 19,
+              "2": 1
+            },
+            "h05": {
+              "2": 10,
+              "1": 10
+            },
+            "h06": {
+              "1": 19,
+              "2": 1
+            },
+            "h07": {
+              "1": 14,
+              "2": 6
+            },
+            "h08": {
+              "0": 12,
+              "1": 8
+            },
+            "h09": {
+              "1": 18,
+              "0": 2
+            },
+            "h10": {
+              "1": 15,
+              "0": 5
+            },
+            "q04": {
+              "4": 15,
+              "3": 5
+            },
+            "q05": {
+              "4": 18,
+              "3": 2
+            },
+            "q05v1": {
+              "2": 13,
+              "3": 6,
+              "4": 1
+            },
+            "q06": {
+              "2": 19,
+              "3": 1
+            },
+            "q07": {
+              "4": 19,
+              "3": 1
+            },
+            "q08": {
+              "4": 18,
+              "3": 2
+            },
+            "q10": {
+              "3": 11,
+              "4": 9
+            },
+            "q11": {
+              "3": 14,
+              "2": 5,
+              "4": 1
+            }
+          }
+        },
+        "modal": {
+          "grounded|q01": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "abstain_ok|q01": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "grounded|q02": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "quality|q01": {
+            "gold": "4",
+            "modal": "4",
+            "agreement": 1.0,
+            "votes": {
+              "4": 20
+            }
+          },
+          "abstain_ok|q02": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "quality|q02": {
+            "gold": "4",
+            "modal": "4",
+            "agreement": 1.0,
+            "votes": {
+              "4": 20
+            }
+          },
+          "grounded|q03": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "abstain_ok|q03": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "quality|q03": {
+            "gold": "4",
+            "modal": "4",
+            "agreement": 1.0,
+            "votes": {
+              "4": 20
+            }
+          },
+          "grounded|q04": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "abstain_ok|q04": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "quality|q04": {
+            "gold": "3",
+            "modal": "4",
+            "agreement": 0.75,
+            "votes": {
+              "4": 15,
+              "3": 5
+            }
+          },
+          "grounded|q05": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "abstain_ok|q05": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "quality|q05": {
+            "gold": "4",
+            "modal": "4",
+            "agreement": 0.9,
+            "votes": {
+              "4": 18,
+              "3": 2
+            }
+          },
+          "grounded|q06": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 0.75,
+            "votes": {
+              "true": 15,
+              "failed": 5
+            }
+          },
+          "abstain_ok|q06": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "quality|q06": {
+            "gold": "3",
+            "modal": "2",
+            "agreement": 0.95,
+            "votes": {
+              "2": 19,
+              "3": 1
+            }
+          },
+          "grounded|q07": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "abstain_ok|q07": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "grounded|q08": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "quality|q07": {
+            "gold": "4",
+            "modal": "4",
+            "agreement": 0.95,
+            "votes": {
+              "4": 19,
+              "3": 1
+            }
+          },
+          "abstain_ok|q08": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "quality|q08": {
+            "gold": "4",
+            "modal": "4",
+            "agreement": 0.9,
+            "votes": {
+              "4": 18,
+              "3": 2
+            }
+          },
+          "grounded|q09": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "abstain_ok|q09": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "quality|q09": {
+            "gold": "4",
+            "modal": "4",
+            "agreement": 1.0,
+            "votes": {
+              "4": 20
+            }
+          },
+          "grounded|q10": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "abstain_ok|q10": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "grounded|q11": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "quality|q10": {
+            "gold": "3",
+            "modal": "3",
+            "agreement": 0.55,
+            "votes": {
+              "3": 11,
+              "4": 9
+            }
+          },
+          "abstain_ok|q11": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "quality|q11": {
+            "gold": "3",
+            "modal": "3",
+            "agreement": 0.7,
+            "votes": {
+              "3": 14,
+              "2": 5,
+              "4": 1
+            }
+          },
+          "grounded|q05v1": {
+            "gold": "false",
+            "modal": "true",
+            "agreement": 0.95,
+            "votes": {
+              "true": 19,
+              "false": 1
+            }
+          },
+          "grounded|h01": {
+            "gold": "false",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "abstain_ok|q05v1": {
+            "gold": "false",
+            "modal": "true",
+            "agreement": 0.9,
+            "votes": {
+              "true": 18,
+              "false": 2
+            }
+          },
+          "quality|q05v1": {
+            "gold": "1",
+            "modal": "2",
+            "agreement": 0.65,
+            "votes": {
+              "2": 13,
+              "3": 6,
+              "4": 1
+            }
+          },
+          "abstain_ok|h01": {
+            "gold": "true",
+            "modal": "false",
+            "agreement": 0.6,
+            "votes": {
+              "false": 12,
+              "true": 8
+            }
+          },
+          "quality|h01": {
+            "gold": "1",
+            "modal": "2",
+            "agreement": 0.7,
+            "votes": {
+              "2": 14,
+              "1": 6
+            }
+          },
+          "grounded|h02": {
+            "gold": "false",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "quality|h02": {
+            "gold": "0",
+            "modal": "1",
+            "agreement": 0.65,
+            "votes": {
+              "1": 13,
+              "0": 7
+            }
+          },
+          "grounded|h03": {
+            "gold": "false",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "abstain_ok|h02": {
+            "gold": "true",
+            "modal": "false",
+            "agreement": 0.95,
+            "votes": {
+              "false": 19,
+              "failed": 1
+            }
+          },
+          "abstain_ok|h03": {
+            "gold": "true",
+            "modal": "false",
+            "agreement": 0.95,
+            "votes": {
+              "false": 19,
+              "true": 1
+            }
+          },
+          "quality|h03": {
+            "gold": "0",
+            "modal": "0",
+            "agreement": 0.8,
+            "votes": {
+              "0": 16,
+              "1": 4
+            }
+          },
+          "grounded|h04": {
+            "gold": "false",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "abstain_ok|h04": {
+            "gold": "true",
+            "modal": "false",
+            "agreement": 0.8,
+            "votes": {
+              "false": 16,
+              "true": 4
+            }
+          },
+          "quality|h04": {
+            "gold": "1",
+            "modal": "1",
+            "agreement": 0.95,
+            "votes": {
+              "1": 19,
+              "2": 1
+            }
+          },
+          "grounded|h05": {
+            "gold": "false",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "abstain_ok|h05": {
+            "gold": "true",
+            "modal": "false",
+            "agreement": 0.6,
+            "votes": {
+              "false": 12,
+              "true": 8
+            }
+          },
+          "quality|h05": {
+            "gold": "1",
+            "modal": "2",
+            "agreement": 0.5,
+            "votes": {
+              "2": 10,
+              "1": 10
+            }
+          },
+          "grounded|h06": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "abstain_ok|h06": {
+            "gold": "true",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "quality|h06": {
+            "gold": "1",
+            "modal": "1",
+            "agreement": 0.95,
+            "votes": {
+              "1": 19,
+              "2": 1
+            }
+          },
+          "grounded|h07": {
+            "gold": "false",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "abstain_ok|h07": {
+            "gold": "true",
+            "modal": "false",
+            "agreement": 0.5,
+            "votes": {
+              "false": 10,
+              "true": 10
+            }
+          },
+          "quality|h07": {
+            "gold": "1",
+            "modal": "1",
+            "agreement": 0.7,
+            "votes": {
+              "1": 14,
+              "2": 6
+            }
+          },
+          "abstain_ok|h08": {
+            "gold": "false",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "grounded|h08": {
+            "gold": "false",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "quality|h08": {
+            "gold": "0",
+            "modal": "0",
+            "agreement": 0.6,
+            "votes": {
+              "0": 12,
+              "1": 8
+            }
+          },
+          "grounded|h09": {
+            "gold": "false",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "abstain_ok|h09": {
+            "gold": "false",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "quality|h09": {
+            "gold": "0",
+            "modal": "1",
+            "agreement": 0.9,
+            "votes": {
+              "1": 18,
+              "0": 2
+            }
+          },
+          "grounded|h10": {
+            "gold": "false",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "abstain_ok|h10": {
+            "gold": "false",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "quality|h10": {
+            "gold": "0",
+            "modal": "1",
+            "agreement": 0.75,
+            "votes": {
+              "1": 15,
+              "0": 5
+            }
+          }
+        },
+        "gold_distribution": {
+          "abstain_ok": {
+            "true": 18,
+            "false": 4
+          },
+          "grounded": {
+            "true": 12,
+            "false": 10
+          },
+          "quality": {
+            "4": 7,
+            "1": 6,
+            "0": 5,
+            "3": 4
+          }
+        },
+        "cost": {
+          "input_tokens_per_call": 9884.634980988592,
+          "output_tokens_per_call": 620.7019011406844,
+          "cached_share": 0.9126612374930712,
+          "list_cost_per_call_usd": 0.003710232775665399,
+          "list_cost_per_decision_usd": 0.0037102327756653986,
+          "calls": 1320,
+          "decisions": 1320,
+          "decisions_per_call": 1.0,
+          "cost_per_call_usd": 0.0012696479545454544,
+          "cost_per_decision_usd": 0.0012696479545454544,
+          "total_cost_usd": 1.6759353,
+          "latency_per_call_s": 5.810825146117008,
+          "latency_p50_s": 3.5274980624672025,
+          "latency_p95_s": 14.896077158581463,
+          "latency_per_decision_s": 5.810825146117008
+        }
+      },
+      "gemini-3.8-flash": {
+        "judge": "gemini-3.8-flash",
+        "model": "gemini-3.8-flash",
+        "reps": 20,
+        "cases": [
+          "h01",
+          "h02",
+          "h03",
+          "h04",
+          "h05",
+          "h06",
+          "h07",
+          "h08",
+          "h09",
+          "h10",
+          "q01",
+          "q02",
+          "q03",
+          "q04",
+          "q05",
+          "q05v1",
+          "q06",
+          "q07",
+          "q08",
+          "q09",
+          "q10",
+          "q11"
+        ],
+        "binary_evals": [
+          "abstain_ok",
+          "grounded"
+        ],
+        "score_evals": [
+          "quality"
+        ],
+        "accuracy": {
+          "abstain_ok": {
+            "correct": 361,
+            "total": 440,
+            "failed": 2,
+            "value": 0.8204545454545454
+          },
+          "grounded": {
+            "correct": 420,
+            "total": 440,
+            "failed": 0,
+            "value": 0.9545454545454546
+          },
+          "quality": {
+            "correct": 301,
+            "total": 440,
+            "failed": 0,
+            "value": 0.6840909090909091
+          },
+          "binary_pooled": {
+            "correct": 781,
+            "total": 880,
+            "failed": 2,
+            "value": 0.8875
+          },
+          "all": {
+            "correct": 1082,
+            "total": 1320,
+            "failed": 2,
+            "value": 0.8196969696969697
+          }
+        },
+        "modal_accuracy": {
+          "abstain_ok": {
+            "correct": 18,
+            "total": 22,
+            "value": 0.8181818181818182
+          },
+          "grounded": {
+            "correct": 21,
+            "total": 22,
+            "value": 0.9545454545454546
+          },
+          "quality": {
+            "correct": 15,
+            "total": 22,
+            "value": 0.6818181818181818
+          },
+          "binary_pooled": {
+            "correct": 39,
+            "total": 44,
+            "value": 0.8863636363636364
+          },
+          "all": {
+            "correct": 54,
+            "total": 66,
+            "value": 0.8181818181818182
+          }
+        },
+        "repeatability": {
+          "abstain_ok": 0.9568181818181819,
+          "grounded": 1.0,
+          "quality": 0.9704545454545456,
+          "binary_pooled": 0.9784090909090909,
+          "all": 0.9757575757575758
+        },
+        "signal": {
+          "abstain_ok": 0.785025826446281,
+          "grounded": 0.9545454545454546,
+          "quality": 0.663879132231405,
+          "binary_pooled": 0.8683380681818181,
+          "all": 0.7998255280073463
+        },
+        "quality_variance": {
+          "quality": {
+            "per_case": {
+              "h01": 0.01171875,
+              "h02": 0.0,
+              "h03": 0.0,
+              "h04": 0.0,
+              "h05": 0.005625,
+              "h06": 0.0,
+              "h07": 0.00796875,
+              "h08": 0.0,
+              "h09": 0.0,
+              "h10": 0.0,
+              "q01": 0.0,
+              "q02": 0.0,
+              "q03": 0.0,
+              "q04": 0.0,
+              "q05": 0.0,
+              "q05v1": 0.0,
+              "q06": 0.00796875,
+              "q07": 0.0,
+              "q08": 0.0,
+              "q09": 0.0,
+              "q10": 0.0,
+              "q11": 0.0
+            },
+            "mean": 0.001512784090909091,
+            "failure_rate": 0.0,
+            "x_jev": null
+          }
+        },
+        "failures": {
+          "total": 2,
+          "per_eval": {
+            "abstain_ok": 2,
+            "grounded": 0,
+            "quality": 0
+          }
+        },
+        "unstable": {
+          "abstain_ok": {
+            "h01": {
+              "true": 16,
+              "false": 4
+            },
+            "h02": {
+              "true": 17,
+              "false": 3
+            },
+            "h05": {
+              "false": 12,
+              "true": 8
+            },
+            "q05v1": {
+              "true": 18,
+              "false": 2
+            },
+            "q10": {
+              "true": 18,
+              "failed": 2
+            }
+          },
+          "grounded": {},
+          "quality": {
+            "h01": {
+              "1": 15,
+              "2": 5
+            },
+            "h05": {
+              "3": 18,
+              "2": 2
+            },
+            "h07": {
+              "2": 17,
+              "1": 3
+            },
+            "q06": {
+              "4": 17,
+              "3": 3
+            }
+          }
+        },
+        "modal": {
+          "grounded|q01": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "abstain_ok|q01": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "grounded|q02": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "abstain_ok|q02": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "quality|q01": {
+            "gold": "4",
+            "modal": "4",
+            "agreement": 1.0,
+            "votes": {
+              "4": 20
+            }
+          },
+          "quality|q02": {
+            "gold": "4",
+            "modal": "4",
+            "agreement": 1.0,
+            "votes": {
+              "4": 20
+            }
+          },
+          "grounded|q03": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "abstain_ok|q03": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "grounded|q04": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "abstain_ok|q04": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "quality|q03": {
+            "gold": "4",
+            "modal": "4",
+            "agreement": 1.0,
+            "votes": {
+              "4": 20
+            }
+          },
+          "quality|q04": {
+            "gold": "3",
+            "modal": "4",
+            "agreement": 1.0,
+            "votes": {
+              "4": 20
+            }
+          },
+          "grounded|q05": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "abstain_ok|q05": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "grounded|q06": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "abstain_ok|q06": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "quality|q05": {
+            "gold": "4",
+            "modal": "4",
+            "agreement": 1.0,
+            "votes": {
+              "4": 20
+            }
+          },
+          "quality|q06": {
+            "gold": "3",
+            "modal": "4",
+            "agreement": 0.85,
+            "votes": {
+              "4": 17,
+              "3": 3
+            }
+          },
+          "grounded|q07": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "abstain_ok|q07": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "grounded|q08": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "abstain_ok|q08": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "quality|q07": {
+            "gold": "4",
+            "modal": "4",
+            "agreement": 1.0,
+            "votes": {
+              "4": 20
+            }
+          },
+          "quality|q08": {
+            "gold": "4",
+            "modal": "4",
+            "agreement": 1.0,
+            "votes": {
+              "4": 20
+            }
+          },
+          "grounded|q09": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "abstain_ok|q09": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "grounded|q10": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "quality|q09": {
+            "gold": "4",
+            "modal": "4",
+            "agreement": 1.0,
+            "votes": {
+              "4": 20
+            }
+          },
+          "quality|q10": {
+            "gold": "3",
+            "modal": "4",
+            "agreement": 1.0,
+            "votes": {
+              "4": 20
+            }
+          },
+          "grounded|q11": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "abstain_ok|q11": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "quality|q11": {
+            "gold": "3",
+            "modal": "4",
+            "agreement": 1.0,
+            "votes": {
+              "4": 20
+            }
+          },
+          "grounded|q05v1": {
+            "gold": "false",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "abstain_ok|q05v1": {
+            "gold": "false",
+            "modal": "true",
+            "agreement": 0.9,
+            "votes": {
+              "true": 18,
+              "false": 2
+            }
+          },
+          "abstain_ok|q10": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 0.9,
+            "votes": {
+              "true": 18,
+              "failed": 2
+            }
+          },
+          "quality|q05v1": {
+            "gold": "1",
+            "modal": "4",
+            "agreement": 1.0,
+            "votes": {
+              "4": 20
+            }
+          },
+          "grounded|h01": {
+            "gold": "false",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "abstain_ok|h01": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 0.8,
+            "votes": {
+              "true": 16,
+              "false": 4
+            }
+          },
+          "grounded|h02": {
+            "gold": "false",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "abstain_ok|h02": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 0.85,
+            "votes": {
+              "true": 17,
+              "false": 3
+            }
+          },
+          "quality|h01": {
+            "gold": "1",
+            "modal": "1",
+            "agreement": 0.75,
+            "votes": {
+              "1": 15,
+              "2": 5
+            }
+          },
+          "quality|h02": {
+            "gold": "0",
+            "modal": "0",
+            "agreement": 1.0,
+            "votes": {
+              "0": 20
+            }
+          },
+          "grounded|h03": {
+            "gold": "false",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "abstain_ok|h03": {
+            "gold": "true",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "grounded|h04": {
+            "gold": "false",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "abstain_ok|h04": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "quality|h03": {
+            "gold": "0",
+            "modal": "0",
+            "agreement": 1.0,
+            "votes": {
+              "0": 20
+            }
+          },
+          "quality|h04": {
+            "gold": "1",
+            "modal": "1",
+            "agreement": 1.0,
+            "votes": {
+              "1": 20
+            }
+          },
+          "grounded|h05": {
+            "gold": "false",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "abstain_ok|h05": {
+            "gold": "true",
+            "modal": "false",
+            "agreement": 0.6,
+            "votes": {
+              "false": 12,
+              "true": 8
+            }
+          },
+          "grounded|h06": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "abstain_ok|h06": {
+            "gold": "true",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "quality|h05": {
+            "gold": "1",
+            "modal": "3",
+            "agreement": 0.9,
+            "votes": {
+              "3": 18,
+              "2": 2
+            }
+          },
+          "quality|h06": {
+            "gold": "1",
+            "modal": "1",
+            "agreement": 1.0,
+            "votes": {
+              "1": 20
+            }
+          },
+          "grounded|h07": {
+            "gold": "false",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "abstain_ok|h07": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "grounded|h08": {
+            "gold": "false",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "abstain_ok|h08": {
+            "gold": "false",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "quality|h07": {
+            "gold": "1",
+            "modal": "2",
+            "agreement": 0.85,
+            "votes": {
+              "2": 17,
+              "1": 3
+            }
+          },
+          "quality|h08": {
+            "gold": "0",
+            "modal": "0",
+            "agreement": 1.0,
+            "votes": {
+              "0": 20
+            }
+          },
+          "grounded|h09": {
+            "gold": "false",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "abstain_ok|h09": {
+            "gold": "false",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "grounded|h10": {
+            "gold": "false",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "abstain_ok|h10": {
+            "gold": "false",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "quality|h09": {
+            "gold": "0",
+            "modal": "0",
+            "agreement": 1.0,
+            "votes": {
+              "0": 20
+            }
+          },
+          "quality|h10": {
+            "gold": "0",
+            "modal": "0",
+            "agreement": 1.0,
+            "votes": {
+              "0": 20
+            }
+          }
+        },
+        "gold_distribution": {
+          "abstain_ok": {
+            "true": 18,
+            "false": 4
+          },
+          "grounded": {
+            "true": 12,
+            "false": 10
+          },
+          "quality": {
+            "4": 7,
+            "1": 6,
+            "0": 5,
+            "3": 4
+          }
+        },
+        "cost": {
+          "input_tokens_per_call": 10925.56904400607,
+          "output_tokens_per_call": 359.59332321699543,
+          "cached_share": 0.6070626879353329,
+          "list_cost_per_call_usd": 0.009542651745068284,
+          "list_cost_per_decision_usd": 0.009542651745068284,
+          "calls": 1320,
+          "decisions": 1320,
+          "decisions_per_call": 1.0,
+          "cost_per_call_usd": 0.005058036348484849,
+          "cost_per_decision_usd": 0.005058036348484849,
+          "total_cost_usd": 6.67660798,
+          "latency_per_call_s": 4.676599461463224,
+          "latency_p50_s": 2.846194812504109,
+          "latency_p95_s": 12.925470589566974,
+          "latency_per_decision_s": 4.676599461463224
+        }
+      },
+      "gpt-5.6-luna": {
+        "judge": "gpt-5.6-luna",
+        "model": "gpt-5.6-luna",
+        "reps": 20,
+        "cases": [
+          "h01",
+          "h02",
+          "h03",
+          "h04",
+          "h05",
+          "h06",
+          "h07",
+          "h08",
+          "h09",
+          "h10",
+          "q01",
+          "q02",
+          "q03",
+          "q04",
+          "q05",
+          "q05v1",
+          "q06",
+          "q07",
+          "q08",
+          "q09",
+          "q10",
+          "q11"
+        ],
+        "binary_evals": [
+          "abstain_ok",
+          "grounded"
+        ],
+        "score_evals": [
+          "quality"
+        ],
+        "accuracy": {
+          "abstain_ok": {
+            "correct": 278,
+            "total": 440,
+            "failed": 3,
+            "value": 0.6318181818181818
+          },
+          "grounded": {
+            "correct": 415,
+            "total": 440,
+            "failed": 0,
+            "value": 0.9431818181818182
+          },
+          "quality": {
+            "correct": 279,
+            "total": 440,
+            "failed": 1,
+            "value": 0.634090909090909
+          },
+          "binary_pooled": {
+            "correct": 693,
+            "total": 880,
+            "failed": 3,
+            "value": 0.7875
+          },
+          "all": {
+            "correct": 972,
+            "total": 1320,
+            "failed": 4,
+            "value": 0.7363636363636363
+          }
+        },
+        "modal_accuracy": {
+          "abstain_ok": {
+            "correct": 14,
+            "total": 22,
+            "value": 0.6363636363636364
+          },
+          "grounded": {
+            "correct": 22,
+            "total": 22,
+            "value": 1.0
+          },
+          "quality": {
+            "correct": 14,
+            "total": 22,
+            "value": 0.6363636363636364
+          },
+          "binary_pooled": {
+            "correct": 36,
+            "total": 44,
+            "value": 0.8181818181818182
+          },
+          "all": {
+            "correct": 50,
+            "total": 66,
+            "value": 0.7575757575757576
+          }
+        },
+        "repeatability": {
+          "abstain_ok": 0.9681818181818183,
+          "grounded": 0.9431818181818182,
+          "quality": 0.9204545454545453,
+          "binary_pooled": 0.9556818181818181,
+          "all": 0.943939393939394
+        },
+        "signal": {
+          "abstain_ok": 0.611714876033058,
+          "grounded": 0.8895919421487605,
+          "quality": 0.5836518595041321,
+          "binary_pooled": 0.7525994318181817,
+          "all": 0.6950826446280992
+        },
+        "quality_variance": {
+          "quality": {
+            "per_case": {
+              "h01": 0.005625,
+              "h02": 0.00796875,
+              "h03": 0.0,
+              "h04": 0.0029687500000000005,
+              "h05": 0.002968750000000001,
+              "h06": 0.0,
+              "h07": 0.0,
+              "h08": 0.00296875,
+              "h09": 0.013124999999999998,
+              "h10": 0.0,
+              "q01": 0.005625,
+              "q02": 0.0,
+              "q03": 0.0,
+              "q04": 0.0029687499999999996,
+              "q05": 0.0,
+              "q05v1": 0.009999999999999998,
+              "q06": 0.0,
+              "q07": 0.016249999999999997,
+              "q08": 0.0,
+              "q09": 0.0,
+              "q10": 0.013504155124653737,
+              "q11": 0.0125
+            },
+            "mean": 0.004385132051120624,
+            "failure_rate": 0.0022727272727272726,
+            "x_jev": null
+          }
+        },
+        "failures": {
+          "total": 4,
+          "per_eval": {
+            "abstain_ok": 3,
+            "grounded": 0,
+            "quality": 1
+          }
+        },
+        "unstable": {
+          "abstain_ok": {
+            "q05v1": {
+              "true": 14,
+              "false": 6
+            },
+            "q07": {
+              "true": 12,
+              "false": 5,
+              "failed": 3
+            }
+          },
+          "grounded": {
+            "q05v1": {
+              "false": 11,
+              "true": 9
+            },
+            "q07": {
+              "true": 14,
+              "false": 6
+            },
+            "q10": {
+              "true": 19,
+              "false": 1
+            },
+            "q11": {
+              "true": 11,
+              "false": 9
+            }
+          },
+          "quality": {
+            "h01": {
+              "2": 18,
+              "1": 2
+            },
+            "h02": {
+              "0": 17,
+              "1": 3
+            },
+            "h04": {
+              "1": 19,
+              "2": 1
+            },
+            "h05": {
+              "2": 19,
+              "1": 1
+            },
+            "h08": {
+              "0": 19,
+              "1": 1
+            },
+            "h09": {
+              "1": 14,
+              "0": 6
+            },
+            "q01": {
+              "4": 18,
+              "3": 2
+            },
+            "q04": {
+              "4": 19,
+              "3": 1
+            },
+            "q05v1": {
+              "2": 16,
+              "3": 4
+            },
+            "q07": {
+              "2": 17,
+              "3": 2,
+              "4": 1
+            },
+            "q10": {
+              "3": 13,
+              "4": 6,
+              "failed": 1
+            },
+            "q11": {
+              "2": 16,
+              "1": 2,
+              "3": 2
+            }
+          }
+        },
+        "modal": {
+          "grounded|q01": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "abstain_ok|q01": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "grounded|q02": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "abstain_ok|q02": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "quality|q01": {
+            "gold": "4",
+            "modal": "4",
+            "agreement": 0.9,
+            "votes": {
+              "4": 18,
+              "3": 2
+            }
+          },
+          "quality|q02": {
+            "gold": "4",
+            "modal": "4",
+            "agreement": 1.0,
+            "votes": {
+              "4": 20
+            }
+          },
+          "grounded|q03": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "abstain_ok|q03": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "quality|q03": {
+            "gold": "4",
+            "modal": "4",
+            "agreement": 1.0,
+            "votes": {
+              "4": 20
+            }
+          },
+          "grounded|q04": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "abstain_ok|q04": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "quality|q04": {
+            "gold": "3",
+            "modal": "4",
+            "agreement": 0.95,
+            "votes": {
+              "4": 19,
+              "3": 1
+            }
+          },
+          "grounded|q05": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "abstain_ok|q05": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "quality|q05": {
+            "gold": "4",
+            "modal": "4",
+            "agreement": 1.0,
+            "votes": {
+              "4": 20
+            }
+          },
+          "grounded|q06": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "abstain_ok|q06": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "quality|q06": {
+            "gold": "3",
+            "modal": "2",
+            "agreement": 1.0,
+            "votes": {
+              "2": 20
+            }
+          },
+          "grounded|q07": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 0.7,
+            "votes": {
+              "true": 14,
+              "false": 6
+            }
+          },
+          "abstain_ok|q07": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 0.6,
+            "votes": {
+              "true": 12,
+              "false": 5,
+              "failed": 3
+            }
+          },
+          "quality|q07": {
+            "gold": "4",
+            "modal": "2",
+            "agreement": 0.85,
+            "votes": {
+              "2": 17,
+              "3": 2,
+              "4": 1
+            }
+          },
+          "grounded|q08": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "abstain_ok|q08": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "quality|q08": {
+            "gold": "4",
+            "modal": "4",
+            "agreement": 1.0,
+            "votes": {
+              "4": 20
+            }
+          },
+          "grounded|q09": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "abstain_ok|q09": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "quality|q09": {
+            "gold": "4",
+            "modal": "4",
+            "agreement": 1.0,
+            "votes": {
+              "4": 20
+            }
+          },
+          "grounded|q10": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 0.95,
+            "votes": {
+              "true": 19,
+              "false": 1
+            }
+          },
+          "abstain_ok|q10": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "grounded|q11": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 0.55,
+            "votes": {
+              "true": 11,
+              "false": 9
+            }
+          },
+          "abstain_ok|q11": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "quality|q11": {
+            "gold": "3",
+            "modal": "2",
+            "agreement": 0.8,
+            "votes": {
+              "2": 16,
+              "1": 2,
+              "3": 2
+            }
+          },
+          "quality|q10": {
+            "gold": "3",
+            "modal": "3",
+            "agreement": 0.65,
+            "votes": {
+              "3": 13,
+              "4": 6,
+              "failed": 1
+            }
+          },
+          "grounded|q05v1": {
+            "gold": "false",
+            "modal": "false",
+            "agreement": 0.55,
+            "votes": {
+              "false": 11,
+              "true": 9
+            }
+          },
+          "abstain_ok|q05v1": {
+            "gold": "false",
+            "modal": "true",
+            "agreement": 0.7,
+            "votes": {
+              "true": 14,
+              "false": 6
+            }
+          },
+          "grounded|h01": {
+            "gold": "false",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "abstain_ok|h01": {
+            "gold": "true",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "quality|q05v1": {
+            "gold": "1",
+            "modal": "2",
+            "agreement": 0.8,
+            "votes": {
+              "2": 16,
+              "3": 4
+            }
+          },
+          "quality|h01": {
+            "gold": "1",
+            "modal": "2",
+            "agreement": 0.9,
+            "votes": {
+              "2": 18,
+              "1": 2
+            }
+          },
+          "grounded|h02": {
+            "gold": "false",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "abstain_ok|h02": {
+            "gold": "true",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "quality|h02": {
+            "gold": "0",
+            "modal": "0",
+            "agreement": 0.85,
+            "votes": {
+              "0": 17,
+              "1": 3
+            }
+          },
+          "grounded|h03": {
+            "gold": "false",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "abstain_ok|h03": {
+            "gold": "true",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "quality|h03": {
+            "gold": "0",
+            "modal": "0",
+            "agreement": 1.0,
+            "votes": {
+              "0": 20
+            }
+          },
+          "grounded|h04": {
+            "gold": "false",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "abstain_ok|h04": {
+            "gold": "true",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "quality|h04": {
+            "gold": "1",
+            "modal": "1",
+            "agreement": 0.95,
+            "votes": {
+              "1": 19,
+              "2": 1
+            }
+          },
+          "grounded|h05": {
+            "gold": "false",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "abstain_ok|h05": {
+            "gold": "true",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "quality|h05": {
+            "gold": "1",
+            "modal": "2",
+            "agreement": 0.95,
+            "votes": {
+              "2": 19,
+              "1": 1
+            }
+          },
+          "grounded|h06": {
+            "gold": "true",
+            "modal": "true",
+            "agreement": 1.0,
+            "votes": {
+              "true": 20
+            }
+          },
+          "abstain_ok|h06": {
+            "gold": "true",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "quality|h06": {
+            "gold": "1",
+            "modal": "1",
+            "agreement": 1.0,
+            "votes": {
+              "1": 20
+            }
+          },
+          "grounded|h07": {
+            "gold": "false",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "abstain_ok|h07": {
+            "gold": "true",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "quality|h07": {
+            "gold": "1",
+            "modal": "1",
+            "agreement": 1.0,
+            "votes": {
+              "1": 20
+            }
+          },
+          "grounded|h08": {
+            "gold": "false",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "abstain_ok|h08": {
+            "gold": "false",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "quality|h08": {
+            "gold": "0",
+            "modal": "0",
+            "agreement": 0.95,
+            "votes": {
+              "0": 19,
+              "1": 1
+            }
+          },
+          "grounded|h09": {
+            "gold": "false",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "abstain_ok|h09": {
+            "gold": "false",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "quality|h09": {
+            "gold": "0",
+            "modal": "1",
+            "agreement": 0.7,
+            "votes": {
+              "1": 14,
+              "0": 6
+            }
+          },
+          "grounded|h10": {
+            "gold": "false",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "abstain_ok|h10": {
+            "gold": "false",
+            "modal": "false",
+            "agreement": 1.0,
+            "votes": {
+              "false": 20
+            }
+          },
+          "quality|h10": {
+            "gold": "0",
+            "modal": "0",
+            "agreement": 1.0,
+            "votes": {
+              "0": 20
+            }
+          }
+        },
+        "gold_distribution": {
+          "abstain_ok": {
+            "true": 18,
+            "false": 4
+          },
+          "grounded": {
+            "true": 12,
+            "false": 10
+          },
+          "quality": {
+            "4": 7,
+            "1": 6,
+            "0": 5,
+            "3": 4
+          }
+        },
+        "cost": {
+          "input_tokens_per_call": 9482.55775075988,
+          "output_tokens_per_call": 162.75075987841944,
+          "cached_share": 0.9996836296620751,
+          "list_cost_per_call_usd": 0.002091812462006079,
+          "list_cost_per_decision_usd": 0.002091812462006079,
+          "calls": 1320,
+          "decisions": 1320,
+          "decisions_per_call": 1.0,
+          "cost_per_call_usd": 0.0003843239090909091,
+          "cost_per_decision_usd": 0.0003843239090909091,
+          "total_cost_usd": 0.50730756,
+          "latency_per_call_s": 4.800672144449764,
+          "latency_p50_s": 3.1085357919801027,
+          "latency_p95_s": 8.74090692649479,
+          "latency_per_decision_s": 4.800672144449764
+        }
+      }
+    },
+    "baseline": {
+      "judge": "baseline(majority)",
+      "model": "baseline(majority)",
+      "reps": 20,
+      "cases": [
+        "h01",
+        "h02",
+        "h03",
+        "h04",
+        "h05",
+        "h06",
+        "h07",
+        "h08",
+        "h09",
+        "h10",
+        "q01",
+        "q02",
+        "q03",
+        "q04",
+        "q05",
+        "q05v1",
+        "q06",
+        "q07",
+        "q08",
+        "q09",
+        "q10",
+        "q11"
+      ],
+      "binary_evals": [
+        "abstain_ok",
+        "grounded"
+      ],
+      "score_evals": [
+        "quality"
+      ],
+      "accuracy": {
+        "abstain_ok": {
+          "correct": 360,
+          "total": 440,
+          "failed": 0,
+          "value": 0.8181818181818182
+        },
+        "grounded": {
+          "correct": 240,
+          "total": 440,
+          "failed": 0,
+          "value": 0.5454545454545454
+        },
+        "quality": {
+          "correct": 140,
+          "total": 440,
+          "failed": 0,
+          "value": 0.3181818181818182
+        },
+        "binary_pooled": {
+          "correct": 600,
+          "total": 880,
+          "failed": 0,
+          "value": 0.6818181818181818
+        },
+        "all": {
+          "correct": 740,
+          "total": 1320,
+          "failed": 0,
+          "value": 0.5606060606060606
+        }
+      },
+      "modal_accuracy": {
+        "abstain_ok": {
+          "correct": 18,
+          "total": 22,
+          "value": 0.8181818181818182
+        },
+        "grounded": {
+          "correct": 12,
+          "total": 22,
+          "value": 0.5454545454545454
+        },
+        "quality": {
+          "correct": 7,
+          "total": 22,
+          "value": 0.3181818181818182
+        },
+        "binary_pooled": {
+          "correct": 30,
+          "total": 44,
+          "value": 0.6818181818181818
+        },
+        "all": {
+          "correct": 37,
+          "total": 66,
+          "value": 0.5606060606060606
+        }
+      },
+      "repeatability": {
+        "abstain_ok": 1.0,
+        "grounded": 1.0,
+        "quality": 1.0,
+        "binary_pooled": 1.0,
+        "all": 1.0
+      },
+      "signal": {
+        "abstain_ok": 0.8181818181818182,
+        "grounded": 0.5454545454545454,
+        "quality": 0.3181818181818182,
+        "binary_pooled": 0.6818181818181818,
+        "all": 0.5606060606060606
+      },
+      "quality_variance": {
+        "quality": {
+          "per_case": {
+            "h01": 0.0,
+            "h02": 0.0,
+            "h03": 0.0,
+            "h04": 0.0,
+            "h05": 0.0,
+            "h06": 0.0,
+            "h07": 0.0,
+            "h08": 0.0,
+            "h09": 0.0,
+            "h10": 0.0,
+            "q01": 0.0,
+            "q02": 0.0,
+            "q03": 0.0,
+            "q04": 0.0,
+            "q05": 0.0,
+            "q05v1": 0.0,
+            "q06": 0.0,
+            "q07": 0.0,
+            "q08": 0.0,
+            "q09": 0.0,
+            "q10": 0.0,
+            "q11": 0.0
+          },
+          "mean": 0.0,
+          "failure_rate": 0.0
+        }
+      },
+      "failures": {
+        "total": 0,
+        "per_eval": {
+          "abstain_ok": 0,
+          "grounded": 0,
+          "quality": 0
+        }
+      },
+      "unstable": {
+        "abstain_ok": {},
+        "grounded": {},
+        "quality": {}
+      },
+      "modal": {
+        "grounded|q01": {
+          "gold": "true",
+          "modal": "true",
+          "agreement": 1.0,
+          "votes": {
+            "true": 20
+          }
+        },
+        "abstain_ok|q01": {
+          "gold": "true",
+          "modal": "true",
+          "agreement": 1.0,
+          "votes": {
+            "true": 20
+          }
+        },
+        "quality|q01": {
+          "gold": "4",
+          "modal": "4",
+          "agreement": 1.0,
+          "votes": {
+            "4": 20
+          }
+        },
+        "grounded|q02": {
+          "gold": "true",
+          "modal": "true",
+          "agreement": 1.0,
+          "votes": {
+            "true": 20
+          }
+        },
+        "abstain_ok|q02": {
+          "gold": "true",
+          "modal": "true",
+          "agreement": 1.0,
+          "votes": {
+            "true": 20
+          }
+        },
+        "quality|q02": {
+          "gold": "4",
+          "modal": "4",
+          "agreement": 1.0,
+          "votes": {
+            "4": 20
+          }
+        },
+        "grounded|q03": {
+          "gold": "true",
+          "modal": "true",
+          "agreement": 1.0,
+          "votes": {
+            "true": 20
+          }
+        },
+        "abstain_ok|q03": {
+          "gold": "true",
+          "modal": "true",
+          "agreement": 1.0,
+          "votes": {
+            "true": 20
+          }
+        },
+        "quality|q03": {
+          "gold": "4",
+          "modal": "4",
+          "agreement": 1.0,
+          "votes": {
+            "4": 20
+          }
+        },
+        "grounded|q04": {
+          "gold": "true",
+          "modal": "true",
+          "agreement": 1.0,
+          "votes": {
+            "true": 20
+          }
+        },
+        "abstain_ok|q04": {
+          "gold": "true",
+          "modal": "true",
+          "agreement": 1.0,
+          "votes": {
+            "true": 20
+          }
+        },
+        "quality|q04": {
+          "gold": "3",
+          "modal": "4",
+          "agreement": 1.0,
+          "votes": {
+            "4": 20
+          }
+        },
+        "grounded|q05": {
+          "gold": "true",
+          "modal": "true",
+          "agreement": 1.0,
+          "votes": {
+            "true": 20
+          }
+        },
+        "abstain_ok|q05": {
+          "gold": "true",
+          "modal": "true",
+          "agreement": 1.0,
+          "votes": {
+            "true": 20
+          }
+        },
+        "quality|q05": {
+          "gold": "4",
+          "modal": "4",
+          "agreement": 1.0,
+          "votes": {
+            "4": 20
+          }
+        },
+        "grounded|q06": {
+          "gold": "true",
+          "modal": "true",
+          "agreement": 1.0,
+          "votes": {
+            "true": 20
+          }
+        },
+        "abstain_ok|q06": {
+          "gold": "true",
+          "modal": "true",
+          "agreement": 1.0,
+          "votes": {
+            "true": 20
+          }
+        },
+        "quality|q06": {
+          "gold": "3",
+          "modal": "4",
+          "agreement": 1.0,
+          "votes": {
+            "4": 20
+          }
+        },
+        "grounded|q07": {
+          "gold": "true",
+          "modal": "true",
+          "agreement": 1.0,
+          "votes": {
+            "true": 20
+          }
+        },
+        "abstain_ok|q07": {
+          "gold": "true",
+          "modal": "true",
+          "agreement": 1.0,
+          "votes": {
+            "true": 20
+          }
+        },
+        "quality|q07": {
+          "gold": "4",
+          "modal": "4",
+          "agreement": 1.0,
+          "votes": {
+            "4": 20
+          }
+        },
+        "grounded|q08": {
+          "gold": "true",
+          "modal": "true",
+          "agreement": 1.0,
+          "votes": {
+            "true": 20
+          }
+        },
+        "abstain_ok|q08": {
+          "gold": "true",
+          "modal": "true",
+          "agreement": 1.0,
+          "votes": {
+            "true": 20
+          }
+        },
+        "quality|q08": {
+          "gold": "4",
+          "modal": "4",
+          "agreement": 1.0,
+          "votes": {
+            "4": 20
+          }
+        },
+        "grounded|q09": {
+          "gold": "true",
+          "modal": "true",
+          "agreement": 1.0,
+          "votes": {
+            "true": 20
+          }
+        },
+        "abstain_ok|q09": {
+          "gold": "true",
+          "modal": "true",
+          "agreement": 1.0,
+          "votes": {
+            "true": 20
+          }
+        },
+        "quality|q09": {
+          "gold": "4",
+          "modal": "4",
+          "agreement": 1.0,
+          "votes": {
+            "4": 20
+          }
+        },
+        "grounded|q10": {
+          "gold": "true",
+          "modal": "true",
+          "agreement": 1.0,
+          "votes": {
+            "true": 20
+          }
+        },
+        "abstain_ok|q10": {
+          "gold": "true",
+          "modal": "true",
+          "agreement": 1.0,
+          "votes": {
+            "true": 20
+          }
+        },
+        "quality|q10": {
+          "gold": "3",
+          "modal": "4",
+          "agreement": 1.0,
+          "votes": {
+            "4": 20
+          }
+        },
+        "grounded|q11": {
+          "gold": "true",
+          "modal": "true",
+          "agreement": 1.0,
+          "votes": {
+            "true": 20
+          }
+        },
+        "abstain_ok|q11": {
+          "gold": "true",
+          "modal": "true",
+          "agreement": 1.0,
+          "votes": {
+            "true": 20
+          }
+        },
+        "quality|q11": {
+          "gold": "3",
+          "modal": "4",
+          "agreement": 1.0,
+          "votes": {
+            "4": 20
+          }
+        },
+        "grounded|q05v1": {
+          "gold": "false",
+          "modal": "true",
+          "agreement": 1.0,
+          "votes": {
+            "true": 20
+          }
+        },
+        "abstain_ok|q05v1": {
+          "gold": "false",
+          "modal": "true",
+          "agreement": 1.0,
+          "votes": {
+            "true": 20
+          }
+        },
+        "quality|q05v1": {
+          "gold": "1",
+          "modal": "4",
+          "agreement": 1.0,
+          "votes": {
+            "4": 20
+          }
+        },
+        "grounded|h01": {
+          "gold": "false",
+          "modal": "true",
+          "agreement": 1.0,
+          "votes": {
+            "true": 20
+          }
+        },
+        "abstain_ok|h01": {
+          "gold": "true",
+          "modal": "true",
+          "agreement": 1.0,
+          "votes": {
+            "true": 20
+          }
+        },
+        "quality|h01": {
+          "gold": "1",
+          "modal": "4",
+          "agreement": 1.0,
+          "votes": {
+            "4": 20
+          }
+        },
+        "grounded|h02": {
+          "gold": "false",
+          "modal": "true",
+          "agreement": 1.0,
+          "votes": {
+            "true": 20
+          }
+        },
+        "abstain_ok|h02": {
+          "gold": "true",
+          "modal": "true",
+          "agreement": 1.0,
+          "votes": {
+            "true": 20
+          }
+        },
+        "quality|h02": {
+          "gold": "0",
+          "modal": "4",
+          "agreement": 1.0,
+          "votes": {
+            "4": 20
+          }
+        },
+        "grounded|h03": {
+          "gold": "false",
+          "modal": "true",
+          "agreement": 1.0,
+          "votes": {
+            "true": 20
+          }
+        },
+        "abstain_ok|h03": {
+          "gold": "true",
+          "modal": "true",
+          "agreement": 1.0,
+          "votes": {
+            "true": 20
+          }
+        },
+        "quality|h03": {
+          "gold": "0",
+          "modal": "4",
+          "agreement": 1.0,
+          "votes": {
+            "4": 20
+          }
+        },
+        "grounded|h04": {
+          "gold": "false",
+          "modal": "true",
+          "agreement": 1.0,
+          "votes": {
+            "true": 20
+          }
+        },
+        "abstain_ok|h04": {
+          "gold": "true",
+          "modal": "true",
+          "agreement": 1.0,
+          "votes": {
+            "true": 20
+          }
+        },
+        "quality|h04": {
+          "gold": "1",
+          "modal": "4",
+          "agreement": 1.0,
+          "votes": {
+            "4": 20
+          }
+        },
+        "grounded|h05": {
+          "gold": "false",
+          "modal": "true",
+          "agreement": 1.0,
+          "votes": {
+            "true": 20
+          }
+        },
+        "abstain_ok|h05": {
+          "gold": "true",
+          "modal": "true",
+          "agreement": 1.0,
+          "votes": {
+            "true": 20
+          }
+        },
+        "quality|h05": {
+          "gold": "1",
+          "modal": "4",
+          "agreement": 1.0,
+          "votes": {
+            "4": 20
+          }
+        },
+        "grounded|h06": {
+          "gold": "true",
+          "modal": "true",
+          "agreement": 1.0,
+          "votes": {
+            "true": 20
+          }
+        },
+        "abstain_ok|h06": {
+          "gold": "true",
+          "modal": "true",
+          "agreement": 1.0,
+          "votes": {
+            "true": 20
+          }
+        },
+        "quality|h06": {
+          "gold": "1",
+          "modal": "4",
+          "agreement": 1.0,
+          "votes": {
+            "4": 20
+          }
+        },
+        "grounded|h07": {
+          "gold": "false",
+          "modal": "true",
+          "agreement": 1.0,
+          "votes": {
+            "true": 20
+          }
+        },
+        "abstain_ok|h07": {
+          "gold": "true",
+          "modal": "true",
+          "agreement": 1.0,
+          "votes": {
+            "true": 20
+          }
+        },
+        "quality|h07": {
+          "gold": "1",
+          "modal": "4",
+          "agreement": 1.0,
+          "votes": {
+            "4": 20
+          }
+        },
+        "grounded|h08": {
+          "gold": "false",
+          "modal": "true",
+          "agreement": 1.0,
+          "votes": {
+            "true": 20
+          }
+        },
+        "abstain_ok|h08": {
+          "gold": "false",
+          "modal": "true",
+          "agreement": 1.0,
+          "votes": {
+            "true": 20
+          }
+        },
+        "quality|h08": {
+          "gold": "0",
+          "modal": "4",
+          "agreement": 1.0,
+          "votes": {
+            "4": 20
+          }
+        },
+        "grounded|h09": {
+          "gold": "false",
+          "modal": "true",
+          "agreement": 1.0,
+          "votes": {
+            "true": 20
+          }
+        },
+        "abstain_ok|h09": {
+          "gold": "false",
+          "modal": "true",
+          "agreement": 1.0,
+          "votes": {
+            "true": 20
+          }
+        },
+        "quality|h09": {
+          "gold": "0",
+          "modal": "4",
+          "agreement": 1.0,
+          "votes": {
+            "4": 20
+          }
+        },
+        "grounded|h10": {
+          "gold": "false",
+          "modal": "true",
+          "agreement": 1.0,
+          "votes": {
+            "true": 20
+          }
+        },
+        "abstain_ok|h10": {
+          "gold": "false",
+          "modal": "true",
+          "agreement": 1.0,
+          "votes": {
+            "true": 20
+          }
+        },
+        "quality|h10": {
+          "gold": "0",
+          "modal": "4",
+          "agreement": 1.0,
+          "votes": {
+            "4": 20
+          }
+        }
+      },
+      "gold_distribution": {
+        "abstain_ok": {
+          "true": 18,
+          "false": 4
+        },
+        "grounded": {
+          "true": 12,
+          "false": 10
+        },
+        "quality": {
+          "4": 7,
+          "1": 6,
+          "0": 5,
+          "3": 4
+        }
+      },
+      "cost": {
+        "input_tokens_per_call": NaN,
+        "output_tokens_per_call": NaN,
+        "cached_share": NaN,
+        "list_cost_per_call_usd": 0.0,
+        "list_cost_per_decision_usd": 0.0,
+        "calls": 440,
+        "decisions": 1320,
+        "decisions_per_call": 3.0,
+        "cost_per_call_usd": 0.0,
+        "cost_per_decision_usd": 0.0,
+        "total_cost_usd": 0.0,
+        "latency_per_call_s": 0.0,
+        "latency_p50_s": 0.0,
+        "latency_p95_s": 0.0,
+        "latency_per_decision_s": 0.0
+      }
+    }
+  }
+}
