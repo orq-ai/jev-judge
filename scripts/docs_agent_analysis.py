@@ -1,6 +1,6 @@
 """Blog-style tables over the docs-agent judge-repeatability run (LangChain "Jev-as-a-Judge" replication).
 
-Reads every `<judge>__rep<NN>.jsonl` in a results dir and writes `blog_tables.md` + `blog_metrics.json`
+Reads every `<judge>.jsonl` (all repetitions in one file, rows carry `rep`) in a results dir and writes `blog_tables.md` + `blog_metrics.json`
 next to them: binary accuracy, quality variance, cost/latency, signal value, unstable cases and per-case
 verdicts. `--compare` puts two run dirs side by side (accuracy and repeatability per eval per judge).
 
@@ -38,13 +38,14 @@ console = Console(width=200)
 
 
 def load_judges(path: Path) -> dict[str, list[dict]]:
-    """Flat rows per judge, read from every rep file in `path`."""
+    """Flat rows per judge: one `<judge>.jsonl` per judge in `path`, every repetition inside (rows carry `rep`)."""
     rows: dict[str, list[dict]] = defaultdict(list)
-    for f in sorted(path.glob('*__rep*.jsonl')):
-        judge = f.name.split('__rep')[0]
-        rows[judge].extend(json.loads(line) for line in f.read_text().splitlines() if line.strip())
+    for f in sorted(path.glob('*.jsonl')):
+        if f.stem.startswith('excluded_'):  # a judge dropped from the run, kept for the record
+            continue
+        rows[f.stem].extend(json.loads(line) for line in f.read_text().splitlines() if line.strip())
     if not rows:
-        raise typer.BadParameter(f'no *__rep*.jsonl files in {path}')
+        raise typer.BadParameter(f'no <judge>.jsonl files in {path}')
     return dict(rows)
 
 
@@ -406,7 +407,7 @@ def write_tables(path: Path, data: dict, compare: dict | None) -> str:
 
 
 def main(
-    directory: Annotated[Path, typer.Option('--dir', help='Run dir holding *__rep*.jsonl files')] = DEFAULT_DIR,
+    directory: Annotated[Path, typer.Option('--dir', help='Run dir holding <judge>.jsonl files')] = DEFAULT_DIR,
     compare: Annotated[Path | None, typer.Option('--compare', help='Second run dir for a before/after table')] = None,
     *,
     summary: Annotated[bool, typer.Option(help='Also rewrite repeat_summary.json from the same functions')] = True,
@@ -414,13 +415,13 @@ def main(
     data = analyse(directory)
     other = analyse(compare) if compare else None
     markdown = write_tables(directory, data, other)
-    (directory / 'blog_tables.md').write_text(markdown)
+    (directory / 'blog_tables.md').write_text(markdown.rstrip('\n') + '\n')
     payload = {'run': data} | ({'compare': other} if other else {})
-    (directory / 'blog_metrics.json').write_text(json.dumps(payload, indent=2))
+    (directory / 'blog_metrics.json').write_text(json.dumps(payload, indent=2) + '\n')
     written = [directory / 'blog_tables.md', directory / 'blog_metrics.json']
     if summary:
         summaries = [data['per_judge'][j] for j in data['judges']]
-        (directory / 'repeat_summary.json').write_text(json.dumps(summaries, indent=2))
+        (directory / 'repeat_summary.json').write_text(json.dumps(summaries, indent=2) + '\n')
         written.append(directory / 'repeat_summary.json')
     logger.info('✓ wrote ' + ', '.join(str(p) for p in written))
 

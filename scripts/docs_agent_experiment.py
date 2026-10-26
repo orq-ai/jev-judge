@@ -14,11 +14,17 @@ from __future__ import annotations
 
 import asyncio
 import json
+import os
 import time
 from collections import Counter
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
+from jev_judge.models import api_key, get_adapter
+
+api_key()  # fail here, not mid-run, when ORQ_API_KEY is missing: evaluatorq reads it at import time too
+
+import evaluatorq.common.judge as _judge
 import typer
 from evaluatorq import DataPoint, EvaluationResult, evaluatorq
 from evaluatorq.common.judge import build_eval_replacements, run_judge
@@ -29,12 +35,28 @@ from pydantic import BaseModel, Field
 from rich.console import Console
 from rich.table import Table
 
-from jev_judge.models import api_key, get_adapter
+from jev_judge import tasks as benchmark_tasks
 from jev_judge.repeat import summarise
 from jev_judge.results import write_results
-from jev_judge.tasks import DOCS_RAG_QUESTIONS, build_docs_rag, docs_rag_answer, docs_rag_search_result
 
-api_key()  # fail here, not mid-run, when ORQ_API_KEY is missing: evaluatorq reads it too
+# Match docs_agent_freeze.py when it is run against a non-default dataset directory.
+if os.environ.get('DOCS_RAG_DIR'):
+    benchmark_tasks.DOCS_RAG_DIR = Path(os.environ['DOCS_RAG_DIR']).expanduser().resolve()
+
+DOCS_RAG_QUESTIONS = benchmark_tasks.DOCS_RAG_QUESTIONS
+build_docs_rag = benchmark_tasks.build_docs_rag
+docs_rag_answer = benchmark_tasks.docs_rag_answer
+docs_rag_search_result = benchmark_tasks.docs_rag_search_result
+
+
+async def _never_classify(model: str, client: object = None) -> bool:
+    """evaluatorq >= 1.40 routes any model the Orq catalogue marks classify-capable (gpt-5.6-luna is) to
+    `/classify` and refuses without a classify question. The LLM judges here are prompted judges by design;
+    Jev goes through its own adapter. Keep run_judge on the prompt path."""
+    return False
+
+
+_judge.supports_classify = _never_classify
 
 JUDGES = ('baseten/deepseek-v4.1-flash', 'google-ai/gemini-3.8-flash', 'openai/gpt-5.6-luna')
 RESULTS = Path(__file__).resolve().parents[1] / 'results' / 'docs_rag'
@@ -69,7 +91,7 @@ class LevelVerdict(BaseModel):
     explanation: str
 
 
-# evaluatorq's default payload carries an `abstain` flag that judges kept setting true; own models drop it
+# ponytail: evaluatorq's default payload carries an `abstain` flag that judges kept setting true; own models drop it
 VERDICT_MODEL = {qid: BoolVerdict if q['type'] == 'noul' else LevelVerdict for qid, q in DOCS_RAG_QUESTIONS.items()}
 CONTEXT = (
     'User question:\n{{input.all_messages[0].content}}\n\n'
@@ -180,10 +202,12 @@ class Bench:
     async def jev_reps(self, row: dict) -> list[dict[str, dict]]:
         if row['id'] not in self._jev_cache:
             loop = asyncio.get_running_loop()
-            self._jev_cache[row['id']] = asyncio.gather(*[
-                loop.run_in_executor(self._pool, self._jev.predict, row['state'], DOCS_RAG_QUESTIONS)
-                for _ in range(self.reps)
-            ])
+            self._jev_cache[row['id']] = asyncio.gather(
+                *[
+                    loop.run_in_executor(self._pool, self._jev.predict, row['state'], DOCS_RAG_QUESTIONS)
+                    for _ in range(self.reps)
+                ]
+            )
         return await self._jev_cache[row['id']]
 
     def record(self, judge: str, row: dict, qid: str, reps: list[dict], *, shared_call: bool = False) -> None:
@@ -217,15 +241,16 @@ def result(reps: list[dict], gold: str) -> EvaluationResult:
     cost = sum(r['cost'] for r in reps)
     ok = [p for p in preds if p is not None]
     mode, n_mode = Counter(ok).most_common(1)[0] if ok else (None, 0)
+    denominator = max(len(preds), 1)
     return EvaluationResult(
         value=mode if mode is not None else 'error',
         pass_=mode == gold,
-        explanation=f'gold={gold} reps={preds} agreement={n_mode / max(len(ok), 1):.2f} cost=${cost:.5f}'
+        explanation=f'gold={gold} reps={preds} agreement={n_mode / denominator:.2f} cost=${cost:.5f}'
         + (f' | {explanations[0]}' if explanations else ''),
         raw_output={
             'gold': gold,
             'repetitions': preds,
-            'accuracy': sum(p == gold for p in ok) / max(len(ok), 1),
+            'accuracy': sum(p == gold for p in preds) / denominator,
             'cost_usd': cost,
         },
     )
@@ -279,7 +304,7 @@ async def run(
         for r in rows
     ]
 
-    async def job(dp: DataPoint, _i: int) -> dict:  # evaluatorq wants a coroutine
+    async def job(dp: DataPoint, _i: int) -> dict:
         return {'name': 'docs-agent (frozen)', 'output': by_case[dp.inputs['id']]['meta']['raw']}
 
     bench = Bench(reps, matched=matched, judges=judges)
@@ -296,10 +321,9 @@ async def run(
 
     summaries = []
     for judge, prows in bench.rows.items():
-        for k in range(reps):
-            write_results([r for r in prows if r['rep'] == k], out / f'{judge}__rep{k:02d}.jsonl')
+        write_results(prows, out / f'{judge}.jsonl')  # every repetition in one file; rows carry `rep`
         summaries.append(summarise(judge, prows))
-    (out / 'repeat_summary.json').write_text(json.dumps(summaries, indent=2))
+    (out / 'repeat_summary.json').write_text(json.dumps(summaries, indent=2) + '\n')
 
     table = Table(title=f'docs-agent judge repeatability, {reps} reps x {len(rows)} cases')
     for col in ('judge', 'accuracy', 'repeatability', 'signal', 'unstable cells', 'failed', '$/call', 's/call'):
@@ -336,8 +360,12 @@ def main(
 ) -> None:
     """`--matched` pins every LLM judge to its least-sampled regime (see MATCHED); `--out` picks the result dir;
     `--judges` is a comma-separated list of router model ids to run beside Jev."""
+    chosen = tuple(j for j in judges.split(',') if j)
+    unprobed = [j for j in chosen if j not in MATCHED]
+    if matched and unprobed:
+        raise typer.BadParameter(f'--matched has no probed regime for {unprobed}; add them to MATCHED first')
     out.mkdir(parents=True, exist_ok=True)
-    asyncio.run(run(reps, path, out, send=send, matched=matched, judges=tuple(j for j in judges.split(',') if j)))
+    asyncio.run(run(reps, path, out, send=send, matched=matched, judges=chosen))
 
 
 if __name__ == '__main__':
