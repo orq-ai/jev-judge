@@ -7,11 +7,13 @@ Writes `frozen.jsonl` (what every judge sees), `annotation_sheet.md` (what the h
 question and rerunning is safe.
 
     uv run python scripts/docs_agent_freeze.py
+    DOCS_AGENT=agent/docs-agent-mini DOCS_RAG_DIR=data/docs_rag/mini_gpt5 uv run python scripts/docs_agent_freeze.py
 """
 
 from __future__ import annotations
 
 import json
+import os
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
@@ -21,9 +23,9 @@ from loguru import logger
 from jev_judge.models import api_key, remote_retry
 from jev_judge.tasks import docs_rag_answer, docs_rag_pages
 
-AGENT = 'agent/docs-agent'
+AGENT = os.environ.get('DOCS_AGENT', 'agent/docs-agent')
 RESPONSES_URL = 'https://my.orq.ai/v3/router/responses'
-DATA = Path(__file__).resolve().parents[1] / 'data' / 'docs_rag'
+DATA = Path(os.environ.get('DOCS_RAG_DIR') or Path(__file__).resolve().parents[1] / 'data' / 'docs_rag').resolve()
 LABEL_FIELDS = ('grounded', 'abstain_ok', 'quality')
 
 
